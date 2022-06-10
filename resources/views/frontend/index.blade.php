@@ -177,7 +177,32 @@
                     </div>
                </a>
             </div>
+            <div class="campus-card">
+               <a href="#" class="card-link">
+                    <img src="{{url('images/landing-page/home/campus-2.png')}}" alt="" class="card-img">
+                    <div class="title">Hotel Manager</div>
+                    <div class="location"><i class="bi bi-geo-alt"></i>Nugegoda, Colombo 05.</div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus et quis sunt mollitia corrupti officiis! Laborum maxime et est earum magni modi quibusdam laboriosam qui!</p>
+                    <div class="footer">
+                        <span><i class="bi bi-person"></i>01</span>
+                        <span><i class="bi bi-chat-left-text"></i>00</span>
+                    </div>
+               </a>
+            </div>
+            <div class="campus-card">
+               <a href="#" class="card-link">
+                    <img src="{{url('images/landing-page/home/campus-3.png')}}" alt="" class="card-img">
+                    <div class="title">Nursing and Home Care</div>
+                    <div class="location"><i class="bi bi-geo-alt"></i>Nugegoda, Colombo 05.</div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus et quis sunt mollitia corrupti officiis! Laborum maxime et est earum magni modi quibusdam laboriosam qui!</p>
+                    <div class="footer">
+                        <span><i class="bi bi-person"></i>01</span>
+                        <span><i class="bi bi-chat-left-text"></i>00</span>
+                    </div>
+               </a>
+            </div>
         </div>
+        <a href="#" class="cta-link">View More <i class="bi bi-chevron-right"></i></a>
     </div>
 </section>
 
@@ -190,18 +215,51 @@
         <div class="inner-wrapper">
             <div class="news-card">
                 <img src="{{url('images/landing-page/home/news-1.png')}}" alt="" class="card-img">
-                <div class="title">
-                    <img src="{{url('images/landing-page/home/news.svg')}}" alt="" class="title-img">
-                    Latest at Tallentor
+                <div class="wrapper">
+                    <div class="title">
+                        <img src="{{url('images/landing-page/home/news.svg')}}" alt="" class="title-img">
+                        Latest at Tallentor
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo explicabo, sapiente minus at repudiandae hic fugit rem tempore delectus neque odio sint quaerat corrupti enim?</p>
+                    <div class="footer">
+                        <span><i class="bi bi-heart"></i>1</span>
+                        <span><i class="bi bi-chat-left-text"></i>Comment</span>
+                        <a href="#" class="view-more">View More</a>
+                    </div>
                 </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo explicabo, sapiente minus at repudiandae hic fugit rem tempore delectus neque odio sint quaerat corrupti enim?</p>
-                <div class="footer">
-                    <span><i class="bi bi-heart"></i>1</span>
-                    <span><i class="bi bi-chat-left-text"></i>Comment</span>
-                    <a href="#" class="view-more">View More</a>
+            </div>
+            <div class="news-card">
+                <img src="{{url('images/landing-page/home/news-2.png')}}" alt="" class="card-img">
+                <div class="wrapper">
+                    <div class="title">
+                        <img src="{{url('images/landing-page/home/news.svg')}}" alt="" class="title-img">
+                        Latest at Tallentor
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo explicabo, sapiente minus at repudiandae hic fugit rem tempore delectus neque odio sint quaerat corrupti enim?</p>
+                    <div class="footer">
+                        <span><i class="bi bi-heart"></i>1</span>
+                        <span><i class="bi bi-chat-left-text"></i>Comment</span>
+                        <a href="#" class="view-more">View More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="news-card">
+                <img src="{{url('images/landing-page/home/news-3.png')}}" alt="" class="card-img">
+                <div class="wrapper">
+                    <div class="title">
+                        <img src="{{url('images/landing-page/home/news.svg')}}" alt="" class="title-img">
+                        Latest at Tallentor
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo explicabo, sapiente minus at repudiandae hic fugit rem tempore delectus neque odio sint quaerat corrupti enim?</p>
+                    <div class="footer">
+                        <span><i class="bi bi-heart"></i>1</span>
+                        <span><i class="bi bi-chat-left-text"></i>Comment</span>
+                        <a href="#" class="view-more">View More</a>
+                    </div>
                 </div>
             </div>
         </div>
+        <a href="#" class="cta-link">View More <i class="bi bi-chevron-right"></i></a>
     </div>
 </section>
 

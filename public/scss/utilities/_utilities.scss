@@ -9,3 +9,51 @@
     -webkit-line-clamp: $lines;
     -webkit-box-orient: vertical;
 }
+
+.btn-fill {
+    font-size: .9rem;
+    color: $white;
+    font-weight: 400;
+    background-color: $primary-blue;
+    padding: 0.7rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    border: 1px solid $primary-blue;
+    text-align: center;
+
+    &:hover {
+        text-decoration: none;
+        color: $white;
+    }
+}
+
+.btn-outline {
+    font-size: .9rem;
+    color: $primary-blue;
+    font-weight: 400;
+    background-color: transparent;
+    padding: 0.7rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    border: 1px solid $primary-blue;
+    text-align: center;
+
+    &:hover {
+        text-decoration: none;
+        color: $primary-blue;
+    }
+}
+
+.cta-link {
+    display: block;
+    width: fit-content;
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 1rem;
+    color: $dark-blue;
+
+    &:hover {
+        text-decoration: none;
+        color: $dark-blue;
+    }
+}
