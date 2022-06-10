@@ -35,4 +35,17 @@ Breadcrumbs::for('admin.contactus_thanks', function ($trail) {
     $trail->push('Contact Us Thanks Email', route('admin.contactus_thanks'));
 });
 
+Breadcrumbs::for('admin.contact_us.index', function ($trail) {
+    $trail->push('Contact Us', route('admin.contact_us.index'));
+});
+Breadcrumbs::for('admin.contact_us.edit', function ($trail) {
+    $trail->push('Edit Contact Us', route('admin.contact_us.edit',1));
+});
+
+Breadcrumbs::for('admin.job_posts.index', function ($trail) {
+    $trail->push('Job Post', route('admin.job_posts.index'));
+});
+Breadcrumbs::for('admin.job_posts.edit', function ($trail) {
+    $trail->push('Edit Job Post', route('admin.job_posts.edit',1));
+});
 
