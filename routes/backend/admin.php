@@ -5,7 +5,9 @@ use App\Http\Controllers\Backend\FileManagerController;
 use App\Http\Controllers\Backend\SettingsController;
 use App\Http\Controllers\Backend\ModuleExplorerController;
 use App\Http\Controllers\Backend\JobPostController;
+use App\Http\Controllers\Backend\JobCategoryController;
 use App\Http\Controllers\Backend\ContactUsController;
+use App\Http\Controllers\Backend\SkillsController;
 
 
 // All route names are prefixed with 'admin.'.
@@ -51,3 +53,19 @@ Route::get('job_posts/get_details', [JobPostController::class, 'get_details'])->
 Route::get('job_posts/edit/{id}', [JobPostController::class, 'edit'])->name('job_posts.edit');
 Route::post('job_posts/update', [JobPostController::class, 'update'])->name('job_posts.update');
 Route::get('job_posts/delete/{id}', [JobPostController::class, 'destroy'])->name('job_posts.destroy');
+
+Route::get('job_category', [JobCategoryController::class, 'index'])->name('job_category.index');
+Route::get('job_category/create', [JobCategoryController::class, 'create'])->name('job_category.create');
+Route::post('job_category/store', [JobCategoryController::class, 'store'])->name('job_category.store');
+Route::get('job_category/get_details', [JobCategoryController::class, 'get_details'])->name('job_category.get_details');
+Route::get('job_category/edit/{id}', [JobCategoryController::class, 'edit'])->name('job_category.edit');
+Route::post('job_category/update', [JobCategoryController::class, 'update'])->name('job_category.update');
+Route::get('job_category/delete/{id}', [JobCategoryController::class, 'destroy'])->name('job_category.destroy');
+
+Route::get('skills', [SkillsController::class, 'index'])->name('skills.index');
+Route::get('skills/create', [SkillsController::class, 'create'])->name('skills.create');
+Route::post('skills/store', [SkillsController::class, 'store'])->name('skills.store');
+Route::get('skills/get_details', [SkillsController::class, 'get_details'])->name('skills.get_details');
+Route::get('skills/edit/{id}', [SkillsController::class, 'edit'])->name('skills.edit');
+Route::post('skills/update', [SkillsController::class, 'update'])->name('skills.update');
+Route::get('skills/delete/{id}', [SkillsController::class, 'destroy'])->name('skills.destroy');

@@ -61,14 +61,32 @@
                 @endif
             @endif
 
-
-            <li class="nav-item">
-                <a class="nav-link {{active_class(Route::is('admin/job_posts'))}}" href="{{ route('admin.job_posts.index') }}">
-                <i class="nav-icon far fa-address-card"></i>
-                    Job Post
+            <li class="nav-item nav-dropdown ">
+                <a class="nav-link nav-dropdown-toggle " href="#">
+                    <i class="nav-icon far fa-address-card"></i>
+                    Jobs
                 </a>
+
+                <ul class="nav-dropdown-items">      
+                    <li class="nav-item">
+                        <a class="nav-link {{active_class(Route::is('admin/skills'))}}" href="{{ route('admin.skills.index') }}">
+                            Skills
+                        </a>
+                    </li>           
+                    <li class="nav-item">
+                        <a class="nav-link {{active_class(Route::is('admin/job_category'))}}" href="{{ route('admin.job_category.index') }}">
+                            Jobs Category
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{active_class(Route::is('admin/job_posts'))}}" href="{{ route('admin.job_posts.index') }}">
+                            Job Post
+                        </a>
+                    </li>                   
+                </ul>
             </li>
 
+  
             <li class="nav-item">
                 <a class="nav-link {{active_class(Route::is('admin/contact_us'))}}" href="{{ route('admin.contact_us.index') }}">
                     <i class="nav-icon fas fa-comments"></i>
