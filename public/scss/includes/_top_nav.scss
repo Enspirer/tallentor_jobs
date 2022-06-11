@@ -1,0 +1,52 @@
+.topNav {
+    background-color: $primary-blue;
+
+    .title {
+        font-size: 1.5rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: $white;
+
+        span {
+            font-weight: 400;
+            color: $primary-blue;
+            background-color: $primary-yellow;
+            padding: 0 .5rem;
+            border-radius: 50px;
+        }
+    }
+
+    .navbar-nav {
+        gap: 1rem;
+
+        .nav-link {
+            color: $white;
+            font-size: .9rem;
+            font-weight: 300;
+        }
+    }
+
+    .button-block {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+        margin: 0 1rem;
+
+        .cta-btn {
+            color: $primary-yellow;
+            font-size: .9rem;
+            font-weight: 300;
+            padding: .5rem 1.5rem;
+
+            &.btn-fill {
+                @include overlay($white, 0.25);
+                border: 1px solid rgba($color: $white, $alpha: 0.25);
+            }
+
+            &.btn-outline {
+                border: 1px solid $primary-yellow;
+            }
+        }
+    }
+}
