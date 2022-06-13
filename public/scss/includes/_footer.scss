@@ -167,3 +167,50 @@ footer {
         }
     }
 }
+
+@media screen and (max-width: 1199px) {
+    footer {
+        .inner-wrapper {
+            width: 90%;
+
+            .footer-blocks {
+                flex-wrap: wrap;
+
+                .block {
+                    flex: 0 0 45%;
+
+                    &:nth-child(2) {
+                        flex: 0 0 45%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    footer {
+        .inner-wrapper {
+            .footer-blocks {
+                .block {
+                    flex: 0 0 100%;
+
+                    &:nth-child(2) {
+                        flex: 0 0 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 575px) {
+    footer {
+        .inner-wrapper {
+            .copyright {
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+        }
+    }
+}

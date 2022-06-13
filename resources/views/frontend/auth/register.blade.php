@@ -112,8 +112,8 @@
 
     <div class="section-wrapper">
         <section class="section-join">
-            <div class="row">
-                <div class="col-xl-4">
+            <div class="row flex-lg-row flex-column-reverse g-4">
+                <div class="col-xxl-4 col-xl-5 col-lg-6">
                     <div class="join-form">
                         <div class="header">
                             <div class="title">Create an account</div>
@@ -187,7 +187,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-8">
+                <div class="col-xxl-8 col-xl-7 col-lg-6">
                     <div class="splide join-slider" id="joinSlider">
                         <div class="splide__track">
                             <ul class="splide__list">
@@ -264,6 +264,37 @@
     } );
     joinSlider.mount();
   } );
+</script>
+
+<script>
+$(".btn-prev").click(function(){
+    $(".splide__arrow.splide__arrow--prev").click(); 
+    return false;
+});
+
+$(".btn-next").click(function(){
+    $(".splide__arrow.splide__arrow--next").click(); 
+    return false;
+});
+
+$(".pagination-nav li:nth-child(1) .page-btn").click(function(){
+    $(".pagination-nav li .page-btn").removeClass('active')
+    $(".pagination-nav li:nth-child(1) .page-btn").addClass('active')
+    $(".splide__pagination li:nth-child(1) .splide__pagination__page").click(); 
+    return false;
+});
+$(".pagination-nav li:nth-child(2) .page-btn").click(function(){
+    $(".pagination-nav li .page-btn").removeClass('active')
+    $(".pagination-nav li:nth-child(2) .page-btn").addClass('active')
+    $(".splide__pagination li:nth-child(2) .splide__pagination__page").click(); 
+    return false;
+});
+$(".pagination-nav li:nth-child(3) .page-btn").click(function(){
+    $(".pagination-nav li .page-btn").removeClass('active')
+    $(".pagination-nav li:nth-child(3) .page-btn").addClass('active')
+    $(".splide__pagination li:nth-child(3) .splide__pagination__page").click(); 
+    return false;
+});
 </script>
  
 @endpush

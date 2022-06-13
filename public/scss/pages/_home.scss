@@ -9,10 +9,10 @@
 
     .inner-wrapper {
         text-align: center;
-        width: 35%;
+        width: 45%;
         position: absolute;
         top: 50%;
-        left: 15%;
+        left: 10%;
         transform: translate(0, -50%);
 
         .subtitle {
@@ -574,5 +574,117 @@
 
     .cta-link {
         margin: 2rem auto 0;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .hero-section {
+        .inner-wrapper {
+            width: 60%;
+            top: unset;
+            bottom: 15%;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+    }
+
+    .job-section {
+        .inner-wrapper {
+            .header {
+                width: 80%;
+            }
+
+            .cta-link {
+                margin-right: auto;
+            }
+
+            .featured-jobs {
+                .job-card {
+                    flex: 0 0 40%;
+                }
+            }
+        }
+    }
+
+    .career-center {
+        .inner-wrapper {
+            flex-direction: column-reverse;
+            gap: 3rem;
+
+            .content-block {
+                padding: 0;
+                text-align: center;
+
+                .button-block {
+                    justify-content: center;
+                }
+            }
+        }
+    }
+
+    .campus-section {
+        .header {
+            width: 80%;
+        }
+
+        .inner-wrapper {
+            flex-direction: column;
+        }
+    }
+
+    .blog-section {
+        .header {
+            width: 80%;
+        }
+
+        .inner-wrapper {
+            flex-direction: column;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .hero-section {
+        .inner-wrapper {
+            width: 100%;
+            top: unset;
+            bottom: 15%;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+    }
+
+    .career-center {
+        .inner-wrapper {
+            .content-block {
+                .button-block {
+                    flex-direction: column;
+                }
+            }
+
+            .image-block {
+                .pop-img {
+
+                    &.img-2,
+                    &.img-3 {
+                        left: 0;
+                    }
+
+                    &.img-7 {
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .job-section {
+        .inner-wrapper {
+            .featured-jobs {
+                .job-card {
+                    flex: 0 0 100%;
+                }
+            }
+        }
     }
 }

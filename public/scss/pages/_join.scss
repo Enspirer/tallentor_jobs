@@ -164,6 +164,11 @@
         .join-slider {
             height: 100%;
 
+            .splide__arrows,
+            .splide__pagination {
+                display: none;
+            }
+
             .splide__track {
                 height: 100%;
 
@@ -249,5 +254,14 @@
                 }
             }
         }
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .section-wrapper .section-join .join-slider .splide__track .splide__list .splide__slide .silde-wrapper .caption-block {
+        width: 90%;
+        right: unset;
+        left: 50%;
+        transform: translate(-50%, 0);
     }
 }

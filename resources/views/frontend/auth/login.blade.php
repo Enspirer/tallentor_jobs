@@ -91,8 +91,8 @@
 
     <div class="section-wrapper">
         <section class="section-join">
-            <div class="row">
-                <div class="col-xl-4">
+            <div class="row flex-lg-row flex-column-reverse g-4">
+                <div class="col-xxl-4 col-xl-5 col-lg-6">
                     <div class="join-form">
                         <div class="header">
                             <div class="title">Login to your account</div>
@@ -112,13 +112,13 @@
                                 <div class="col-12">
                                     @include('includes.partials.messages')
                                 </div>
-                                <div class="col-6">
+                                <div class="col-sm-6">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="1" id="remember" name="remember" checked="checked">
                                         <label class="form-check-label" for="remember">Remember me</label>
                                     </div>
                                 </div>
-                                <div class="col-6 text-right">
+                                <div class="col-sm-6 text-sm-right">
                                     <a href="{{ route('frontend.auth.password.reset') }}" class="forgot-password">Forgot Password?</a>
                                 </div>
                                 <!-- <div class="col-12">
@@ -146,12 +146,12 @@
                             <div class="register-block">
                                 <span>New to Tallentor Jobs</span>
                                 <p>Create your profile now and be visible to the top recruiters in the world</p>
-                                <a href="#" class="btn-fill cta-btn">Register with Us</a>
+                                <a href="{{url('/register')}}" class="btn-fill cta-btn">Register with Us</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-8">
+                <div class="col-xxl-8 col-xl-7 col-lg-6">
                     <div class="splide join-slider" id="joinSlider">
                         <div class="splide__track">
                             <ul class="splide__list">
@@ -228,6 +228,37 @@
     } );
     joinSlider.mount();
   } );
+</script>
+
+<script>
+$(".btn-prev").click(function(){
+    $(".splide__arrow.splide__arrow--prev").click(); 
+    return false;
+});
+
+$(".btn-next").click(function(){
+    $(".splide__arrow.splide__arrow--next").click(); 
+    return false;
+});
+
+$(".pagination-nav li:nth-child(1) .page-btn").click(function(){
+    $(".pagination-nav li .page-btn").removeClass('active')
+    $(".pagination-nav li:nth-child(1) .page-btn").addClass('active')
+    $(".splide__pagination li:nth-child(1) .splide__pagination__page").click(); 
+    return false;
+});
+$(".pagination-nav li:nth-child(2) .page-btn").click(function(){
+    $(".pagination-nav li .page-btn").removeClass('active')
+    $(".pagination-nav li:nth-child(2) .page-btn").addClass('active')
+    $(".splide__pagination li:nth-child(2) .splide__pagination__page").click(); 
+    return false;
+});
+$(".pagination-nav li:nth-child(3) .page-btn").click(function(){
+    $(".pagination-nav li .page-btn").removeClass('active')
+    $(".pagination-nav li:nth-child(3) .page-btn").addClass('active')
+    $(".splide__pagination li:nth-child(3) .splide__pagination__page").click(); 
+    return false;
+});
 </script>
     
 @endpush

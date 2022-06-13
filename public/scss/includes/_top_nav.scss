@@ -16,6 +16,18 @@
         }
     }
 
+    .navbar-toggler {
+
+        &:focus {
+            box-shadow: none;
+            outline: none;
+        }
+
+        i {
+            color: $white;
+        }
+    }
+
     .navbar-nav {
         gap: 1rem;
 
@@ -47,6 +59,14 @@
             &.btn-outline {
                 border: 1px solid $primary-yellow;
             }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .topNav {
+        .button-block {
+            margin: 0;
         }
     }
 }
