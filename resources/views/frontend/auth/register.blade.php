@@ -179,8 +179,8 @@
                                             <div class="title">New update topic here...</div>
                                             <p>Let's see what we have new, Check it out! So maybe write here something more.</p>
                                             <div class="nav-arrows">
-                                                <button type="button" class="btn-prev"><i class="bi bi-arrow-left-circle"></i></button>
-                                                <button type="button" class="btn-next"><i class="bi bi-arrow-right-circle"></i></button>
+                                                <button type="button" class="btn-prev" data-btn-prev><i class="bi bi-arrow-left-circle"></i></button>
+                                                <button type="button" class="btn-next" data-btn-next><i class="bi bi-arrow-right-circle"></i></button>
                                             </div>
                                             <ul class="pagination-nav">
                                                 <li><button class="page-btn active"></button></li>
