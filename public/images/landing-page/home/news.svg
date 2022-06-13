@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ff2323;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        font-size: 14px;
+        font-family: SegoeUI, Segoe UI;
+      }
+    </style>
+  </defs>
+  <g id="Group_936" data-name="Group 936" transform="translate(-722 -6878)">
+    <circle id="Ellipse_6" data-name="Ellipse 6" class="cls-1" cx="28" cy="28" r="28" transform="translate(722 6878)"/>
+    <text id="NEWS" class="cls-2" transform="translate(750 6911)"><tspan x="-19.035" y="0">NEWS</tspan></text>
+  </g>
+</svg>
