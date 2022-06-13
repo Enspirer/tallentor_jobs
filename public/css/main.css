@@ -551,6 +551,216 @@
   margin: 2rem auto 0;
 }
 
+.section-wrapper {
+  background-color: #EEEDF1;
+}
+.section-wrapper .section-join {
+  padding: 7.5rem 0 5rem;
+  width: 80%;
+  margin: auto;
+}
+.section-wrapper .section-join .join-form {
+  background-color: #fff;
+  padding: 2rem;
+}
+.section-wrapper .section-join .join-form .header {
+  margin-bottom: 1.5rem;
+}
+.section-wrapper .section-join .join-form .header .title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #333;
+  text-align: center;
+}
+.section-wrapper .section-join .join-form .header .subtitle {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #333;
+  text-align: center;
+}
+.section-wrapper .section-join .join-form .form-body {
+  margin-bottom: 3rem;
+}
+.section-wrapper .section-join .join-form .form-body .form-label,
+.section-wrapper .section-join .join-form .form-body .form-check-label {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #333;
+}
+.section-wrapper .section-join .join-form .form-body .form-check-label a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+.section-wrapper .section-join .join-form .form-body .forgot-password {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #207CD8;
+  text-decoration: none;
+}
+.section-wrapper .section-join .join-form .form-body .form-control {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #777;
+  height: 45px;
+  border: none;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.05);
+}
+.section-wrapper .section-join .join-form .form-body .form-control:hover, .section-wrapper .section-join .join-form .form-body .form-control:focus {
+  outline: none;
+}
+.section-wrapper .section-join .join-form .form-body .cta-btn {
+  width: 100%;
+  border-radius: 5px;
+}
+.section-wrapper .section-join .join-form .form-footer .devider {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #777;
+  text-align: center;
+  position: relative;
+}
+.section-wrapper .section-join .join-form .form-footer .devider::after, .section-wrapper .section-join .join-form .form-footer .devider::before {
+  content: "";
+  width: 20%;
+  height: 1px;
+  background-color: #ddd;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.section-wrapper .section-join .join-form .form-footer .devider::before {
+  left: 0;
+}
+.section-wrapper .section-join .join-form .form-footer .devider::after {
+  right: 0;
+}
+.section-wrapper .section-join .join-form .form-footer .social-sign {
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.section-wrapper .section-join .join-form .form-footer .social-sign a {
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.075);
+}
+.section-wrapper .section-join .join-form .form-footer .social-sign a img {
+  width: 24px;
+  height: 24px;
+}
+.section-wrapper .section-join .join-form .register-block {
+  padding: 1.5rem 1rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  position: relative;
+}
+.section-wrapper .section-join .join-form .register-block span {
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 300;
+  background-color: #fff;
+  padding: 0 1rem;
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: fit-content;
+}
+.section-wrapper .section-join .join-form .register-block p {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #777;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.section-wrapper .section-join .join-form .register-block .cta-btn {
+  width: 100%;
+  border-radius: 5px;
+  display: block;
+}
+.section-wrapper .section-join .join-slider {
+  height: 100%;
+}
+.section-wrapper .section-join .join-slider .splide__track {
+  height: 100%;
+}
+.section-wrapper .section-join .join-slider .splide__track .splide__list .splide__slide .silde-wrapper {
+  height: 100%;
+}
+.section-wrapper .section-join .join-slider .splide__track .splide__list .splide__slide .silde-wrapper img {
+  height: 100%;
+}
+.section-wrapper .section-join .join-slider .splide__track .splide__list .splide__slide .silde-wrapper .caption-block {
+  padding: 1.5rem 1rem 1rem;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(15px);
+  text-align: center;
+}
+.section-wrapper .section-join .join-slider .splide__track .splide__list .splide__slide .silde-wrapper .caption-block .title {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+.section-wrapper .section-join .join-slider .splide__track .splide__list .splide__slide .silde-wrapper .caption-block p {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #fff;
+  width: 80%;
+  margin: auto;
+}
+.section-wrapper .section-join .join-slider .splide__track .splide__list .splide__slide .silde-wrapper .caption-block .nav-arrows {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.section-wrapper .section-join .join-slider .splide__track .splide__list .splide__slide .silde-wrapper .caption-block .nav-arrows button {
+  border: none;
+  background-color: transparent;
+}
+.section-wrapper .section-join .join-slider .splide__track .splide__list .splide__slide .silde-wrapper .caption-block .nav-arrows button .bi {
+  font-size: 2rem;
+  color: #fff;
+}
+.section-wrapper .section-join .join-slider .splide__track .splide__list .splide__slide .silde-wrapper .caption-block .pagination-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+.section-wrapper .section-join .join-slider .splide__track .splide__list .splide__slide .silde-wrapper .caption-block .pagination-nav .page-btn {
+  width: 50px;
+  height: 5px;
+  border-radius: 10px;
+  background-color: #fff;
+  border: none;
+}
+.section-wrapper .section-join .join-slider .splide__track .splide__list .splide__slide .silde-wrapper .caption-block .pagination-nav .page-btn.active {
+  background-color: #22244B;
+}
+
 .topNav {
   background-color: #22244B;
 }
