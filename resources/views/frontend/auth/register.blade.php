@@ -124,23 +124,42 @@
                             <div class="row g-4">
                                 <div class="col-12">
                                     <label for="first_name" class="form-label">First name</label>
-                                    <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Enter Your First Name" required="required">
+                                    <input type="text" class="form-control" name="first_name" value="{{old('first_name')}}" id="first_name" placeholder="Enter Your First Name" required>
+                                    @if($errors->has('first_name'))
+                                        <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('first_name')}}</p>
+                                    @endif
                                 </div>
                                 <div class="col-12">
                                     <label for="last_name" class="form-label">Last name</label>
-                                    <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Enter Your Last Name" required="required">
+                                    <input type="text" class="form-control" name="last_name" value="{{old('last_name')}}" id="last_name" placeholder="Enter Your Last Name" required>
+                                    @if($errors->has('last_name'))
+                                        <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('last_name')}}</p>
+                                    @endif
                                 </div>
                                 <div class="col-12">       
-                                    <label for="email" class="form-label">Email ID</label> 
-                                    <input type="email" class="form-control" name="email" id="email" placeholder="Enter Your Email" required="required">
+                                    <label for="email" class="form-label">Email</label> 
+                                    <input type="email" class="form-control" name="email" value="{{old('email')}}" id="email" placeholder="Enter Your Email" required>
+                                    @if($errors->has('email'))
+                                        <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('email')}}</p>
+                                    @endif
                                 </div>
                                 <div class="col-12">
                                     <label for="password" class="form-label">Password</label>
-                                    <input type="password" class="form-control" name="password" id="password" placeholder="Password should be minimum 6 characters" required="required">
+                                    <input type="password" class="form-control" name="password" id="password" placeholder="Password should be minimum 6 characters" required>
+                                    @if($errors->has('password'))
+                                        <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('password')}}</p>
+                                    @endif
+                                </div>
+                                <div class="col-12">
+                                    <label for="password_confirmation" class="form-label">Confirm Password</label>
+                                    <input type="password" class="form-control" name="password_confirmation" id="password_confirmation" placeholder="Confirm Your Password" required>
+                                    @if($errors->has('password_confirmation'))
+                                        <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('password_confirmation')}}</p>
+                                    @endif
                                 </div>
                                 <div class="col-12">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="terms" name="terms">
+                                        <input class="form-check-input" type="checkbox" id="terms" name="terms" required>
                                         <label class="form-check-label" for="terms">By Creating an account means you agree to the <a href="#" target="_blank">Terms and Conditions</a>, and our <a href="#" target="_blank">Privacy Policy</a></label>
                                     </div>
                                 </div>

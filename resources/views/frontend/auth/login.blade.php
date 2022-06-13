@@ -103,11 +103,14 @@
                             <div class="row g-4">
                                 <div class="col-12">
                                     <label for="email" class="form-label">Your Email</label>
-                                    <input type="email" class="form-control" name="email" id="email" placeholder="Enter Your Email" required="required">
+                                    <input type="email" class="form-control" name="email" value="{{old('email')}}" id="email" placeholder="Enter Your Email" required="required">
                                 </div>
                                 <div class="col-12">
                                     <label for="password" class="form-label">Your Password</label>
                                     <input type="password" class="form-control" name="password" id="password" placeholder="Enter Your Password" required="required">
+                                </div>
+                                <div class="col-12">
+                                    @include('includes.partials.messages')
                                 </div>
                                 <div class="col-6">
                                     <div class="form-check">
@@ -118,12 +121,12 @@
                                 <div class="col-6 text-right">
                                     <a href="{{ route('frontend.auth.password.reset') }}" class="forgot-password">Forgot Password?</a>
                                 </div>
-                                <div class="col-12">
+                                <!-- <div class="col-12">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="terms" name="terms">
                                         <label class="form-check-label" for="terms">By Creating an account means you agree to the <a href="#" target="_blank">Terms and Conditions</a>, and our <a href="#" target="_blank">Privacy Policy</a></label>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="col-12">
                                     <button type="submit" class="cta-btn btn-fill pull-right">Sign In</button>
                                 </div>
