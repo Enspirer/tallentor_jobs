@@ -28,10 +28,15 @@
             <div class="block">
                 <div class="subtitle">Newsletter</div>
                 <p>You can trust us. we only send promo offers, not a single spam.</p>
-                <div class="input-group">
-                    <input type="text" name="newsletter" class="form-control" placeholder="Type your Email">
-                    <button type="submit" class="ns-submit">SUBSCRIBE</button>
-                </div>
+
+                <form action="{{route('frontend.newsletter.store')}}" method="post" enctype="multipart/form-data">
+                {{csrf_field()}}
+                    <div class="input-group">
+                        <input type="email" name="newsletter" class="form-control" placeholder="Type your Email" required>
+                        <button type="submit" class="ns-submit">SUBSCRIBE</button>
+                    </div>
+                </form>
+
                 <div class="subtitle">Follow Us</div>
                 <div class="social-links">
                     <a href="#" target="_blank"><i class="fa-brands fa-facebook-square"></i></a>
@@ -51,3 +56,4 @@
         </div>
     </div>
 </footer>
+

@@ -68,3 +68,18 @@ Breadcrumbs::for('admin.skills.create', function ($trail) {
 Breadcrumbs::for('admin.skills.edit', function ($trail) {
     $trail->push('Edit Skills', route('admin.skills.edit',1));
 });
+
+Breadcrumbs::for('admin.events.index', function ($trail) {
+    $trail->push('Events', route('admin.events.index'));
+});
+Breadcrumbs::for('admin.events.create', function ($trail) {
+    $trail->push('Create Events', route('admin.events.create'));
+});
+Breadcrumbs::for('admin.events.edit', function ($trail) {
+    $trail->push('Edit Events', route('admin.events.edit',1));
+});
+
+Breadcrumbs::for('admin.email_sub.index', function ($trail) {
+    $trail->push('Email Subscriptions', route('admin.email_sub.index'));
+});
+

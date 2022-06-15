@@ -39,7 +39,7 @@ class JobCategoryController extends Controller
 
         $add->save();
 
-        return redirect()->route('admin.job_category.index')->withFlashSuccess('Updated Successfully');                      
+        return redirect()->route('admin.job_category.index')->withFlashSuccess('Added Successfully');                      
 
     }
 

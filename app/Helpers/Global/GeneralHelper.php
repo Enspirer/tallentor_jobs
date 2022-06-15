@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Settings; 
+use App\Models\Skills;
 
 if (! function_exists('app_name')) {
     /**
@@ -119,7 +120,36 @@ if (! function_exists('get_settings')) {
 }
 
 
+if (! function_exists('create_skill')) {
+    /**
+     * Return the route to the "home" page depending on authentication/authorization status.
+     *
+     * @return string
+     */
+    function create_skill($name, $description)
+    {
+        $chack_name = Skills::where('name', 'like', '%'.$name.'%')->first();   
+        // dd($chack_name);
+        
+        if($chack_name == null){
 
+            $add = new Skills;
+            $add->name=$name;
+            $add->description=$description;
+            $add->status='Enabled';    
+            $add->save();
+
+            return 'done';
+
+        }
+        else{
+            return 'Already Added';
+        }
+
+            
+       
+    }
+}
 
 
 

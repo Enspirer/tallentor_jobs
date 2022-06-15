@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Frontend\Contact\SendContactRequest;
 use App\Mail\Frontend\Contact\SendContact;
 use Illuminate\Support\Facades\Mail;
+use App\Models\EmailSubscription;
+use Illuminate\Http\Request;
 
 /**
  * Class ContactController.
@@ -31,4 +33,21 @@ class ContactController extends Controller
 
         return redirect()->back()->withFlashSuccess(__('alerts.frontend.contact.sent'));
     }
+
+    public function newsletter_store(Request $request)
+    {        
+        // dd($request); 
+
+        $add = new EmailSubscription;
+        $add->email=$request->newsletter;
+        $add->type='Email Subscription'; 
+        $add->save();
+
+        session()->flash('message','Thanks!');
+
+        return back()->with([
+            'email_sub_success' => 'email_sub_success'
+        ]);   
+    }
+
 }

@@ -8,6 +8,8 @@ use App\Http\Controllers\Backend\JobPostController;
 use App\Http\Controllers\Backend\JobCategoryController;
 use App\Http\Controllers\Backend\ContactUsController;
 use App\Http\Controllers\Backend\SkillsController;
+use App\Http\Controllers\Backend\EventsController;
+use App\Http\Controllers\Backend\EmailSubController;
 
 
 // All route names are prefixed with 'admin.'.
@@ -42,6 +44,13 @@ Route::post('terms_and_conditions_update/update', [SettingsController::class, 't
 Route::get('contactus_thanks', [SettingsController::class, 'contactus_thanks'])->name('contactus_thanks');
 Route::post('contactus_thanks_update/update', [SettingsController::class, 'contactus_thanks_update'])->name('contactus_thanks_update');
 
+
+Route::get('email_sub', [EmailSubController::class, 'index'])->name('email_sub.index');
+Route::get('email_sub/getdetails', [EmailSubController::class, 'getDetails'])->name('email_sub.getDetails');
+Route::get('email_sub/edit/{id}', [EmailSubController::class, 'edit'])->name('email_sub.edit');
+Route::post('email_sub/update', [EmailSubController::class, 'update'])->name('email_sub.update');
+Route::get('email_sub/delete/{id}', [EmailSubController::class, 'destroy'])->name('email_sub.destroy');
+
 Route::get('contact_us', [ContactUsController::class, 'index'])->name('contact_us.index');
 Route::get('contact_us/getdetails', [ContactUsController::class, 'getDetails'])->name('contact_us.getDetails');
 Route::get('contact_us/edit/{id}', [ContactUsController::class, 'edit'])->name('contact_us.edit');
@@ -69,3 +78,14 @@ Route::get('skills/get_details', [SkillsController::class, 'get_details'])->name
 Route::get('skills/edit/{id}', [SkillsController::class, 'edit'])->name('skills.edit');
 Route::post('skills/update', [SkillsController::class, 'update'])->name('skills.update');
 Route::get('skills/delete/{id}', [SkillsController::class, 'destroy'])->name('skills.destroy');
+
+
+Route::get('events', [EventsController::class, 'index'])->name('events.index');
+Route::get('events/create', [EventsController::class, 'create'])->name('events.create');
+Route::post('events/store', [EventsController::class, 'store'])->name('events.store');
+Route::get('events/get_details', [EventsController::class, 'get_details'])->name('events.get_details');
+Route::get('events/edit/{id}', [EventsController::class, 'edit'])->name('events.edit');
+Route::post('events/update', [EventsController::class, 'update'])->name('events.update');
+Route::get('events/delete/{id}', [EventsController::class, 'destroy'])->name('events.destroy');
+
+
