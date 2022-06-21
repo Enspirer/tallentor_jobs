@@ -26,6 +26,9 @@
         <!-- Splide Slider -->
         <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css">
+
+        <!-- Recaptcha -->
+        <script src='https://www.google.com/recaptcha/api.js'></script>
         
         <!-- Fontawesome -->
         <script src="https://kit.fontawesome.com/730a86179f.js" crossorigin="anonymous"></script>
