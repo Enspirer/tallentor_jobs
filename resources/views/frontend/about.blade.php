@@ -65,25 +65,28 @@
             <h2>We Provide...</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur animi quas illo reiciendis id optio praesentium, debitis error illum rerum magnam culpa, voluptate, aspernatur unde. Quis quam nostrum eos? Temporibus vero ducimus iusto consequatur quam libero quasi error! Facere, ipsa!</p>
         </div>
-        <div class="services-block">
-            <h2>Professional Services</h2>
-            <div class="wrapepr">
-                <div class="block">
-                    <div class="title">Candidate</div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos reprehenderit corporis cumque quam ut quae animi atque vitae, quas earum. Quasi eligendi officia ut laudantium odit. Id corrupti similique rerum!</p>
-                </div>
-                <div class="block">
-                    <div class="title">Job Seeker</div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos reprehenderit corporis cumque quam ut quae animi atque vitae, quas earum. Quasi eligendi officia ut laudantium odit. Id corrupti similique rerum!</p>
-                </div>
-                <div class="block">
-                    <div class="title">Vacancies</div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos reprehenderit corporis cumque quam ut quae animi atque vitae, quas earum. Quasi eligendi officia ut laudantium odit. Id corrupti similique rerum!</p>
-                </div>
-                <div class="block">
-                    <div class="title">Employer</div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos reprehenderit corporis cumque quam ut quae animi atque vitae, quas earum. Quasi eligendi officia ut laudantium odit. Id corrupti similique rerum!</p>
-                </div>
+    </div>
+</section>
+
+<section class="pro-services">
+    <div class="services-block">
+        <h2>Professional Services</h2>
+        <div class="wrapepr">
+            <div class="block">
+                <div class="title">Candidate</div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos reprehenderit corporis cumque quam ut quae animi atque vitae, quas earum. Quasi eligendi officia ut laudantium odit. Id corrupti similique rerum!</p>
+            </div>
+            <div class="block">
+                <div class="title">Job Seeker</div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos reprehenderit corporis cumque quam ut quae animi atque vitae, quas earum. Quasi eligendi officia ut laudantium odit. Id corrupti similique rerum!</p>
+            </div>
+            <div class="block">
+                <div class="title">Vacancies</div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos reprehenderit corporis cumque quam ut quae animi atque vitae, quas earum. Quasi eligendi officia ut laudantium odit. Id corrupti similique rerum!</p>
+            </div>
+            <div class="block">
+                <div class="title">Employer</div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos reprehenderit corporis cumque quam ut quae animi atque vitae, quas earum. Quasi eligendi officia ut laudantium odit. Id corrupti similique rerum!</p>
             </div>
         </div>
     </div>
