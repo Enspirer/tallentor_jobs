@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="178.13" height="87.102" viewBox="0 0 178.13 87.102">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #d8ae26;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        fill: #fdfffe;
+        font-family: SegoeUI, Segoe UI;
+      }
+
+      .cls-2 {
+        font-size: 10px;
+      }
+
+      .cls-2, .cls-3 {
+        letter-spacing: 0.1em;
+      }
+
+      .cls-3, .cls-4 {
+        font-size: 24px;
+      }
+
+      .cls-4 {
+        letter-spacing: 0.04em;
+      }
+    </style>
+  </defs>
+  <g id="Group_3018" data-name="Group 3018" transform="translate(-48.085 -293.558)">
+    <path id="Path_7942" data-name="Path 7942" class="cls-1" d="M123.151,320.805a15.255,15.255,0,0,1-30.509-.126V301.05h-10.3v-7.492h28.3v7.492h-10.51v19.629a7.756,7.756,0,1,0,15.513,0V293.558h7.494V320.8Z" transform="translate(33.739)"/>
+    <text id="we_care_always" data-name="we care always" class="cls-2" transform="translate(98.085 377.66)"><tspan x="0" y="0">we care always</tspan></text>
+    <g id="Group_3014" data-name="Group 3014" transform="translate(48.085 338.838)">
+      <text id="Tallentor" class="cls-3" transform="translate(0 25)"><tspan x="0" y="0">Tallentor</tspan></text>
+      <text id="Jobs" class="cls-4" transform="translate(128.13 25.006)"><tspan x="0" y="0">Jobs</tspan></text>
+    </g>
+  </g>
+</svg>

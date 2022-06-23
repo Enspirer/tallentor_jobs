@@ -19,11 +19,11 @@
 @import "utilities/utilities";
 
 // Pages
-@import "pages/home";
-@import "pages/join";
-@import "pages/contact";
-@import "pages/about";
+@import "landing_page/pages/home";
+@import "landing_page/pages/join";
+@import "landing_page/pages/contact";
+@import "landing_page/pages/about";
 
 // Includes
-@import "includes/top_nav";
-@import "includes/footer";
+@import "landing_page/includes/top_nav";
+@import "landing_page/includes/footer";

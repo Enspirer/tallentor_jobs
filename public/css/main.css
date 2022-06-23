@@ -396,6 +396,9 @@
 .campus-section .inner-wrapper .campus-card:nth-child(3)::after {
   background-color: #DC2619;
 }
+.campus-section .inner-wrapper .campus-card .card-link {
+  text-decoration: none;
+}
 .campus-section .inner-wrapper .campus-card .card-img {
   width: 100%;
   height: 160px;
