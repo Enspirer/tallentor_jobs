@@ -59,7 +59,7 @@
     </div>
 </section>
 
-<section class="about-services">
+<section class="about-services" style="background: linear-gradient(to bottom, rgba(21, 44, 88, 0.68), rgba(21, 44, 88, 0.68)), url('{{url('images/landing-page/about/services-bg.png')}}')">
     <div class="container">
         <div class="inner-wrapper">
             <h2>We Provide...</h2>

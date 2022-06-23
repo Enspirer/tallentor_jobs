@@ -4,7 +4,7 @@
 
 @section('content')
 
-<section class="hero-section">
+<section class="hero-section" style="background: url('{{url('images/landing-page/home/hero-banner.png')}}')">
     <div class="container">
         <div class="inner-wrapper">
             <div class="subtitle">Get Resisted</div>

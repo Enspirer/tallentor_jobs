@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.dashboard-container {
+    position: relative;
+    background-color: #EEEDF1;
+
+    .dashboard-content {
+        width: calc(100vw - 267px);
+        min-height: 100vh;
+        margin-left: auto;
+        position: relative;
+
+        .content-wrapper {
+            width: 90%;
+            margin: auto;
+            padding: 3rem 0 5rem;
+        }
+    }
+}
+
+// Utilities
+@import "utilities/variables";
+@import "utilities/utilities";
+
+// Pages
+@import "dashboard/pages/home";
+@import "dashboard/pages/profile";
+
+// Includes
+@import "dashboard/includes/top_nav";
+@import "dashboard/includes/side_nav";

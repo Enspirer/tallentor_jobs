@@ -6,6 +6,7 @@ use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\AboutUsController;
 use App\Http\Controllers\Frontend\User\AccountController;
 use App\Http\Controllers\Frontend\User\DashboardController;
+use App\Http\Controllers\Frontend\User\DashboardProfileController;
 use App\Http\Controllers\Frontend\User\ProfileController;
 
 /*
@@ -35,6 +36,7 @@ Route::group(['middleware' => ['auth', 'password_expires']], function () {
     Route::group(['namespace' => 'User', 'as' => 'user.'], function () {
         // User Dashboard Specific
         Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+        Route::get('profile', [DashboardProfileController::class, 'index'])->name('profile');
 
         // User Account Specific
         Route::get('account', [AccountController::class, 'index'])->name('account');
