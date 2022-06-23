@@ -144,6 +144,22 @@
                                     @endif
                                 </div>
                                 <div class="col-12">
+                                    <label for="user_type" class="form-label">User Type</label>
+                                    <select class="form-control custom-select" id="user_type" name="user_type" required>
+                                        <option value="" selected disabled>... Select Here ...</option>                               
+                                        @if(old('user_type'))
+                                            <option value="Job Seeker" {{ old('user_type') == 'Job Seeker' ? "selected":"" }}>Job Seeker</option>
+                                            <option value="Employer" {{ old('user_type') == 'Employer' ? "selected":"" }} >Employer</option>
+                                        @else
+                                            <option value="Job Seeker">Job Seeker</option>
+                                            <option value="Employer">Employer</option>
+                                        @endif   
+                                    </select>
+                                    @if($errors->has('user_type'))
+                                        <p style="color: red;font-size: 13px;padding-top: 7px;">{{$errors->first('user_type')}}</p>
+                                    @endif
+                                </div>
+                                <div class="col-12">
                                     <label for="password" class="form-label">Password</label>
                                     <input type="password" class="form-control" name="password" id="password" placeholder="Password should be minimum 6 characters" required>
                                     @if($errors->has('password'))

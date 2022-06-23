@@ -90,8 +90,11 @@
         <div class="inner-wrapper">
             <div class="text">Feeling comfortable and feel free <br>get in touch</div>
             <div class="input-wrapper">
-                <input type="text" class="form-control" name="newsletter" placeholder="Enter your email" required>
-                <button type="submit" class="cta-btn btn-fill">Send</button>
+                <form action="{{route('frontend.newsletter.store')}}" method="post" enctype="multipart/form-data">
+                {{csrf_field()}}
+                    <input type="text" class="form-control" name="newsletter" placeholder="Enter your email" required>
+                    <button type="submit" class="cta-btn btn-fill">Send</button>
+                </form>
             </div>
         </div>
     </div>

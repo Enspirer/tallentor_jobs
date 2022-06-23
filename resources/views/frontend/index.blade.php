@@ -206,62 +206,42 @@
     </div>
 </section>
 
+@if(count(Modules\Blog\Entities\Post::get()) != 0)
+
 <section class="blog-section">
     <div class="container">
         <div class="header">
             <div class="title">Latest <span>Campus</span></div>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
         </div>
+
         <div class="inner-wrapper">
-            <div class="news-card">
-                <img src="{{url('images/landing-page/home/news-1.png')}}" alt="" class="card-img">
-                <div class="wrapper">
-                    <div class="title">
-                        <img src="{{url('images/landing-page/home/news.svg')}}" alt="" class="title-img">
-                        Latest at Tallentor
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo explicabo, sapiente minus at repudiandae hic fugit rem tempore delectus neque odio sint quaerat corrupti enim?</p>
-                    <div class="footer">
-                        <span><i class="bi bi-heart"></i>1</span>
-                        <span><i class="bi bi-chat-left-text"></i>Comment</span>
-                        <a href="#" class="view-more">View More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="news-card">
-                <img src="{{url('images/landing-page/home/news-2.png')}}" alt="" class="card-img">
-                <div class="wrapper">
-                    <div class="title">
-                        <img src="{{url('images/landing-page/home/news.svg')}}" alt="" class="title-img">
-                        Latest at Tallentor
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo explicabo, sapiente minus at repudiandae hic fugit rem tempore delectus neque odio sint quaerat corrupti enim?</p>
-                    <div class="footer">
-                        <span><i class="bi bi-heart"></i>1</span>
-                        <span><i class="bi bi-chat-left-text"></i>Comment</span>
-                        <a href="#" class="view-more">View More</a>
+            @foreach(Modules\Blog\Entities\Post::where('status','Enabled')->latest()->take(3)->get() as $key => $blog_posts)            
+                <div class="news-card">
+                    <img src="{{ uploaded_asset($blog_posts->feature_image) }}" alt="" class="card-img">
+                    <div class="wrapper">
+                        <div class="title">
+                            @if(Modules\Blog\Entities\Category::where('id',$blog_posts->category)->first() != null)
+                                <img src="{{ uploaded_asset(Modules\Blog\Entities\Category::where('id',$blog_posts->category)->first()->image) }}" alt="" class="title-img">
+                            @endif
+                            {{$blog_posts->title}}
+                        </div>
+                        <p style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">{!!$blog_posts->description!!}</p>
+                        <div class="footer">
+                            <!-- <span><i class="bi bi-heart"></i>1</span>
+                            <span><i class="bi bi-chat-left-text"></i>Comment</span> -->
+                            <a href="#" class="view-more">View More</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="news-card">
-                <img src="{{url('images/landing-page/home/news-3.png')}}" alt="" class="card-img">
-                <div class="wrapper">
-                    <div class="title">
-                        <img src="{{url('images/landing-page/home/news.svg')}}" alt="" class="title-img">
-                        Latest at Tallentor
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo explicabo, sapiente minus at repudiandae hic fugit rem tempore delectus neque odio sint quaerat corrupti enim?</p>
-                    <div class="footer">
-                        <span><i class="bi bi-heart"></i>1</span>
-                        <span><i class="bi bi-chat-left-text"></i>Comment</span>
-                        <a href="#" class="view-more">View More</a>
-                    </div>
-                </div>
-            </div>
+            @endforeach                
         </div>
         <a href="#" class="cta-link">View More <i class="bi bi-chevron-right"></i></a>
+
     </div>
 </section>
+@endif
+
 
 @endsection
 
