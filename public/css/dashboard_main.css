@@ -351,6 +351,41 @@ a {
   display: block;
 }
 
+.pending-action-block {
+  background-color: #fff;
+  padding: 1rem;
+}
+.pending-action-block h5 {
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: #8E91A2;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #ddd;
+  margin: 0;
+}
+.pending-action-block .actions {
+  padding: 1rem 1rem 0;
+}
+.pending-action-block .actions .action-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 0.15rem 0;
+  text-decoration: none;
+}
+.pending-action-block .actions .action-block .title {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #333;
+}
+.pending-action-block .actions .action-block .status {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #0D31FF;
+}
+
 .top-nav {
   padding: 0.75rem 0;
   border-bottom: 2px solid #DFDFDF;

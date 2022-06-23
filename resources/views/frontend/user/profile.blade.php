@@ -94,6 +94,37 @@
                     </div>
                 </div>
             </div>
+            <div class="col-12">
+                <div class="pending-action-block">
+                    <h5>Pending Actions</h5>
+                    <div class="actions">
+                        <a href="#" class="action-block">
+                            <div class="title">Resume</div>
+                            <div class="status">30%</div>
+                        </a>
+                        <a href="#" class="action-block">
+                            <div class="title">Education</div>
+                            <div class="status">30%</div>
+                        </a>
+                        <a href="#" class="action-block">
+                            <div class="title">Employment</div>
+                            <div class="status">30%</div>
+                        </a>
+                        <a href="#" class="action-block">
+                            <div class="title">Verify Email ID</div>
+                            <div class="status">30%</div>
+                        </a>
+                        <a href="#" class="action-block">
+                            <div class="title">Verify Mobile Number</div>
+                            <div class="status">30%</div>
+                        </a>
+                        <a href="#" class="action-block">
+                            <div class="title">Edit Profile Picture</div>
+                            <div class="status">30%</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="col-xl-8">
@@ -124,61 +155,106 @@
 
 <!-- Tag Suggestion -->
 <script>
-const searchWrapper = document.querySelector("#tagWrapper"),
-    suggBox = searchWrapper.querySelector(".input-suggestions"),
-    ul = searchWrapper.querySelector(".input-tags"),
-    input = searchWrapper.querySelector("input")
+    const searchWrapper = document.querySelector("#tagWrapper"),
+        suggBox = searchWrapper.querySelector(".input-suggestions"),
+        ul = searchWrapper.querySelector(".input-tags"),
+        input = searchWrapper.querySelector("input")
 
-let tags = ["coding", "nepal"];
+    let tags = ["coding", "nepal"];
 
-let suggestions = [
-    "Channel",
-    "CodingLab",
-    "CodingNepal",
-    "YouTube",
-    "YouTuber",
-    "YouTube Channel",
-    "Blogger",
-    "Bollywood",
-    "Vlogger",
-    "Vechiles",
-    "Facebook",
-    "Freelancer",
-    "Facebook Page",
-    "Designer",
-    "Developer",
-    "Web Designer",
-    "Web Developer",
-    "Login Form in HTML & CSS",
-    "How to learn HTML & CSS",
-    "How to learn JavaScript",
-    "How to become Freelancer",
-    "How to become Web Designer",
-    "How to start Gaming Channel",
-    "How to start YouTube Channel",
-    "What does HTML stands for?",
-    "What does CSS stands for?",
-];
+    let suggestions = [
+        "Channel",
+        "CodingLab",
+        "CodingNepal",
+        "YouTube",
+        "YouTuber",
+        "YouTube Channel",
+        "Blogger",
+        "Bollywood",
+        "Vlogger",
+        "Vechiles",
+        "Facebook",
+        "Freelancer",
+        "Facebook Page",
+        "Designer",
+        "Developer",
+        "Web Designer",
+        "Web Developer",
+        "Login Form in HTML & CSS",
+        "How to learn HTML & CSS",
+        "How to learn JavaScript",
+        "How to become Freelancer",
+        "How to become Web Designer",
+        "How to start Gaming Channel",
+        "How to start YouTube Channel",
+        "What does HTML stands for?",
+        "What does CSS stands for?",
+    ];
 
-createTag();
+    createTag();
 
-function createTag() {
-    ul.querySelectorAll("li").forEach(li => li.remove());
-    tags.slice().reverse().forEach(tag => {
-        let liTag = `<li>${tag} <i class="bi bi-x" remove-tag onclick="remove(this, '${tag}')"></i></li>`;
-        ul.insertAdjacentHTML("afterbegin", liTag);
-    });
-}
+    function createTag() {
+        ul.querySelectorAll("li").forEach(li => li.remove());
+        tags.slice().reverse().forEach(tag => {
+            let liTag = `<li>${tag} <i class="bi bi-x" remove-tag onclick="remove(this, '${tag}')"></i></li>`;
+            ul.insertAdjacentHTML("afterbegin", liTag);
+        });
+    }
 
-function remove(element, tag) {
-    let index = tags.indexOf(tag);
-    tags = [...tags.slice(0, index), ...tags.slice(index + 1)];
-    element.parentElement.remove();
-}
+    function remove(element, tag) {
+        let index = tags.indexOf(tag);
+        tags = [...tags.slice(0, index), ...tags.slice(index + 1)];
+        element.parentElement.remove();
+    }
 
-function addTag(e) {
-    if (e.key == "Enter") {
-        let tag = e.target.value.replace(/\s+/g, ' ');
+    function addTag(e) {
+        if (e.key == "Enter") {
+            let tag = e.target.value.replace(/\s+/g, ' ');
+            if (tag.length > 1 && !tags.includes(tag)) {
+                if (tags.length < 10) {
+                    tag.split(',').forEach(tag => {
+                        tags.push(tag);
+                        createTag();
+                    });
+                }
+            }
+            e.target.value = "";
+        }
+    }
+
+    input.addEventListener("keyup", addTag);
+
+    // getting all required elements
+
+
+    // if user press any key and release
+    input.onkeyup = (e) => {
+        let userData = e.target.value; //user enetered data
+        let emptyArray = [];
+        if (userData) {
+            emptyArray = suggestions.filter((data) => {
+                //filtering array value and user characters to lowercase and return only those words which are start with user enetered chars
+                return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
+            });
+            emptyArray = emptyArray.map((data) => {
+                // passing return data inside li tag
+                return data = `<li>${data}</li>`;
+            });
+            searchWrapper.classList.add("active"); //show autocomplete box
+            showSuggestions(emptyArray);
+            let allList = suggBox.querySelectorAll("li");
+            for (let i = 0; i < allList.length; i++) {
+                //adding onclick attribute in all li tag
+                allList[i].setAttribute("onclick", "select(this)");
+            }
+        } else {
+            searchWrapper.classList.remove("active"); //hide autocomplete box
+        }
+    }
+
+    function select(element) {
+        let tag = element.textContent.replace(/\s+/g, ' ');
+
         if (tag.length > 1 && !tags.includes(tag)) {
             if (tags.length < 10) {
                 tag.split(',').forEach(tag => {
@@ -187,120 +263,80 @@ function addTag(e) {
                 });
             }
         }
-        e.target.value = "";
+
+        input.value = '';
+        searchWrapper.classList.remove("active");
     }
-}
 
-input.addEventListener("keyup", addTag);
-
-// getting all required elements
-
-
-// if user press any key and release
-input.onkeyup = (e) => {
-    let userData = e.target.value; //user enetered data
-    let emptyArray = [];
-    if (userData) {
-        emptyArray = suggestions.filter((data) => {
-            //filtering array value and user characters to lowercase and return only those words which are start with user enetered chars
-            return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
-        });
-        emptyArray = emptyArray.map((data) => {
-            // passing return data inside li tag
-            return data = `<li>${data}</li>`;
-        });
-        searchWrapper.classList.add("active"); //show autocomplete box
-        showSuggestions(emptyArray);
-        let allList = suggBox.querySelectorAll("li");
-        for (let i = 0; i < allList.length; i++) {
-            //adding onclick attribute in all li tag
-            allList[i].setAttribute("onclick", "select(this)");
+    function showSuggestions(list) {
+        let listData;
+        if (!list.length) {
+            userValue = input.value;
+            listData = `<li>${userValue}</li>`;
+        } else {
+            listData = list.join('');
         }
-    } else {
-        searchWrapper.classList.remove("active"); //hide autocomplete box
+        suggBox.innerHTML = listData;
     }
-}
-
-function select(element) {
-    let tag = element.textContent.replace(/\s+/g, ' ');
-
-    if (tag.length > 1 && !tags.includes(tag)) {
-        if (tags.length < 10) {
-            tag.split(',').forEach(tag => {
-                tags.push(tag);
-                createTag();
-            });
-        }
-    }
-
-    input.value = '';
-    searchWrapper.classList.remove("active");
-}
-
-function showSuggestions(list) {
-    let listData;
-    if (!list.length) {
-        userValue = input.value;
-        listData = `<li>${userValue}</li>`;
-    } else {
-        listData = list.join('');
-    }
-    suggBox.innerHTML = listData;
-}
 </script>
 
 <!-- Edit profile function -->
 <script>
-const $profileBlock = document.querySelector('#profileBlock')
-const $editProfile = $profileBlock.querySelector('[edit-profile]')
-const $saveProfile = $profileBlock.querySelector('[save-profile]')
-const $addProfile = $profileBlock.querySelector('[add-profile]')
-const $removeTag = $profileBlock.querySelectorAll('[remove-tag]')
-const $inputs = $profileBlock.querySelectorAll('input')
+    const $profileBlock = document.querySelector('#profileBlock')
+    const $editProfile = $profileBlock.querySelector('[edit-profile]')
+    const $saveProfile = $profileBlock.querySelector('[save-profile]')
+    const $addProfile = $profileBlock.querySelector('[add-profile]')
+    const $inputs = $profileBlock.querySelectorAll('input')
+    let $removeTag;
 
-const editableInputs = () => {
-    $inputs.forEach((input) => {
-        input.removeAttribute('readonly')
-    })
-}
-
-const removableTags = () => {
-    if($removeTag) {
-        $removeTag.forEach((tag) => {
-            tag.classList.remove('disabled')
+    const editableInputs = () => {
+        $inputs.forEach((input) => {
+            input.removeAttribute('readonly')
         })
     }
-}
 
-const nonEditableInputs = () => {
-    $inputs.forEach((input) => {
-        input.setAttribute('readonly', '')
-    })
-}
+    const removableTags = () => {
+        if ($removeTag) {
+            $removeTag.forEach((tag) => {
+                tag.classList.remove('disabled')
+            })
+        }
+    }
 
-const nonRemovableTags = () => {
-    if($removeTag) {
-        $removeTag.forEach((tag) => {
-            tag.classList.add('disabled')
+    const nonEditableInputs = () => {
+        $inputs.forEach((input) => {
+            input.setAttribute('readonly', '')
         })
     }
-}
 
-window.addEventListener('load', nonRemovableTags())
+    const nonRemovableTags = () => {
+        if ($removeTag) {
+            $removeTag.forEach((tag) => {
+                tag.classList.add('disabled')
+            })
+        }
+    }
 
-$editProfile.addEventListener('click', () => {
-    editableInputs()
-    removableTags()
-    $saveProfile.classList.add('show')
-    $addProfile.classList.remove('show')
-})
+    window.addEventListener('load', () => {
+        $removeTag = $profileBlock.querySelectorAll('[remove-tag]')
+        nonRemovableTags()
+    })
 
-$saveProfile.addEventListener('click', () => {
-    nonEditableInputs()
-    nonRemovableTags()
-    $saveProfile.classList.remove('show')
-    $addProfile.classList.add('show')
-})
+    $editProfile.addEventListener('click', () => {
+        $removeTag = $profileBlock.querySelectorAll('[remove-tag]')
+        editableInputs()
+        removableTags()
+        $saveProfile.classList.add('show')
+        $addProfile.classList.remove('show')
+    })
+
+    $saveProfile.addEventListener('click', () => {
+        $removeTag = $profileBlock.querySelectorAll('[remove-tag]')
+        nonEditableInputs()
+        nonRemovableTags()
+        $saveProfile.classList.remove('show')
+        $addProfile.classList.add('show')
+    })
 </script>
 
 @endpush
