@@ -30,6 +30,75 @@ a {
     }
 }
 
+// Tag input
+.tag-wrapper {
+    position: relative;
+
+    .input-tags {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+
+        li {
+            color: #fff;
+            list-style: none;
+            border-radius: 50px;
+            background-color: #22244B;
+            padding: 2px 8px;
+            font-size: 0.75rem;
+            font-weight: 300;
+            margin: 0.15rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 5px;
+
+            .bi {
+                font-size: 1rem;
+                cursor: pointer;
+                color: #fff;
+
+                &.disabled {
+                    pointer-events: none;
+                    opacity: 0;
+                    width: 0;
+                }
+            }
+        }
+
+        .form-control {
+            padding: 0.375rem;
+        }
+    }
+
+    .input-suggestions {
+        display: none;
+        margin: 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 0.5rem 0;
+
+        li {
+            margin: 4px 3px;
+            list-style: none;
+            border-radius: 50px;
+            background: #F2F2F2;
+            padding: 4px 8px;
+            border: 1px solid #e3e1e1;
+            font-size: 0.75rem;
+            cursor: pointer;
+        }
+    }
+
+    &.active {
+
+        .input-suggestions {
+            display: flex;
+        }
+    }
+}
+
 // Utilities
 @import "utilities/variables";
 @import "utilities/utilities";

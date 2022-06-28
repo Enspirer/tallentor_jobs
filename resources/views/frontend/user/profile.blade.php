@@ -36,91 +36,102 @@
     <div class="col-xl-4">
         <div class="row g-4">
             <div class="col-12">
-                <div class="profile-block" id="profileBlock">
-                    <h4>My Profile</h4>
-                    <div class="inner-wrapper">
+                <div class="profile-block">
+                    <h4 class="profile-block__title">My Profile</h4>
+                    <div class="profile-block__content">
                         <div class="image-block">
-                            <button edit-profile class="edit-btn" type="button"><i class="bi bi-pencil-fill"></i></button>
-                            <img src="{{url('images/dashboard/profile.png')}}">
+                            <img src="{{url('images/dashboard/profile.png')}}" class="image-block__img">
+                            <button type="button" class="image-block__edit-btn"><i class="bi bi-pencil-fill"></i></button>
                         </div>
                         <div class="name">Pawani Anuththara</div>
                         <div class="country">
-                            <img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/LK.svg" class="country-flag">
-                            <div class="country-name">Sri Lanka</div>
+                            <img src="https://purecatamphetamine.github.io/country-flag-icons/3x2/LK.svg" class="country__flag">
+                            <div class="country__name">Sri Lanka</div>
                         </div>
-                        <div class="profile-table">
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td class="th"><i class="bi bi-briefcase-fill"></i> <span>Experiance</span></td>
-                                        <td><input type="text" class="form-control" readonly name="experiance" placeholder="Overall experiance"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="th"><i class="bi bi-person-fill"></i> <span>Role</span></td>
-                                        <td>
-                                        <div class="input-wrapper" id="tagWrapper">
-                                            <ul class="input-tags">
-                                            <input type="text" class="form-control" readonly name="roles" placeholder="Add roles" spellcheck="false">
-                                            </ul>
-                                            <ul class="input-suggestions"></ul>
-                                        </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="th"><i class="bi bi-telephone-fill"></i> <span>Phone</span></td>
-                                        <td>
-                                            <div class="form-input-group">
-                                                <input type="tel" class="form-control" readonly name="phone" placeholder="Phone">
-                                                <button type="button" class="verify-button green verified">Verified</button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="th"><i class="bi bi-at"></i> <span>Email</span></td>
-                                        <td>
-                                            <div class="form-input-group">
-                                                <input type="email" class="form-control" readonly name="email" placeholder="Email">
-                                                <button type="button" class="verify-button red">Verify Now</button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="info-block">
+                            <div class="row mb-3">
+                                <div class="col-auto">
+                                    <span class="info-block__title"><i class="bi bi-briefcase-fill"></i>Experiance</span>
+                                </div>
+                                <div class="col">
+                                    <span class="info-block__text">1 Year and 3 Months</span>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-auto">
+                                    <span class="info-block__title"><i class="bi bi-person-fill"></i>Role</span>
+                                </div>
+                                <div class="col">
+                                    <span class="info-block__tag">UI Designer</span>
+                                    <span class="info-block__tag">UX Designer</span>
+                                    <span class="info-block__tag">Software Engineer</span>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-auto">
+                                    <span class="info-block__title"><i class="bi bi-telephone-fill"></i>Phone</span>
+                                </div>
+                                <div class="col">
+                                    <span class="info-block__text">(+94) 77 755 4571</span>
+                                    <span class="info-block__status verified">Verified</span>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-auto">
+                                    <span class="info-block__title"><i class="bi bi-at"></i>Email</span>
+                                </div>
+                                <div class="col">
+                                    <span class="info-block__text">example@gmail.com</span>
+                                    <span class="info-block__status"><button type="button" class="verify-btn">Verify Now</button></span>
+                                </div>
+                            </div>
                         </div>
                         <div class="button-block">
-                            <button add-profile class="act-btn add-btn show" type="button"><i class="bi bi-plus-lg"></i> Add New Profile</button>
-                            <button save-profile class="act-btn save-btn" type="button">Save Changes</button>
+                            <button type="button" class="cta-btn"><i class="bi bi-plus-lg"></i> Add New Profile</button>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-12">
-                <div class="pending-action-block">
-                    <h5>Pending Actions</h5>
-                    <div class="actions">
-                        <a href="#" class="action-block">
-                            <div class="title">Resume</div>
-                            <div class="status">30%</div>
+                <div class="profile-list">
+                    <h5 class="profile-list__title">Select Profile</h5>
+                    <div class="profile-list__content">
+                        <div class="profile-list__item">
+                            <div class="profile-list__item-name">UX Designer</div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="radio" role="switch" name="profile_list_item" checked>
+                            </div>
+                        </div>
+                        <div class="profile-list__item">
+                            <div class="profile-list__item-name">UI Designer</div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="radio" role="switch" name="profile_list_item">
+                            </div>
+                        </div>
+                        <div class="profile-list__item">
+                            <div class="profile-list__item-name">Web Developer</div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="radio" role="switch" name="profile_list_item">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="pending-actions">
+                    <h5 class="pending-actions__title">Pending Actions</h5>
+                    <div class="pending-actions__content">
+                        <a href="#" class="pending-actions__item">
+                            <div class="pending-actions__item-name">Resume</div>
+                            <div class="pending-actions__item-status">30%</div>
                         </a>
-                        <a href="#" class="action-block">
-                            <div class="title">Education</div>
-                            <div class="status">30%</div>
+                        <a href="#" class="pending-actions__item">
+                            <div class="pending-actions__item-name">Education</div>
+                            <div class="pending-actions__item-status">75%</div>
                         </a>
-                        <a href="#" class="action-block">
-                            <div class="title">Employment</div>
-                            <div class="status">30%</div>
-                        </a>
-                        <a href="#" class="action-block">
-                            <div class="title">Verify Email ID</div>
-                            <div class="status">30%</div>
-                        </a>
-                        <a href="#" class="action-block">
-                            <div class="title">Verify Mobile Number</div>
-                            <div class="status">30%</div>
-                        </a>
-                        <a href="#" class="action-block">
-                            <div class="title">Edit Profile Picture</div>
-                            <div class="status">30%</div>
+                        <a href="#" class="pending-actions__item">
+                            <div class="pending-actions__item-name">Verify Email ID</div>
+                            <div class="pending-actions__item-status">0%</div>
                         </a>
                     </div>
                 </div>
@@ -128,7 +139,136 @@
         </div>
     </div>
     <div class="col-xl-8">
-
+        <div class="row g-4">
+            <div class="col-12">
+                <div class="personal-information">
+                    <h4 class="personal-information__title">Personal Information</h4>
+                    <div class="personal-information__content">
+                        <div class="header">
+                            <h5 class="header__title">My Skills</h5>
+                            <button type="button" class="header__btn"><i class="bi bi-plus-lg"></i> Add New Profile</button>
+                        </div>
+                        <div class="information-table--wrapper">
+                            <table class="information-table">
+                                <thead>
+                                    <tr>
+                                        <th>Skill</th>
+                                        <th>Level</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="information-table__tag">UI Design</span></td>
+                                        <td><span class="information-table__text">Expert</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="information-table__tag">UX Design</span></td>
+                                        <td><span class="information-table__text">Intermediate</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="information-table__tag">Web Development</span></td>
+                                        <td><span class="information-table__text">Beginner</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- Add below block if there is no data -->
+                        <!-- <div class="no-data">Add your skills</div> -->
+                        <div class="button-block">
+                            <button type="button" class="edit-btn">Edit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="job-preferences">
+                    <div class="job-preferences__header">
+                        <h5 class="job-preferences__header-title">Job Preferences</h5>
+                        <button type="button" class="edit-btn"><i class="bi bi-pencil-fill"></i></button>
+                    </div>
+                    <div class="job-preferences__content">
+                        <div class="row mb-2">
+                            <div class="col-auto"><span class="job-preferences__content-title">Industry :</span></div>
+                            <div class="col"><span class="job-preferences__content-text">IT/Computers-Software ,Advertising/PR/Event</span></div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-auto"><span class="job-preferences__content-title">Function :</span></div>
+                            <div class="col"><span class="job-preferences__content-text">IT</span></div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-auto"><span class="job-preferences__content-title">Job Type :</span></div>
+                            <div class="col"><span class="job-preferences__content-text">IT Manager | Graphic Designer  | </span></div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-auto"><span class="job-preferences__content-title">Role :</span></div>
+                            <div class="col"><span class="job-preferences__content-text">IT Manager | Graphic Designer  | </span></div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-auto"><span class="job-preferences__content-title">Employment Type :</span></div>
+                            <div class="col"><span class="job-preferences__content-text">IT/Computers-Software ,Advertising/PR/Event</span></div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-auto"><span class="job-preferences__content-title">Are yo willing to work 6 days a week ?</span></div>
+                            <div class="col"><span class="job-preferences__content-text">No</span></div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-auto"><span class="job-preferences__content-title">Are you pinto join early startup ?</span></div>
+                            <div class="col"><span class="job-preferences__content-text">No</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="personal-details">
+                    <div class="personal-details__header">
+                        <h5 class="personal-details__header-title">Personal Details</h5>
+                        <button type="button" class="edit-btn"><i class="bi bi-pencil-fill"></i></button>
+                    </div>
+                    <div class="personal-details__content">
+                        <div class="row mb-2">
+                            <div class="col-auto"><span class="personal-details__content-title">Home Town :</span></div>
+                            <div class="col"><span class="personal-details__content-text">Minuwangoda</span></div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-auto"><span class="personal-details__content-title">Gender :</span></div>
+                            <div class="col"><span class="personal-details__content-text">Male</span></div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-auto"><span class="personal-details__content-title">Marital Status :</span></div>
+                            <div class="col"><span class="personal-details__content-text">Single</span></div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-auto"><span class="personal-details__content-title">Passport Number :</span></div>
+                            <div class="col"><span class="personal-details__content-text">1548713487N</span></div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-auto"><span class="personal-details__content-title">Work Permit for USA :</span></div>
+                            <div class="col"><span class="personal-details__content-text">Yes</span></div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-auto"><span class="personal-details__content-title">Permanent Address :</span></div>
+                            <div class="col"><span class="personal-details__content-text">No. 25/2 B, Main St, Colombo 05</span></div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-auto"><span class="personal-details__content-title">Date of Birth :</span></div>
+                            <div class="col"><span class="personal-details__content-text">26th June 1993</span></div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-auto"><span class="personal-details__content-title">Nationality :</span></div>
+                            <div class="col"><span class="personal-details__content-text">Sri Lankan</span></div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-auto"><span class="personal-details__content-title">Languages :</span></div>
+                            <div class="col">
+                                <span class="personal-details__content-tag">Sinhala</span>
+                                <span class="personal-details__content-tag">English</span>
+                                <span class="personal-details__content-tag">Tamil</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
   
@@ -151,192 +291,6 @@
             value.querySelector('#radialProgress .value').innerHTML = percent + '%';
         });
     }
-</script>
-
-<!-- Tag Suggestion -->
-<script>
-    const searchWrapper = document.querySelector("#tagWrapper"),
-        suggBox = searchWrapper.querySelector(".input-suggestions"),
-        ul = searchWrapper.querySelector(".input-tags"),
-        input = searchWrapper.querySelector("input")
-
-    let tags = ["coding", "nepal"];
-
-    let suggestions = [
-        "Channel",
-        "CodingLab",
-        "CodingNepal",
-        "YouTube",
-        "YouTuber",
-        "YouTube Channel",
-        "Blogger",
-        "Bollywood",
-        "Vlogger",
-        "Vechiles",
-        "Facebook",
-        "Freelancer",
-        "Facebook Page",
-        "Designer",
-        "Developer",
-        "Web Designer",
-        "Web Developer",
-        "Login Form in HTML & CSS",
-        "How to learn HTML & CSS",
-        "How to learn JavaScript",
-        "How to become Freelancer",
-        "How to become Web Designer",
-        "How to start Gaming Channel",
-        "How to start YouTube Channel",
-        "What does HTML stands for?",
-        "What does CSS stands for?",
-    ];
-
-    createTag();
-
-    function createTag() {
-        ul.querySelectorAll("li").forEach(li => li.remove());
-        tags.slice().reverse().forEach(tag => {
-            let liTag = `<li>${tag} <i class="bi bi-x" remove-tag onclick="remove(this, '${tag}')"></i></li>`;
-            ul.insertAdjacentHTML("afterbegin", liTag);
-        });
-    }
-
-    function remove(element, tag) {
-        let index = tags.indexOf(tag);
-        tags = [...tags.slice(0, index), ...tags.slice(index + 1)];
-        element.parentElement.remove();
-    }
-
-    function addTag(e) {
-        if (e.key == "Enter") {
-            let tag = e.target.value.replace(/\s+/g, ' ');
-            if (tag.length > 1 && !tags.includes(tag)) {
-                if (tags.length < 10) {
-                    tag.split(',').forEach(tag => {
-                        tags.push(tag);
-                        createTag();
-                    });
-                }
-            }
-            e.target.value = "";
-        }
-    }
-
-    input.addEventListener("keyup", addTag);
-
-    // getting all required elements
-
-
-    // if user press any key and release
-    input.onkeyup = (e) => {
-        let userData = e.target.value; //user enetered data
-        let emptyArray = [];
-        if (userData) {
-            emptyArray = suggestions.filter((data) => {
-                //filtering array value and user characters to lowercase and return only those words which are start with user enetered chars
-                return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
-            });
-            emptyArray = emptyArray.map((data) => {
-                // passing return data inside li tag
-                return data = `<li>${data}</li>`;
-            });
-            searchWrapper.classList.add("active"); //show autocomplete box
-            showSuggestions(emptyArray);
-            let allList = suggBox.querySelectorAll("li");
-            for (let i = 0; i < allList.length; i++) {
-                //adding onclick attribute in all li tag
-                allList[i].setAttribute("onclick", "select(this)");
-            }
-        } else {
-            searchWrapper.classList.remove("active"); //hide autocomplete box
-        }
-    }
-
-    function select(element) {
-        let tag = element.textContent.replace(/\s+/g, ' ');
-
-        if (tag.length > 1 && !tags.includes(tag)) {
-            if (tags.length < 10) {
-                tag.split(',').forEach(tag => {
-                    tags.push(tag);
-                    createTag();
-                });
-            }
-        }
-
-        input.value = '';
-        searchWrapper.classList.remove("active");
-    }
-
-    function showSuggestions(list) {
-        let listData;
-        if (!list.length) {
-            userValue = input.value;
-            listData = `<li>${userValue}</li>`;
-        } else {
-            listData = list.join('');
-        }
-        suggBox.innerHTML = listData;
-    }
-</script>
-
-<!-- Edit profile function -->
-<script>
-    const $profileBlock = document.querySelector('#profileBlock')
-    const $editProfile = $profileBlock.querySelector('[edit-profile]')
-    const $saveProfile = $profileBlock.querySelector('[save-profile]')
-    const $addProfile = $profileBlock.querySelector('[add-profile]')
-    const $inputs = $profileBlock.querySelectorAll('input')
-    let $removeTag;
-
-    const editableInputs = () => {
-        $inputs.forEach((input) => {
-            input.removeAttribute('readonly')
-        })
-    }
-
-    const removableTags = () => {
-        if ($removeTag) {
-            $removeTag.forEach((tag) => {
-                tag.classList.remove('disabled')
-            })
-        }
-    }
-
-    const nonEditableInputs = () => {
-        $inputs.forEach((input) => {
-            input.setAttribute('readonly', '')
-        })
-    }
-
-    const nonRemovableTags = () => {
-        if ($removeTag) {
-            $removeTag.forEach((tag) => {
-                tag.classList.add('disabled')
-            })
-        }
-    }
-
-    window.addEventListener('load', () => {
-        $removeTag = $profileBlock.querySelectorAll('[remove-tag]')
-        nonRemovableTags()
-    })
-
-    $editProfile.addEventListener('click', () => {
-        $removeTag = $profileBlock.querySelectorAll('[remove-tag]')
-        editableInputs()
-        removableTags()
-        $saveProfile.classList.add('show')
-        $addProfile.classList.remove('show')
-    })
-
-    $saveProfile.addEventListener('click', () => {
-        $removeTag = $profileBlock.querySelectorAll('[remove-tag]')
-        nonEditableInputs()
-        nonRemovableTags()
-        $saveProfile.classList.remove('show')
-        $addProfile.classList.add('show')
-    })
 </script>
 
 @endpush
