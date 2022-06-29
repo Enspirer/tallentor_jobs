@@ -658,6 +658,7 @@
                         <ul class="tag-input">
                             <input type="text" name="roles">
                         </ul>
+                        <input type="hidden" name="roles_tags">
                     </div>
                     <div class="col-12">
                         <label class="form-label">Phone :</label>
@@ -941,6 +942,7 @@
                 <ul class="tag-input">
                     <input type="text" name="languages">
                 </ul>
+                <input type="hidden" name="languages_tags">
             </div>
         </div>
       </div>
@@ -1318,10 +1320,18 @@
 <!-- Tag Input -->
 <script>
 const tagInputs = document.querySelectorAll('.tag-input')
+const rolesTags = document.querySelector('[name="roles_tags"]')
+const languagesTags = document.querySelector('[name="languages_tags"]')
+
 let tags = []
 
 tagInputs.forEach((tagInput) => {
   const input = tagInput.querySelector('input')
+
+  let rolesArr = []
+  let langArr = []
+
+  tags = []
 
   createTag()
 
@@ -1340,12 +1350,19 @@ tagInputs.forEach((tagInput) => {
     if (e.key == 'Enter') {
       let tag = e.target.value.replace(/\s+/g, ' ')
       if (tag.length > 1 && !tags.includes(tag)) {
-        if (tags.length < 10) {
-          tag.split(',').forEach((tag) => {
-            tags.push(tag)
-            createTag()
-          })
-        }
+        tag.split(',').forEach((tag) => {
+          tags.push(tag)
+
+          if (input.getAttribute('name') === 'roles') {
+            rolesArr.push(tag)
+            rolesTags.value = rolesArr
+          } else if (input.getAttribute('name') === 'languages') {
+            langArr.push(tag)
+            languagesTags.value = langArr
+          }
+
+          createTag()
+        })
       }
       e.target.value = ''
     }
