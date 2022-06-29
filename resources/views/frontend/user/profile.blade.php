@@ -695,7 +695,7 @@
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="copy_data">
                     <label class="form-check-label">
-                        Copy data from previous profile
+                        Import data from previous profile
                     </label>
                 </div>
             </div>
