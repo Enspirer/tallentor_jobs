@@ -36,12 +36,16 @@ Route::group(['middleware' => ['auth', 'password_expires']], function () {
     Route::group(['namespace' => 'User', 'as' => 'user.'], function () {
         // User Dashboard Specific
         Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
-        Route::get('profile', [DashboardProfileController::class, 'index'])->name('profile');
 
         // User Account Specific
         Route::get('account', [AccountController::class, 'index'])->name('account');
 
         // User Profile Specific
         Route::patch('profile/update', [ProfileController::class, 'update'])->name('profile.update');
+
+        Route::get('profile/{id}', [DashboardProfileController::class, 'index'])->name('profile');
+        Route::post('job_preference.update', [DashboardProfileController::class, 'job_preference_update'])->name('job_preference.update');
+
+        
     });
 });

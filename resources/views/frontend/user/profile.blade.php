@@ -189,27 +189,27 @@
                     <div class="job-preferences__content">
                         <div class="row mb-2">
                             <div class="col-auto"><span class="job-preferences__content-title">Industry :</span></div>
-                            <div class="col"><span class="job-preferences__content-text">IT/Computers-Software ,Advertising/PR/Event</span></div>
+                            <div class="col"><span class="job-preferences__content-text">{{$profile->industry}}</span></div>
                         </div>
                         <div class="row mb-2">
                             <div class="col-auto"><span class="job-preferences__content-title">Function :</span></div>
-                            <div class="col"><span class="job-preferences__content-text">IT</span></div>
+                            <div class="col"><span class="job-preferences__content-text">{{$profile->function}}</span></div>
                         </div>
                         <div class="row mb-2">
                             <div class="col-auto"><span class="job-preferences__content-title">Job Type :</span></div>
-                            <div class="col"><span class="job-preferences__content-text">IT Manager | Graphic Designer  | </span></div>
+                            <div class="col"><span class="job-preferences__content-text">{{$profile->job_type}}</span></div>
                         </div>
                         <div class="row mb-2">
                             <div class="col-auto"><span class="job-preferences__content-title">Employment Type :</span></div>
-                            <div class="col"><span class="job-preferences__content-text">IT/Computers-Software ,Advertising/PR/Event</span></div>
+                            <div class="col"><span class="job-preferences__content-text">{{$profile->employment_type}}</span></div>
                         </div>
                         <div class="row mb-2">
                             <div class="col-auto"><span class="job-preferences__content-title">Are yo willing to work 6 days a week ?</span></div>
-                            <div class="col"><span class="job-preferences__content-text">No</span></div>
+                            <div class="col"><span class="job-preferences__content-text">{{$profile->six_days}}</span></div>
                         </div>
                         <div class="row mb-2">
                             <div class="col-auto"><span class="job-preferences__content-title">Are you open to join early stage startups?</span></div>
-                            <div class="col"><span class="job-preferences__content-text">No</span></div>
+                            <div class="col"><span class="job-preferences__content-text">{{$profile->startup}}</span></div>
                         </div>
                     </div>
                 </div>
@@ -837,46 +837,50 @@
         <h5 class="modal-title" id="jobPreferenceModalLabel">Job Preferences</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        <div class="row g-3">
-            <div class="col-12">
-                <label class="form-label">Industry :</label>
-                <input type="text" class="form-control" name="industry">
+        <form action="{{route('frontend.user.job_preference.update')}}" method="post" enctype="multipart/form-data">
+        {{csrf_field()}}
+            <div class="modal-body">
+                <div class="row g-3">
+                    <div class="col-12">
+                        <label class="form-label">Industry :</label>
+                        <input type="text" class="form-control" name="industry" value="{{$profile->industry}}">
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">Function :</label>
+                        <input type="text" class="form-control" name="function" value="{{$profile->function}}">
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">Job Type :</label>
+                        <input type="text" class="form-control" name="job_type" value="{{$profile->job_type}}">
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">Employment Type :</label>
+                        <input type="text" class="form-control" name="employment_type" value="{{$profile->employment_type}}">
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">Are you willing to work 6 days a week?</label>
+                        <select name="six_days" class="form-control" required>
+                            <option value="" selected disabled>Select...</option>
+                            <option value="Yes" {{$profile->six_days == 'Yes' ? "selected" : ""}}>Yes</option>
+                            <option Value="No" {{$profile->six_days == 'No' ? "selected" : ""}}>No</option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">Are you open to join early stage startups?</label>
+                        <select name="startup" class="form-control" required>
+                            <option value="" selected disabled>Select...</option>
+                            <option value="Yes" {{$profile->startup == 'Yes' ? "selected" : ""}}>Yes</option>
+                            <option Value="No" {{$profile->startup == 'No' ? "selected" : ""}}>No</option>
+                        </select>
+                    </div>
+                </div>
             </div>
-            <div class="col-12">
-                <label class="form-label">Function :</label>
-                <input type="text" class="form-control" name="function">
+            <div class="modal-footer">
+                <input type="hidden" name="hidden_profile_id" value="{{$profile->id}}">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-success">Save changes</button>
             </div>
-            <div class="col-12">
-                <label class="form-label">Job Type :</label>
-                <input type="text" class="form-control" name="job_type">
-            </div>
-            <div class="col-12">
-                <label class="form-label">Employment Type :</label>
-                <input type="text" class="form-control" name="employment_type">
-            </div>
-            <div class="col-12">
-                <label class="form-label">Are you willing to work 6 days a week?</label>
-                <select name="6_days"  class="form-control">
-                    <option selected disabled>Select...</option>
-                    <option>Yes</option>
-                    <option>No</option>
-                </select>
-            </div>
-            <div class="col-12">
-                <label class="form-label">Are you open to join early stage startups?</label>
-                <select name="early_startup"  class="form-control">
-                    <option selected disabled>Select...</option>
-                    <option>Yes</option>
-                    <option>No</option>
-                </select>
-            </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+        </form>
     </div>
   </div>
 </div>

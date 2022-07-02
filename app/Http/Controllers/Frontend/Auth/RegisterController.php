@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Frontend\Auth\RegisterRequest;
 use App\Repositories\Frontend\Auth\UserRepository;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Models\Profile;
 
 /**
  * Class RegisterController.
@@ -75,7 +76,14 @@ class RegisterController extends Controller
                     __('exceptions.frontend.auth.confirmation.created_confirm')
             );
         }
-
+     
+        if($request->user_type == 'Job Seeker'){
+            $add = new Profile;
+            $add->user_id=$user->id;        
+            $add->profile_name='Default';
+            $add->save();
+        }
+        
         auth()->login($user);
 
         event(new UserRegistered($user));
