@@ -3,7 +3,7 @@
 @section('title', app_name() . ' | ' . __('navs.frontend.dashboard') )
 
 @section('content')
-<link rel="stylesheet" href="{{url('css/dashboard/employee/profile.css')}}">
+<link rel="stylesheet" href="{{url('css/dashboard/employee/pages/profile.css')}}">
 
 <div class="row mb-4">
     <div class="col">
