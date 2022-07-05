@@ -41,5 +41,25 @@ class DashboardProfileController extends Controller
 
     }
 
+    public function work_experience_add(Request $request)
+    {    
+        // dd($request);
+                
+        $add = new WorkExperience;
+
+        $add->user_id=auth()->user()->id;
+        $add->profile_id=$request->hidden_id;        
+        $add->name=$request->designation;        
+        $add->company=$request->company;
+        $add->status=$request->present;
+        $add->duration=$request->start_date;
+        $add->description=$request->end_date;
+        
+        $add->save();
+
+        return back();                      
+
+    }
+
 
 }

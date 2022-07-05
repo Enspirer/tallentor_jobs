@@ -45,7 +45,9 @@ Route::group(['middleware' => ['auth', 'password_expires']], function () {
 
         Route::get('profile/{id}', [DashboardProfileController::class, 'index'])->name('profile');
         Route::post('job_preference.update', [DashboardProfileController::class, 'job_preference_update'])->name('job_preference.update');
+        Route::post('work_experience.add', [DashboardProfileController::class, 'work_experience_add'])->name('work_experience.add');
 
+        
         
     });
 });

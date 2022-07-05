@@ -966,42 +966,46 @@
         <h5 class="modal-title" id="addWorkExperienceModalLabel">Add Work Experience</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        <div class="row g-3">
-            <div class="col-12">
-                <label class="form-label">Designation :</label>
-                <input type="text" class="form-control" name="designation">
-            </div>
-            <div class="col-12">
-                <label class="form-label">Company :</label>
-                <input type="text" class="form-control" name="company">
-            </div>
-            <div class="col-12">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="present">
-                    <label class="form-check-label">
-                        I am currently working in this role
-                    </label>
+      <form action="{{route('frontend.user.work_experience.add')}}" method="post" enctype="multipart/form-data">
+        {{csrf_field()}}
+            <div class="modal-body">
+                <div class="row g-3">
+                    <div class="col-12">
+                        <label class="form-label">Designation :</label>
+                        <input type="text" class="form-control" name="designation" required>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">Company :</label>
+                        <input type="text" class="form-control" name="company" required>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="present_work" name="present" value="Yes">
+                            <label class="form-check-label" for="present_work">
+                                I am currently working in this role
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Start Date :</label>
+                        <input type="date" class="form-control" name="start_date" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">End Date :</label>
+                        <input type="date" class="form-control" name="end_date" required>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">Description :</label>
+                        <textarea name="description" class="form-control" id="editor_work_experience"><br><br></textarea>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <label class="form-label">Start Date :</label>
-                <input type="date" class="form-control" name="start_date">
+            <div class="modal-footer">
+                <input type="hidden" name="hidden_id" value="{{$profile->id}}">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-success">Add</button>
             </div>
-            <div class="col-md-6">
-                <label class="form-label">End Date :</label>
-                <input type="date" class="form-control" name="end_date">
-            </div>
-            <div class="col-12">
-                <label class="form-label">Description :</label>
-                <textarea name="description" class="form-control" rows="4"></textarea>
-            </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Add</button>
-      </div>
+        </form>
     </div>
   </div>
 </div>
@@ -1380,6 +1384,22 @@ function remove(element, tag) {
   tags = [...tags.slice(0, index), ...tags.slice(index + 1)]
   element.parentElement.remove()
 }
+</script>
+
+
+<script>
+	ClassicEditor
+		.create( document.querySelector( '#editor_work_experience' ), {
+			// toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
+		} )
+		.then( editor => {
+			window.editor = editor;
+		} )
+		.catch( err => {
+			console.error( err.stack );
+		} );
+
+    
 </script>
 
 @endpush
