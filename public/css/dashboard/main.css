@@ -84,6 +84,60 @@ a {
   display: flex;
 }
 
+.premium-popup {
+  background-color: #1a1832;
+  padding: 5rem 1rem 1rem;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 420px;
+}
+.premium-popup img {
+  position: absolute;
+  top: -3rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 180px;
+}
+.premium-popup .bi {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+.premium-popup .title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 1rem 0 0.75rem;
+  color: #eec45f;
+  text-shadow: 2px 2px 4px rgba(238, 196, 95, 0.2);
+}
+.premium-popup p {
+  width: 80%;
+  text-align: center;
+  margin: 0 auto 2rem;
+  font-size: 0.8rem;
+  font-weight: 200;
+  color: white;
+}
+.premium-popup .cta-btn {
+  display: block;
+  width: fit-content;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  margin: auto;
+  background: linear-gradient(135deg, #672cb9 60%, #6317ae 40%);
+  background-position: 0;
+}
+
 .btn-fill {
   font-size: 0.9rem;
   color: #fff;
