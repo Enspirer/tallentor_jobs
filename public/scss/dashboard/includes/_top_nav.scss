@@ -10,6 +10,80 @@
     .inner-wrapper {
         width: 90%;
         margin: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .property-block {
+            display: flex;
+            flex-direction: row;
+
+            .new-property {
+                border-right: 1px solid #ddd;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                padding: 0 1rem;
+
+                .add-btn {
+                    text-decoration: none;
+                    color: white;
+                    background-color: #22244b;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 1.5rem;
+                    font-weight: 300;
+                }
+            }
+
+            .property-drop {
+                border-right: 1px solid #ddd;
+                padding: 0 1rem;
+
+                .drop-header {
+                    font-size: 0.8rem;
+                    font-weight: 300;
+                    color: #8e91a2;
+                    margin-bottom: 0.15rem;
+                }
+
+                .property-drop-btn {
+                    border: none;
+                    background-color: transparent;
+                }
+
+                .property-item {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 0.5rem;
+
+                    img {
+                        width: 35px;
+                        height: 35px;
+                        object-fit: cover;
+                        object-position: center;
+                        border-radius: 50%;
+                    }
+
+                    .name {
+                        font-size: 0.9rem;
+                        font-weight: 400;
+                        text-transform: uppercase;
+                        max-width: 160px;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
 
         .navs {
             list-style: none;

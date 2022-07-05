@@ -3,6 +3,7 @@
 @section('title', app_name() . ' | ' . __('navs.general.home'))
 
 @section('content')
+<link rel="stylesheet" href="{{url('css/landing_page/pages/home.css')}}">
 
 <section class="hero-section" style="background: url('{{url('images/landing-page/home/hero-banner.png')}}')">
     <div class="container">

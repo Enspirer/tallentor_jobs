@@ -1,0 +1,57 @@
+@import "../../utilities/utilities";
+@import "../../utilities/variables";
+
+.create-account {
+    background-color: #eeedf1;
+    padding: 7.5rem 0 5rem;
+
+    form {
+        background-color: white;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+        padding: 5rem 0;
+
+        .inner-wrapper {
+            width: 90%;
+            margin: auto;
+
+            .title {
+                font-size: 1.5rem;
+                font-weight: 400;
+                color: #333;
+                margin-bottom: 1.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+                font-weight: 300;
+                color: #777;
+                margin-bottom: 0.5rem;
+            }
+
+            .form-control {
+                border-radius: 0;
+                height: 40px;
+                box-shadow: none;
+                outline: none;
+                font-size: 1rem;
+                font-weight: 300;
+                background-color: #f3f6fb;
+
+                &::-webkit-file-upload-button {
+                    height: 40px;
+                }
+            }
+
+            .form-label {
+                font-size: 0.9rem;
+                font-weight: 300;
+            }
+
+            .cta-btn {
+                width: 160px;
+                display: block;
+                border-radius: 5px;
+            }
+        }
+    }
+}

@@ -1,0 +1,302 @@
+.btn-fill {
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: 400;
+  background-color: #22244b;
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  border: 1px solid #22244b;
+  text-align: center;
+}
+.btn-fill:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.btn-outline {
+  font-size: 0.9rem;
+  color: #22244b;
+  font-weight: 400;
+  background-color: transparent;
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  border: 1px solid #22244b;
+  text-align: center;
+}
+.btn-outline:hover {
+  text-decoration: none;
+  color: #22244b;
+}
+
+.cta-link {
+  display: block;
+  width: fit-content;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 1rem;
+  color: #150d6d;
+}
+.cta-link:hover {
+  text-decoration: none;
+  color: #150d6d;
+}
+
+.contact-hero {
+  background-color: #22244b;
+  padding: 10rem 0 15rem;
+  position: relative;
+  overflow: hidden;
+}
+.contact-hero .header {
+  width: 45%;
+  margin: auto;
+  text-align: center;
+}
+.contact-hero .header h2 {
+  font-weight: 500;
+  color: white;
+}
+.contact-hero .header p {
+  font-weight: 300;
+  color: white;
+}
+.contact-hero img {
+  position: absolute;
+  opacity: 0.5;
+  width: 100%;
+  max-width: 150px;
+}
+.contact-hero img.img-1 {
+  top: 50%;
+  left: 10%;
+  transform: translate(0, -50%);
+}
+.contact-hero img.img-2 {
+  top: 1rem;
+  right: -3rem;
+}
+.contact-hero img.img-3 {
+  bottom: -2rem;
+  right: 0;
+}
+
+.contact-map {
+  margin-top: -12.5rem;
+  position: relative;
+}
+.contact-map .inner-wrapper {
+  background-color: #22244b;
+  border: 2px solid white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+.contact-map .inner-wrapper .map {
+  flex: 0 0 60%;
+  height: 500px;
+  position: relative;
+}
+.contact-map .inner-wrapper .map iframe {
+  left: 0;
+  top: 0;
+  height: 500px;
+  width: 100%;
+  position: absolute;
+}
+.contact-map .inner-wrapper .contents {
+  flex: 0 0 40%;
+  padding: 2rem;
+}
+.contact-map .inner-wrapper .contents h3 {
+  font-weight: 400;
+  color: white;
+}
+.contact-map .inner-wrapper .contents p {
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+.contact-map .inner-wrapper .contents div {
+  margin-bottom: 1rem;
+}
+.contact-map .inner-wrapper .contents div strong {
+  font-weight: 500;
+  color: white;
+  font-size: 0.9rem;
+  display: block;
+}
+.contact-map .inner-wrapper .contents div span {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: white;
+}
+.contact-map .inner-wrapper .contents div span a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: white;
+}
+
+.contact-form {
+  margin: 5rem 0;
+}
+.contact-form .inner-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 80%;
+  margin-left: auto;
+}
+.contact-form .inner-wrapper .form-block {
+  padding: 3rem;
+}
+.contact-form .inner-wrapper .form-block h3 {
+  color: #16265e;
+  margin-bottom: 2rem;
+}
+.contact-form .inner-wrapper .form-block input {
+  height: 45px;
+}
+.contact-form .inner-wrapper .form-block textarea {
+  resize: none;
+}
+.contact-form .inner-wrapper .form-block .form-control {
+  background-color: #f3f3f3;
+  color: #707070;
+  border-radius: 0;
+  border: 1px solid transparent;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+.contact-form .inner-wrapper .form-block .form-control:active, .contact-form .inner-wrapper .form-block .form-control:focus {
+  background-color: #f2f8fe;
+  box-shadow: none;
+  border: 1px solid #017df3;
+}
+.contact-form .inner-wrapper .form-block .cta-btn {
+  width: 100%;
+  height: 45px;
+  border-radius: 5px;
+}
+.contact-form .inner-wrapper .form-block button[disabled] {
+  filter: grayscale(1);
+  opacity: 0.5;
+}
+.contact-form .inner-wrapper .image-block {
+  flex: 0 0 40%;
+}
+.contact-form .inner-wrapper .image-block img {
+  width: 100%;
+}
+
+.newsletter {
+  background: linear-gradient(to bottom, #fff 50%, #22244b 50%);
+}
+.newsletter .inner-wrapper {
+  background: url("../../../images/landing-page/contact/newsletter-bg.svg");
+  background-position: top center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.newsletter .inner-wrapper .text {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: white;
+}
+.newsletter .inner-wrapper .input-wrapper {
+  position: relative;
+  flex: 0 0 40%;
+}
+.newsletter .inner-wrapper .input-wrapper .form-control {
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background-color: white;
+  height: 60px;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #707070;
+  padding: 0.375rem 6.5rem 0.375rem 0.75rem;
+}
+.newsletter .inner-wrapper .input-wrapper .form-control:active, .newsletter .inner-wrapper .input-wrapper .form-control:focus {
+  background-color: white;
+  box-shadow: none;
+  border: 1px solid #017df3;
+}
+.newsletter .inner-wrapper .input-wrapper .cta-btn {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translate(0, -50%);
+  border-radius: 5px;
+  background-color: #017df3;
+  border: none;
+}
+
+@media screen and (max-width: 1199px) {
+  .contact-form .inner-wrapper {
+    margin-left: unset;
+    margin: auto;
+  }
+  .contact-form .inner-wrapper .image-block {
+    display: none;
+  }
+}
+@media screen and (max-width: 991px) {
+  .contact-map .inner-wrapper {
+    flex-wrap: wrap;
+  }
+  .contact-map .inner-wrapper .map {
+    flex: 0 0 100%;
+  }
+
+  .newsletter .inner-wrapper {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .contact-hero .header {
+    width: 80%;
+  }
+
+  .contact-map .inner-wrapper .contents {
+    flex: unset;
+  }
+
+  .contact-form .inner-wrapper {
+    width: 90%;
+  }
+  .contact-form .inner-wrapper .form-block {
+    padding: 3rem 0;
+  }
+  .contact-form .inner-wrapper .form-block h3 {
+    text-align: center;
+  }
+  .contact-form .inner-wrapper .form-block h3 br {
+    display: none;
+  }
+
+  .newsletter .inner-wrapper {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .newsletter .inner-wrapper .text {
+    text-align: center;
+  }
+  .newsletter .inner-wrapper .text br {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=contact.css.map */

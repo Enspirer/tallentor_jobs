@@ -1,0 +1,46 @@
+.btn-fill {
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: 400;
+  background-color: #22244b;
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  border: 1px solid #22244b;
+  text-align: center;
+}
+.btn-fill:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.btn-outline {
+  font-size: 0.9rem;
+  color: #22244b;
+  font-weight: 400;
+  background-color: transparent;
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  border: 1px solid #22244b;
+  text-align: center;
+}
+.btn-outline:hover {
+  text-decoration: none;
+  color: #22244b;
+}
+
+.cta-link {
+  display: block;
+  width: fit-content;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 1rem;
+  color: #150d6d;
+}
+.cta-link:hover {
+  text-decoration: none;
+  color: #150d6d;
+}
+
+/*# sourceMappingURL=home.css.map */

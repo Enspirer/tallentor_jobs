@@ -1,0 +1,93 @@
+.btn-fill {
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: 400;
+  background-color: #22244b;
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  border: 1px solid #22244b;
+  text-align: center;
+}
+.btn-fill:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.btn-outline {
+  font-size: 0.9rem;
+  color: #22244b;
+  font-weight: 400;
+  background-color: transparent;
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  border: 1px solid #22244b;
+  text-align: center;
+}
+.btn-outline:hover {
+  text-decoration: none;
+  color: #22244b;
+}
+
+.cta-link {
+  display: block;
+  width: fit-content;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 1rem;
+  color: #150d6d;
+}
+.cta-link:hover {
+  text-decoration: none;
+  color: #150d6d;
+}
+
+.create-account {
+  background-color: #eeedf1;
+  padding: 7.5rem 0 5rem;
+}
+.create-account form {
+  background-color: white;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 5rem 0;
+}
+.create-account form .inner-wrapper {
+  width: 90%;
+  margin: auto;
+}
+.create-account form .inner-wrapper .title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+.create-account form .inner-wrapper .subtitle {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: #777;
+  margin-bottom: 0.5rem;
+}
+.create-account form .inner-wrapper .form-control {
+  border-radius: 0;
+  height: 40px;
+  box-shadow: none;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 300;
+  background-color: #f3f6fb;
+}
+.create-account form .inner-wrapper .form-control::-webkit-file-upload-button {
+  height: 40px;
+}
+.create-account form .inner-wrapper .form-label {
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+.create-account form .inner-wrapper .cta-btn {
+  width: 160px;
+  display: block;
+  border-radius: 5px;
+}
+
+/*# sourceMappingURL=create_account.css.map */

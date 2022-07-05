@@ -1,5 +1,8 @@
+@import "../../utilities/utilities";
+@import "../../utilities/variables";
+
 .hero-section {
-    background: url('../../images/landing-page/home/hero-banner.png');
+    background: url("../../images/landing-page/home/hero-banner.png");
     background-position: bottom center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -65,7 +68,7 @@
                 color: $primary-blue;
 
                 span {
-                    color: #FF7129;
+                    color: #ff7129;
                     font-weight: 600;
                 }
             }
@@ -92,7 +95,7 @@
                 flex: 0 0 23%;
 
                 &::before {
-                    content: '';
+                    content: "";
                     width: 8px;
                     height: 100%;
                     position: absolute;
@@ -154,7 +157,7 @@
                     display: block;
 
                     .subtitle {
-                        font-size: .75rem;
+                        font-size: 0.75rem;
                         font-weight: 400;
                         margin-bottom: 0.5rem;
                     }
@@ -168,7 +171,7 @@
                     }
 
                     .location {
-                        font-size: .75rem;
+                        font-size: 0.75rem;
                         font-weight: 300;
                         margin-bottom: 0.25rem;
                         @include text_overflow(1);
@@ -176,12 +179,12 @@
                         .bi {
                             font-size: 1rem;
                             color: red;
-                            margin-right: .25rem;
+                            margin-right: 0.25rem;
                         }
                     }
 
                     p {
-                        font-size: .75rem;
+                        font-size: 0.75rem;
                         font-weight: 300;
                         @include text_overflow(1);
                         margin-bottom: 1rem;
@@ -196,7 +199,7 @@
                         p {
                             margin: 0;
                             flex: 1;
-                            font-size: .75rem;
+                            font-size: 0.75rem;
                             font-weight: 400;
                             color: $dark-blue;
                         }
@@ -236,18 +239,18 @@
                 font-size: 2rem;
                 font-weight: 400;
                 line-height: 1;
-                color: #FF7129;
+                color: #ff7129;
             }
 
             .title {
                 font-size: 2.5rem;
                 font-weight: 700;
                 color: $primary-blue;
-                margin-bottom: .5rem;
+                margin-bottom: 0.5rem;
             }
 
             p {
-                font-size: .9rem;
+                font-size: 0.9rem;
                 font-weight: 400;
                 margin-bottom: 1.5rem;
             }
@@ -281,7 +284,7 @@
                 position: absolute;
                 border: 2px solid $white;
                 border-radius: 10px;
-                transition: all .5s ease;
+                transition: all 0.5s ease;
 
                 &:hover {
                     transform: scale(1.1);
@@ -356,7 +359,7 @@
             color: $primary-blue;
 
             span {
-                color: #FF7129;
+                color: #ff7129;
                 font-weight: 600;
             }
         }
@@ -381,7 +384,7 @@
             position: relative;
 
             &::after {
-                content: '';
+                content: "";
                 width: 100%;
                 height: 8px;
                 position: absolute;
@@ -427,7 +430,7 @@
             }
 
             .location {
-                font-size: .8rem;
+                font-size: 0.8rem;
                 font-weight: 300;
                 @include text_overflow(1);
                 margin-bottom: 1rem;
@@ -435,12 +438,12 @@
                 .bi {
                     font-size: 1rem;
                     color: red;
-                    margin-right: .5rem;
+                    margin-right: 0.5rem;
                 }
             }
 
             p {
-                font-size: .9rem;
+                font-size: 0.9rem;
                 font-weight: 300;
                 margin-bottom: 1.5rem;
                 @include text_overflow(3);
@@ -453,13 +456,13 @@
                 gap: 2rem;
 
                 span {
-                    font-size: .9rem;
+                    font-size: 0.9rem;
                     font-weight: 300;
                     color: $dark-blue;
 
                     .bi {
                         font-size: 1rem;
-                        margin-right: .5rem;
+                        margin-right: 0.5rem;
                         color: $text-black;
                     }
                 }
@@ -487,7 +490,7 @@
             color: $primary-blue;
 
             span {
-                color: #FF7129;
+                color: #ff7129;
                 font-weight: 600;
             }
         }
@@ -538,7 +541,7 @@
                 }
 
                 p {
-                    font-size: .9rem;
+                    font-size: 0.9rem;
                     font-weight: 300;
                     margin-bottom: 1.5rem;
                     @include text_overflow(2);
@@ -549,17 +552,17 @@
                     flex-direction: row;
                     align-items: center;
                     gap: 2rem;
-                    padding-top: .5rem;
+                    padding-top: 0.5rem;
                     border-top: 1px solid $light-gray;
 
                     span {
-                        font-size: .9rem;
+                        font-size: 0.9rem;
                         font-weight: 300;
                         color: $gray;
 
                         .bi {
                             font-size: 1rem;
-                            margin-right: .5rem;
+                            margin-right: 0.5rem;
                             color: $gray;
                         }
                     }
@@ -567,7 +570,7 @@
                     .view-more {
                         flex: 1;
                         text-align: right;
-                        font-size: .9rem;
+                        font-size: 0.9rem;
                         font-weight: 400;
                         color: $light-blue;
                         text-decoration: none;
@@ -669,7 +672,6 @@
 
             .image-block {
                 .pop-img {
-
                     &.img-2,
                     &.img-3 {
                         left: 0;

@@ -12,13 +12,12 @@
             font-weight: 400;
             color: $primary-blue;
             background-color: $primary-yellow;
-            padding: 0 .5rem;
+            padding: 0 0.5rem;
             border-radius: 50px;
         }
     }
 
     .navbar-toggler {
-
         &:focus {
             box-shadow: none;
             outline: none;
@@ -34,7 +33,7 @@
 
         .nav-link {
             color: $white;
-            font-size: .9rem;
+            font-size: 0.9rem;
             font-weight: 300;
         }
     }
@@ -48,9 +47,9 @@
 
         .cta-btn {
             color: $primary-yellow;
-            font-size: .9rem;
+            font-size: 0.9rem;
             font-weight: 300;
-            padding: .5rem 1.5rem;
+            padding: 0.5rem 1.5rem;
 
             &.btn-fill {
                 @include overlay($white, 0.25);
@@ -68,6 +67,15 @@
     .topNav {
         .button-block {
             margin: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .topNav {
+        &__wrapper {
+            width: 90%;
+            margin: auto;
         }
     }
 }

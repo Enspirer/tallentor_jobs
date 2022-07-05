@@ -1,5 +1,46 @@
 <div class="top-nav">
     <div class="inner-wrapper">
+        <div class="property-block">
+            <div class="new-property">
+                <a href="#" class="add-btn">+</a>
+            </div>
+            <div class="dropdown-center property-drop">
+                <div class="drop-header">Your Organization</div>
+                <button class="property-drop-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div class="property-item">
+                        <img src="{{url('images/company-logo.png')}}" alt="">
+                        <div class="name">ABC Holdings PVT LTD</div>
+                        <i class="bi bi-chevron-expand"></i>
+                    </div>
+                </button>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            <div class="property-item">
+                                <img src="{{url('images/company-logo.png')}}" alt="">
+                                <div class="name">ABC Holdings PVT LTD</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            <div class="property-item">
+                                <img src="{{url('images/company-logo.png')}}" alt="">
+                                <div class="name">ABC Holdings PVT LTD</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            <div class="property-item">
+                                <img src="{{url('images/company-logo.png')}}" alt="">
+                                <div class="name">ABC Holdings PVT LTD</div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
         <ul class="navs">
             <li>
                 <a href="#" class="nav-link">Home</a>

@@ -1,0 +1,297 @@
+.btn-fill {
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: 400;
+  background-color: #22244b;
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  border: 1px solid #22244b;
+  text-align: center;
+}
+.btn-fill:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.btn-outline {
+  font-size: 0.9rem;
+  color: #22244b;
+  font-weight: 400;
+  background-color: transparent;
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  border: 1px solid #22244b;
+  text-align: center;
+}
+.btn-outline:hover {
+  text-decoration: none;
+  color: #22244b;
+}
+
+.cta-link {
+  display: block;
+  width: fit-content;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 1rem;
+  color: #150d6d;
+}
+.cta-link:hover {
+  text-decoration: none;
+  color: #150d6d;
+}
+
+.about-hero {
+  background-color: #22244b;
+  min-height: 100vh;
+}
+.about-hero .inner-wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+.about-hero .inner-wrapper .content-block h2 {
+  color: white;
+  font-size: 2.75rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+.about-hero .inner-wrapper .content-block .button-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+.about-hero .inner-wrapper .content-block .button-block .cta-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 1px dashed #008d13;
+  width: 50px;
+  height: 50px;
+}
+.about-hero .inner-wrapper .content-block .button-block .cta-btn span {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #008d13;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+.about-hero .inner-wrapper .content-block .button-block .cta-btn span .bi {
+  font-size: 28px;
+  color: #fff;
+  line-height: 1;
+}
+.about-hero .inner-wrapper .content-block .button-block p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #fff;
+}
+.about-hero .inner-wrapper .content-block ul {
+  list-style: none;
+}
+.about-hero .inner-wrapper .content-block ul li {
+  position: relative;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+.about-hero .inner-wrapper .content-block ul li .bi {
+  position: absolute;
+  top: 50%;
+  left: -1.75rem;
+  transform: translate(0, -50%);
+  color: #fff;
+  font-size: 1.25rem;
+}
+
+.about-image-block {
+  position: relative;
+  margin-top: -25vh;
+}
+.about-image-block .inner-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+}
+.about-image-block .inner-wrapper img {
+  height: auto;
+  border: 2px solid #fff;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+.about-image-block .inner-wrapper img:nth-child(1) {
+  width: 35%;
+}
+.about-image-block .inner-wrapper img:nth-child(2) {
+  width: 25%;
+  margin-top: 5rem;
+}
+.about-image-block .inner-wrapper img:nth-child(3) {
+  width: 25%;
+}
+
+.counter-section {
+  margin: 5rem 0;
+}
+.counter-section .inner-wrapper {
+  display: flex;
+}
+.counter-section .inner-wrapper .counter-block {
+  flex: 0 0 25%;
+  text-align: center;
+  padding: 2rem;
+  border: 1px solid #f3f3f3;
+}
+.counter-section .inner-wrapper .counter-block:nth-child(odd) {
+  background-color: #f3f3f3;
+}
+.counter-section .inner-wrapper .counter-block .count {
+  font-size: 2rem;
+  color: #152c58;
+}
+.counter-section .inner-wrapper .counter-block .text {
+  font-size: 0.9rem;
+  color: #152c58;
+}
+
+.about-services {
+  position: relative;
+  padding: 5rem 0 15rem;
+  background: linear-gradient(to bottom, rgba(21, 44, 88, 0.68), rgba(21, 44, 88, 0.68)), url("../../images/landing-page/about/services-bg.png");
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+.about-services .inner-wrapper {
+  width: 80%;
+}
+.about-services .inner-wrapper h2 {
+  color: white;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+.about-services .inner-wrapper p {
+  font-size: 1rem;
+  color: white;
+  font-weight: 300;
+}
+
+.pro-services {
+  position: relative;
+  margin-top: -12rem;
+  margin-bottom: 5rem;
+}
+.pro-services .services-block {
+  background-color: #140e34;
+  padding: 2rem 3rem;
+  width: 75%;
+  margin-left: auto;
+}
+.pro-services .services-block h2 {
+  color: white;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+.pro-services .services-block .wrapepr {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2rem;
+}
+.pro-services .services-block .wrapepr .block .title {
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  color: white;
+  border-bottom: 1px solid white;
+  margin-bottom: 1rem;
+}
+.pro-services .services-block .wrapepr .block p {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: white;
+}
+
+@media screen and (max-width: 1199px) {
+  .pro-services .services-block {
+    margin: auto;
+  }
+}
+@media screen and (max-width: 991px) {
+  .about-hero {
+    min-height: auto;
+    padding: 7.5rem 0 15rem;
+  }
+  .about-hero .inner-wrapper {
+    display: block;
+    height: auto;
+  }
+  .about-hero .content-block {
+    margin-bottom: 2rem;
+  }
+
+  .counter-section .inner-wrapper {
+    flex-wrap: wrap;
+  }
+  .counter-section .inner-wrapper .counter-block {
+    flex: 0 0 50%;
+  }
+  .counter-section .inner-wrapper .counter-block:nth-child(odd) {
+    background-color: unset;
+  }
+
+  .about-services .inner-wrapper {
+    width: 100%;
+  }
+
+  .pro-services .services-block .wrapepr {
+    flex-wrap: wrap;
+  }
+  .pro-services .services-block .wrapepr .block {
+    flex: 0 0 45%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .about-hero .inner-wrapper .content-block h2 br {
+    display: none;
+  }
+
+  .pro-services .services-block .wrapepr .block {
+    flex: unset;
+  }
+}
+@media screen and (max-width: 575px) {
+  .about-hero {
+    padding: 7.5rem 0 10rem;
+  }
+
+  .about-image-block {
+    margin-top: -15vh;
+  }
+  .about-image-block .inner-wrapper {
+    gap: 0.5rem;
+  }
+
+  .pro-services .services-block {
+    width: 90%;
+  }
+}
+
+/*# sourceMappingURL=about.css.map */

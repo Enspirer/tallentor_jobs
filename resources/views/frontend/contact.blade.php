@@ -3,6 +3,7 @@
 @section('title', app_name() . ' | ' . __('labels.frontend.contact.box_title'))
 
 @section('content')
+<link rel="stylesheet" href="{{url('css/landing_page/pages/contact.css')}}">
 
 <section class="contact-hero">
     <div class="header">

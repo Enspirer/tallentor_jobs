@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     color: #333;
 }
 
@@ -14,7 +14,7 @@ a {
 
 .dashboard-container {
     position: relative;
-    background-color: #EEEDF1;
+    background-color: #eeedf1;
 
     .dashboard-content {
         width: calc(100vw - 267px);
@@ -44,7 +44,7 @@ a {
             color: #fff;
             list-style: none;
             border-radius: 50px;
-            background-color: #22244B;
+            background-color: #22244b;
             padding: 2px 8px;
             font-size: 0.75rem;
             font-weight: 300;
@@ -83,7 +83,7 @@ a {
             margin: 4px 3px;
             list-style: none;
             border-radius: 50px;
-            background: #F2F2F2;
+            background: #f2f2f2;
             padding: 4px 8px;
             border: 1px solid #e3e1e1;
             font-size: 0.75rem;
@@ -92,7 +92,6 @@ a {
     }
 
     &.active {
-
         .input-suggestions {
             display: flex;
         }
@@ -100,13 +99,9 @@ a {
 }
 
 // Utilities
-@import "utilities/variables";
-@import "utilities/utilities";
-
-// Pages
-@import "dashboard/pages/home";
-@import "dashboard/pages/profile";
+@import "../utilities/variables";
+@import "../utilities/utilities";
 
 // Includes
-@import "dashboard/includes/top_nav";
-@import "dashboard/includes/side_nav";
+@import "./includes/side_nav";
+@import "./includes/top_nav";
