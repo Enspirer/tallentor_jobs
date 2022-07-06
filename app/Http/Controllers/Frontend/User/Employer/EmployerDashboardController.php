@@ -7,7 +7,11 @@ use Illuminate\Http\Request;
 
 class EmployerDashboardController extends Controller
 {
-    public function index() {
+    public function active_jobs() {
         return view('frontend.user.employer_dashboard');
+    }
+
+    public function inactive_jobs() {
+        return view('frontend.user.employer.inactive_jobs');
     }
 }
