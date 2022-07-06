@@ -3,9 +3,9 @@
 @section('title', app_name() . ' | ' . __('navs.frontend.dashboard') )
 
 @section('content')
-@include('frontend.user.employer.includes.premium_popup')
 <link rel="stylesheet" href="{{url('css/dashboard/employer/pages/home.css')}}">
-
+<link rel="stylesheet" href="{{url('css/dashboard/employer/includes/header_nav.css')}}">
+@include('frontend.user.employer.includes.premium_popup')
 @include('frontend.user.employer.includes.jobs_header_nav')
 
 <div class="status-block">
@@ -51,7 +51,7 @@
             <span>Remote</span>
         </div>
         <div class="footer">
-            <div class="status published">
+            <div class="status draft">
                 <i class="bi bi-file-earmark-text-fill"></i>
                 Draft
             </div>

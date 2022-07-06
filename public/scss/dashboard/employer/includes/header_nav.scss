@@ -1,0 +1,42 @@
+.header-nav {
+    padding-top: 1rem;
+    position: relative;
+
+    &::after {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: #ddd;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__link {
+        display: block;
+        padding: 0.5rem 1rem;
+        font-size: 1.1rem;
+        font-weight: 300;
+        color: #8e91a2;
+        text-decoration: none;
+        border-bottom: 3px solid transparent;
+
+        &:hover,
+        &.active {
+            color: #333;
+        }
+
+        &.active {
+            border-bottom: 3px solid #008d13;
+        }
+    }
+}

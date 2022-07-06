@@ -43,4 +43,102 @@
   color: #150d6d;
 }
 
+.feature-jobs .divider {
+  font-size: 1rem;
+  color: #8E91A2;
+  margin-bottom: 2rem;
+}
+.feature-jobs .jobs-cards-block {
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+.feature-jobs .jobs-cards-block .job-card {
+  flex: 0 0 48%;
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.feature-jobs .jobs-cards-block .job-card img {
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  display: block;
+  margin: 0.5rem;
+}
+.feature-jobs .jobs-cards-block .job-card .details-block {
+  flex: 1;
+}
+.feature-jobs .jobs-cards-block .job-card .details-block .duration {
+  float: right;
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: #8E91A2;
+}
+.feature-jobs .jobs-cards-block .job-card .details-block .title {
+  font-size: 1.15rem;
+  font-weight: 300;
+  color: #8E91A2;
+  margin-bottom: 1rem;
+}
+.feature-jobs .jobs-cards-block .job-card .details-block .tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.feature-jobs .jobs-cards-block .job-card .details-block .tags .tag {
+  font-size: 0.75rem;
+  font-weight: 300;
+  padding: 0.3rem 0.75rem;
+  border-radius: 50px;
+}
+.feature-jobs .jobs-cards-block .job-card .details-block .tags .tag.purple {
+  color: #916BE2;
+  background-color: #EDEBFA;
+}
+.feature-jobs .jobs-cards-block .job-card .details-block .tags .tag.blue {
+  color: #6178A7;
+  background-color: #E2EFFF;
+}
+.feature-jobs .jobs-cards-block .job-card .details-block .status {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+.feature-jobs .jobs-cards-block .job-card .details-block .status .status-tag {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #8E91A2;
+  gap: 0.75rem;
+}
+.feature-jobs .jobs-cards-block .job-card .details-block .status .status-tag .bi {
+  font-size: 1rem;
+  color: #333;
+}
+.feature-jobs .jobs-cards-block .job-card .details-block a {
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+}
+
 /*# sourceMappingURL=home.css.map */

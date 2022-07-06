@@ -1,2 +1,116 @@
 @import "../../../utilities/utilities";
 @import "../../../utilities/variables";
+
+.feature-jobs {
+    .divider {
+        font-size: 1rem;
+        color: #8E91A2;
+        margin-bottom: 2rem;
+    }
+
+    .jobs-cards-block {
+        margin-bottom: 3rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 2rem;
+
+        .job-card {
+            flex: 0 0 48%;
+            padding: 1rem;
+            background-color: #fff;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: .5rem;
+
+            img {
+                width: 75px;
+                height: 75px;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 50%;
+                display: block;
+                margin: .5rem;
+            }
+
+            .details-block {
+                flex: 1;
+
+                .duration {
+                    float: right;
+                    font-size: .85rem;
+                    font-weight: 300;
+                    color: #8E91A2;
+                }
+
+                .title {
+                    font-size: 1.15rem;
+                    font-weight: 300;
+                    color: #8E91A2;
+                    margin-bottom: 1rem;
+                }
+
+                .tags {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    gap: 0.5rem;
+                    margin-bottom: .5rem;
+
+                    .tag {
+                        font-size: .75rem;
+                        font-weight: 300;
+                        padding: .3rem .75rem;
+                        border-radius: 50px;
+
+                        &.purple {
+                            color: #916BE2;
+                            background-color: #EDEBFA;
+                        }
+
+                        &.blue {
+                            color: #6178A7;
+                            background-color: #E2EFFF;
+                        }
+                    }
+                }
+
+                .status {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    gap: 2rem;
+                    margin-bottom: 1rem;
+
+                    .status-tag {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        font-size: .8rem;
+                        font-weight: 300;
+                        color: #8E91A2;
+                        gap: 0.75rem;
+
+                        .bi {
+                            font-size: 1rem;
+                            color: #333;
+                        }
+                    }
+                }
+
+                a {
+                    text-decoration: none;
+                    color: #333;
+                    font-size: .9rem;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: .75rem;
+                }
+            }
+        }
+    }
+}
