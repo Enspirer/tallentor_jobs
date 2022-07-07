@@ -4,12 +4,13 @@ use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\AizUploadController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\AboutUsController;
-use App\Http\Controllers\Frontend\EmployerWelcomeController;
-use App\Http\Controllers\Frontend\EmployerCreateAccountController;
+use App\Http\Controllers\Frontend\JobsController;
 use App\Http\Controllers\Frontend\User\AccountController;
 use App\Http\Controllers\Frontend\User\DashboardController;
 use App\Http\Controllers\Frontend\User\DashboardProfileController;
 use App\Http\Controllers\Frontend\User\ProfileController;
+use App\Http\Controllers\Frontend\User\Employer\EmployerWelcomeController;
+use App\Http\Controllers\Frontend\User\Employer\EmployerCreateAccountController;
 use App\Http\Controllers\Frontend\User\Employer\EmployerDashboardController;
 
 /*
@@ -21,6 +22,7 @@ Route::get('contact', [ContactController::class, 'index'])->name('contact');
 Route::post('contact/send', [ContactController::class, 'send'])->name('contact.send');
 Route::post('newsletter/store', [ContactController::class, 'newsletter_store'])->name('newsletter.store');
 Route::get('about', [AboutUsController::class, 'index'])->name('about');
+Route::get('jobs', [JobsController::class, 'index'])->name('jobs');
 
 
 Route::post('/aiz-uploader', [AizUploadController::class, 'show_uploader']);
@@ -50,10 +52,9 @@ Route::group(['middleware' => ['auth', 'password_expires']], function () {
         Route::post('job_preference.update', [DashboardProfileController::class, 'job_preference_update'])->name('job_preference.update');
         Route::post('work_experience.add', [DashboardProfileController::class, 'work_experience_add'])->name('work_experience.add');
 
+        // Employer Dashboard
         Route::get('welcome', [EmployerWelcomeController::class, 'index'])->name('welcome');
         Route::get('create-account', [EmployerCreateAccountController::class, 'index'])->name('employer_create_account');
-
-        // Employer Dashboard
         Route::get('employer/dashboard/active-jobs', [EmployerDashboardController::class, 'active_jobs'])->name('active_jobs');     
         Route::get('employer/dashboard/inactive-jobs', [EmployerDashboardController::class, 'inactive_jobs'])->name('inactive_jobs');     
 

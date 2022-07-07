@@ -35,5 +35,7 @@
         <span class="tag">Web Developer</span>
         <span class="tag">Mobile App Developer</span>
     </div>
-    <a href="#">More Jobs <i class="bi bi-box-arrow-up-right"></i></a>
+    @if(Request::segment(1) == 'dashboard')
+        <a href="#">More Jobs <i class="bi bi-box-arrow-up-right"></i></a>
+    @endif
 </div>
