@@ -36,6 +36,6 @@
         <span class="tag">Mobile App Developer</span>
     </div>
     @if(Request::segment(1) == 'dashboard')
-        <a href="#">More Jobs <i class="bi bi-box-arrow-up-right"></i></a>
+        <a href="{{route('frontend.jobs')}}">More Jobs <i class="bi bi-box-arrow-up-right"></i></a>
     @endif
 </div>

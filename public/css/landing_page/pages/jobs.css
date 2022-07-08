@@ -1,0 +1,385 @@
+.btn-fill {
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: 400;
+  background-color: #22244b;
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  border: 1px solid #22244b;
+  text-align: center;
+}
+.btn-fill:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.btn-outline {
+  font-size: 0.9rem;
+  color: #22244b;
+  font-weight: 400;
+  background-color: transparent;
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  border: 1px solid #22244b;
+  text-align: center;
+}
+.btn-outline:hover {
+  text-decoration: none;
+  color: #22244b;
+}
+
+.cta-link {
+  display: block;
+  width: fit-content;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 1rem;
+  color: #150d6d;
+}
+.cta-link:hover {
+  text-decoration: none;
+  color: #150d6d;
+}
+
+.job-card {
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+.job-card img {
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  display: block;
+  margin: 0.5rem 1rem 1rem 0.5rem;
+  float: left;
+}
+.job-card .header {
+  margin-bottom: 1rem;
+}
+.job-card .header .duration {
+  float: right;
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: #8E91A2;
+}
+.job-card .header .title {
+  font-size: 1.15rem;
+  font-weight: 300;
+  color: #8E91A2;
+  margin-bottom: 0.25rem;
+}
+.job-card .header .company {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #22244b;
+  margin-bottom: 1rem;
+}
+.job-card .header .company .bi {
+  font-size: 1rem;
+  margin-left: 0.5rem;
+}
+.job-card .header .tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.job-card .header .tags .tag {
+  font-size: 0.75rem;
+  font-weight: 300;
+  padding: 0.3rem 0.75rem;
+  border-radius: 50px;
+}
+.job-card .header .tags .tag.purple {
+  color: #916BE2;
+  background-color: #EDEBFA;
+}
+.job-card .header .tags .tag.blue {
+  color: #6178A7;
+  background-color: #E2EFFF;
+}
+.job-card .job-breadcrumb {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+.job-card .job-breadcrumb li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+.job-card .job-breadcrumb li a {
+  color: #ACACAC;
+  font-size: 0.85rem;
+  font-weight: 300;
+  text-decoration: none;
+}
+.job-card .job-breadcrumb li .bi {
+  color: #ACACAC;
+  font-size: 0.85rem;
+}
+.job-card .status {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  float: left;
+  margin-top: 0.5rem;
+}
+.job-card .status .status-tag {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #8E91A2;
+  gap: 0.75rem;
+}
+.job-card .status .status-tag .bi {
+  font-size: 1rem;
+  color: #333;
+}
+.job-card a {
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+  width: fit-content;
+  margin-left: auto;
+}
+
+.pagination {
+  margin-top: 5rem;
+  justify-content: flex-end;
+}
+.pagination .page-item .page-link {
+  color: #22244B;
+}
+.pagination .page-item.active .page-link {
+  background-color: #22244B;
+  border-color: #22244b;
+  color: #fff;
+}
+.pagination .page-item.disabled .page-link {
+  color: #6c757d;
+}
+
+.jobs-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+.jobs-container .jobs-filter {
+  flex: 0 0 22rem;
+}
+.jobs-container .jobs-list {
+  flex: 1;
+}
+
+.jobs-filter .job-alert {
+  padding: 2rem 1.5rem;
+  background-color: #E9F2FF;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+.jobs-filter .job-alert__title {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 0.65rem;
+}
+.jobs-filter .job-alert__text {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: #8E91A2;
+  margin-bottom: 0.65rem;
+}
+.jobs-filter .job-alert__input {
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 300;
+  height: 40px;
+  color: #8E91A2;
+  background-color: #fff;
+  margin-bottom: 1rem;
+}
+.jobs-filter .job-alert__input:active, .jobs-filter .job-alert__input:focus {
+  box-shadow: none;
+  outline: none;
+}
+.jobs-filter .job-alert__btn {
+  border-radius: 5px;
+  width: 100%;
+  font-size: 0.85rem;
+  font-weight: 300;
+}
+.jobs-filter .filter-sec {
+  padding: 2rem 1.5rem;
+  border-radius: 5px;
+  background-color: #F7F9FD;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  /* Price Range */
+  /* Price Range Containers */
+  /* Price Range Input */
+  /* Price Range Input Track */
+  /* Price Range Input Thumb */
+  /* Price Range Output */
+}
+.jobs-filter .filter-sec__cat {
+  margin-bottom: 1.5rem;
+}
+.jobs-filter .filter-sec__cat--title {
+  font-size: 1.15rem;
+  font-weight: 400;
+  margin-bottom: 0.65rem;
+}
+.jobs-filter .filter-sec__cat--count {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #8E91A2;
+}
+.jobs-filter .filter-sec .form-check-input:focus {
+  box-shadow: none;
+}
+.jobs-filter .filter-sec .form-check-label {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #8E91A2;
+}
+.jobs-filter .filter-sec .form-label {
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+}
+.jobs-filter .filter-sec .form-select {
+  border: 1px solid #BFCFEB;
+  background-color: #EBF0F9;
+  font-weight: 300;
+}
+.jobs-filter .filter-sec .form-select:focus, .jobs-filter .filter-sec .form-select:active {
+  box-shadow: none;
+}
+.jobs-filter .filter-sec .form-select option {
+  background-color: #fff;
+}
+.jobs-filter .filter-sec price-range {
+  --thumb-size: 20px;
+  --thumb-color: #fff;
+  --thumb-shadow-size: 5px;
+  --track-size: 8px;
+  --track-color: #ddd;
+  --track-highlight-color: #22244B;
+  width: 100%;
+  display: block;
+}
+.jobs-filter .filter-sec price-range > div {
+  position: relative;
+  width: 100%;
+  height: var(--thumb-size);
+}
+.jobs-filter .filter-sec price-range > div > div {
+  width: 100%;
+  height: var(--track-size);
+  background: var(--track-color);
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.jobs-filter .filter-sec price-range input[type=range] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.jobs-filter .filter-sec price-range input[type=range]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  height: 5px;
+}
+.jobs-filter .filter-sec price-range input[type=range]::-moz-range-track {
+  -moz-appearance: none;
+  height: 5px;
+}
+.jobs-filter .filter-sec price-range input[type=range]::-ms-track {
+  appearance: none;
+  height: 5px;
+}
+.jobs-filter .filter-sec price-range input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  margin-top: -10px;
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  background: var(--thumb-color);
+  border: none;
+  border-radius: 3px;
+  pointer-events: auto;
+  cursor: pointer;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.15s ease;
+}
+.jobs-filter .filter-sec price-range input[type=range]::-moz-range-thumb {
+  -moz-appearance: none;
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  background: var(--thumb-color);
+  border: none;
+  border-radius: 3px;
+  pointer-events: auto;
+  cursor: pointer;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.15s ease;
+}
+.jobs-filter .filter-sec price-range input[type=range]::-ms-thumb {
+  appearance: none;
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  background: var(--thumb-color);
+  border: none;
+  border-radius: 3px;
+  pointer-events: auto;
+  cursor: pointer;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.15s ease;
+}
+.jobs-filter .filter-sec price-range output {
+  display: block;
+  margin: 1.5rem 0 0.75rem 0;
+}
+
+.jobs-list .result-count {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+.jobs-list .job-card {
+  margin-bottom: 2rem;
+}
+
+/*# sourceMappingURL=jobs.css.map */

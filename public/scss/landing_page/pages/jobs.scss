@@ -1,0 +1,258 @@
+@import "../../utilities/utilities";
+@import "../../utilities/variables";
+
+
+// Layout
+.jobs-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 5rem;
+
+    .jobs-filter {
+        flex: 0 0 22rem;
+    }
+
+    .jobs-list {
+        flex: 1;
+    }
+}
+
+.jobs-filter {
+    .job-alert {
+        padding: 2rem 1.5rem;
+        background-color: #E9F2FF;
+        border-radius: 5px;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+
+        &__title {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: #333;
+            margin-bottom: .65rem;
+        }
+
+        &__text {
+            font-size: .85rem;
+            font-weight: 300;
+            color: #8E91A2;
+            margin-bottom: .65rem;
+        }
+
+        &__input {
+            border: none;
+            font-size: .9rem;
+            font-weight: 300;
+            height: 40px;
+            color: #8E91A2;
+            background-color: #fff;
+            margin-bottom: 1rem;
+
+            &:active,
+            &:focus {
+                box-shadow: none;
+                outline: none;
+            }
+        }
+
+        &__btn {
+            border-radius: 5px;
+            width: 100%;
+            font-size: .85rem;
+            font-weight: 300;
+        }
+    }
+
+    .filter-sec {
+        padding: 2rem 1.5rem;
+        border-radius: 5px;
+        background-color: #F7F9FD;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+
+        &__cat {
+            margin-bottom: 1.5rem;
+        }
+
+        &__cat--title {
+            font-size: 1.15rem;
+            font-weight: 400;
+            margin-bottom: .65rem;
+        }
+
+        &__cat--count {
+            font-size: .9rem;
+            font-weight: 300;
+            color: #8E91A2;
+        }
+
+        .form-check-input {
+            &:focus {
+                box-shadow: none;
+            }
+        }
+
+        .form-check-label {
+            font-size: .9rem;
+            font-weight: 300;
+            color: #8E91A2;
+        }
+
+        .form-label {
+            margin-bottom: 0.25rem;
+            font-size: .9rem;
+        }
+
+        .form-select {
+            border: 1px solid #BFCFEB;
+            background-color: #EBF0F9;
+            font-weight: 300;
+
+            &:focus,
+            &:active {
+                box-shadow: none;
+            }
+
+            option {
+                background-color: #fff;
+            }
+        }
+
+        /* Price Range */
+        price-range {
+            --thumb-size: 20px;
+            --thumb-color: #fff;
+            --thumb-shadow-size: 5px;
+            --track-size: 8px;
+            --track-color: #ddd;
+            --track-highlight-color: #22244B;
+
+            width: 100%;
+            display: block;
+        }
+
+        /* Price Range Containers */
+        price-range>div {
+            position: relative;
+            width: 100%;
+            height: var(--thumb-size);
+        }
+
+        price-range>div>div {
+            width: 100%;
+            height: var(--track-size);
+            background: var(--track-color);
+            border-radius: 10px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        /* Price Range Input */
+        price-range input[type="range"] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background: transparent;
+            border: none;
+            outline: none;
+            pointer-events: none;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        /* Price Range Input Track */
+        price-range input[type="range"]::-webkit-slider-runnable-track {
+            -webkit-appearance: none;
+            height: 5px;
+        }
+
+        price-range input[type="range"]::-moz-range-track {
+            -moz-appearance: none;
+            height: 5px;
+        }
+
+        price-range input[type="range"]::-ms-track {
+            appearance: none;
+            height: 5px;
+        }
+
+        /* Price Range Input Thumb */
+        price-range input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            margin-top: -10px;
+            width: var(--thumb-size);
+            height: var(--thumb-size);
+            background: var(--thumb-color);
+            border: none;
+            border-radius: 3px;
+            pointer-events: auto;
+            cursor: pointer;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.15s ease;
+        }
+
+        price-range input[type="range"]::-moz-range-thumb {
+            -moz-appearance: none;
+            width: var(--thumb-size);
+            height: var(--thumb-size);
+            background: var(--thumb-color);
+            border: none;
+            border-radius: 3px;
+            pointer-events: auto;
+            cursor: pointer;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.15s ease;
+        }
+
+        price-range input[type="range"]::-ms-thumb {
+            appearance: none;
+            width: var(--thumb-size);
+            height: var(--thumb-size);
+            background: var(--thumb-color);
+            border: none;
+            border-radius: 3px;
+            pointer-events: auto;
+            cursor: pointer;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.15s ease;
+        }
+
+        // price-range input[type="range"]::-webkit-slider-thumb:hover {
+        //     box-shadow: 0 0 0 var(--thumb-shadow-size) var(--thumb-color);
+        // }
+
+        // price-range input[type="range"]::-moz-range-thumb:hover {
+        //     box-shadow: 0 0 0 var(--thumb-shadow-size) var(--thumb-color);
+        // }
+
+        // price-range input[type="range"]::-ms-thumb:hover {
+        //     box-shadow: 0 0 0 var(--thumb-shadow-size) var(--thumb-color);
+        // }
+
+        /* Price Range Output */
+        price-range output {
+            display: block;
+            margin: 1.5rem 0 .75rem 0;
+        }
+    }
+}
+
+.jobs-list {
+    .result-count {
+        font-size: 1rem;
+        font-weight: 400;
+        margin-bottom: 1rem;
+    }
+
+    .job-card {
+        margin-bottom: 2rem;
+    }
+}

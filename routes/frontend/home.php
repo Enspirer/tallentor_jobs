@@ -5,6 +5,7 @@ use App\Http\Controllers\Frontend\AizUploadController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\AboutUsController;
 use App\Http\Controllers\Frontend\JobsController;
+use App\Http\Controllers\Frontend\ViewJobController;
 use App\Http\Controllers\Frontend\User\AccountController;
 use App\Http\Controllers\Frontend\User\DashboardController;
 use App\Http\Controllers\Frontend\User\DashboardProfileController;
@@ -23,6 +24,7 @@ Route::post('contact/send', [ContactController::class, 'send'])->name('contact.s
 Route::post('newsletter/store', [ContactController::class, 'newsletter_store'])->name('newsletter.store');
 Route::get('about', [AboutUsController::class, 'index'])->name('about');
 Route::get('jobs', [JobsController::class, 'index'])->name('jobs');
+Route::get('jobs/view_job', [ViewJobController::class, 'index'])->name('view_job');
 
 
 Route::post('/aiz-uploader', [AizUploadController::class, 'show_uploader']);
