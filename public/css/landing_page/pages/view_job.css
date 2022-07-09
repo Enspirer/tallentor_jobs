@@ -1,0 +1,29 @@
+.view-job-card {
+  margin: 0 auto 5rem;
+  background-color: #fff;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+.view-job-card .job-card-wrapper {
+  width: 90%;
+  margin: auto;
+}
+.view-job-card .header {
+  background-color: #F7F9FD;
+  padding: 2rem 0 1rem;
+}
+.view-job-card .header .job-card {
+  padding: 0;
+  background-color: transparent;
+  box-shadow: none;
+}
+.view-job-card .header .job-card .header {
+  padding: 0;
+}
+.view-job-card .header .job-card .status {
+  float: unset;
+}
+.view-job-card .body .content-block {
+  padding: 2rem 0;
+}
+
+/*# sourceMappingURL=view_job.css.map */

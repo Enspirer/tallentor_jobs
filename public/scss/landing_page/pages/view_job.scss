@@ -1,0 +1,35 @@
+.view-job-card {
+    margin: 0 auto 5rem;
+    background-color: #fff;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+
+    .job-card-wrapper {
+        width: 90%;
+        margin: auto;
+    }
+
+    .header {
+        background-color: #F7F9FD;
+        padding: 2rem 0 1rem;
+
+        .job-card {
+            padding: 0;
+            background-color: transparent;
+            box-shadow: none;
+
+            .header {
+                padding: 0;
+            }
+
+            .status {
+                float: unset;
+            }
+        }
+    }
+
+    .body {
+        .content-block {
+            padding: 2rem 0;
+        }
+    }
+}
