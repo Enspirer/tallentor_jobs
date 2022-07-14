@@ -314,6 +314,12 @@
 .card-block .job-card .candidates-block .content img {
   width: auto;
   height: 53px;
+  object-fit: unset;
+  object-position: unset;
+  border-radius: unset;
+  display: unset;
+  margin: unset;
+  float: unset;
 }
 .card-block .job-card .candidates-block .content .count {
   border-left: 1px solid #22244b;
@@ -359,6 +365,7 @@
   flex-direction: row;
   align-items: center;
   gap: 0.5rem;
+  margin: 0;
 }
 .card-block .job-card .footer .status.draft {
   color: #8e91a2;
@@ -372,6 +379,13 @@
 }
 .card-block .job-card .footer .status.published img {
   width: 18px;
+  height: auto;
+  object-fit: unset;
+  object-position: unset;
+  border-radius: unset;
+  display: unset;
+  margin: unset;
+  float: unset;
 }
 .card-block .job-card .footer .cta-link {
   font-size: 0.8rem;

@@ -13,6 +13,7 @@ use App\Http\Controllers\Frontend\User\ProfileController;
 use App\Http\Controllers\Frontend\User\Employer\EmployerWelcomeController;
 use App\Http\Controllers\Frontend\User\Employer\EmployerCreateAccountController;
 use App\Http\Controllers\Frontend\User\Employer\EmployerDashboardController;
+use App\Http\Controllers\Frontend\User\Employer\CandidateListController;
 
 /*
  * Frontend Controllers
@@ -59,6 +60,7 @@ Route::group(['middleware' => ['auth', 'password_expires']], function () {
         Route::get('create-account', [EmployerCreateAccountController::class, 'index'])->name('employer_create_account');
         Route::get('employer/dashboard/active-jobs', [EmployerDashboardController::class, 'active_jobs'])->name('active_jobs');     
         Route::get('employer/dashboard/inactive-jobs', [EmployerDashboardController::class, 'inactive_jobs'])->name('inactive_jobs');     
+        Route::get('employer/dashboard/candidate-list', [CandidateListController::class, 'index'])->name('candidate_list');     
 
     });
 });

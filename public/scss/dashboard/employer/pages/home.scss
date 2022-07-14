@@ -155,6 +155,12 @@
                 img {
                     width: auto;
                     height: 53px;
+                    object-fit: unset;
+                    object-position: unset;
+                    border-radius: unset;
+                    display: unset;
+                    margin: unset;
+                    float: unset;
                 }
 
                 .count {
@@ -208,6 +214,7 @@
                 flex-direction: row;
                 align-items: center;
                 gap: 0.5rem;
+                margin: 0;
 
                 &.draft {
                     color: #8e91a2;
@@ -223,6 +230,13 @@
 
                     img {
                         width: 18px;
+                        height: auto;
+                        object-fit: unset;
+                        object-position: unset;
+                        border-radius: unset;
+                        display: unset;
+                        margin: unset;
+                        float: unset;
                     }
                 }
             }

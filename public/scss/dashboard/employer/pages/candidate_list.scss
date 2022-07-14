@@ -1,0 +1,197 @@
+.candidate-header {
+    padding-top: 1rem;
+
+    .header-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 1rem 0;
+
+        .info-block {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
+
+            a {
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+                background-color: #fff;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+
+                .bi {
+                    font-size: 1rem;
+                    line-height: 0;
+                }
+            }
+
+            .job-info {
+                .job-cat {
+                    font-size: .85rem;
+                    font-weight: 300;
+                    text-transform: uppercase;
+                }
+
+                .title {
+                    font-size: 1.25rem;
+                    font-weight: 400;
+                    color: #22244B;
+                    margin-bottom: .2rem;
+                }
+
+                .status {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    gap: .5rem;
+
+                    span {
+                        font-size: .75rem;
+                        font-weight: 400;
+                        text-transform: uppercase;
+                    }
+
+                    .bi {
+                        font-size: .5rem;
+                    }
+                }
+            }
+        }
+
+        .option-block {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
+
+            .clipboard-btn {
+                margin: 0;
+                line-height: 0;
+                border: none;
+
+                .bi {
+                    font-size: 1rem;
+                }
+            }
+
+            .cta-btn {
+                border-radius: 5px;
+                padding: 0.5rem 1rem;
+                font-size: .9rem;
+                font-weight: 300;
+                color: #22244B;
+
+                .bi {
+                    margin-right: .25rem;
+                }
+
+                &:hover {
+                    background-color: transparent;
+                    border: 1px solid #22244B;
+                }
+            }
+
+            .drop-btn {
+                border-radius: 5px;
+                padding: 0.5rem 1rem;
+                border: 1px solid #22244B;
+                font-size: .85rem;
+                font-weight: 300;
+                color: #fff;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 0.5rem;
+
+                .bi {
+                    color: #fff;
+                }
+            }
+
+            .dropdown-item {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 0.5rem;
+                font-size: .9rem;
+                font-weight: 300;
+                color: #22244B;
+
+                .bi {
+                    font-size: .9rem;
+                }
+            }
+        }
+    }
+
+    .nav-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+
+        &::after {
+            content: "";
+            width: 100%;
+            height: 1px;
+            background-color: #ddd;
+            position: absolute;
+            left: 0;
+            bottom: 4px;
+            z-index: 0;
+        }
+
+        .header-nav {
+            &__links {
+                display: flex;
+                flex-direction: row;
+                gap: 1rem;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            &__link {
+                display: block;
+                padding: 0.5rem 1rem;
+                font-size: 1.1rem;
+                font-weight: 300;
+                color: #8e91a2;
+                text-decoration: none;
+                border-bottom: 3px solid transparent;
+                position: relative;
+                z-index: 1;
+
+                &:hover,
+                &.active {
+                    color: #333;
+                }
+
+                &.active {
+                    border-bottom: 4px solid #008d13;
+                }
+            }
+        }
+
+        .job-status {
+            padding: 1rem;
+            font-size: .85rem;
+            font-weight: 300;
+
+            color: #5B5C79;
+
+            span {
+                font-weight: 500;
+                margin-right: .25rem;
+            }
+        }
+    }
+}

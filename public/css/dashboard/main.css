@@ -93,6 +93,7 @@ a {
   border-radius: 10px;
   width: 100%;
   max-width: 420px;
+  z-index: 99;
 }
 .premium-popup img {
   position: absolute;
