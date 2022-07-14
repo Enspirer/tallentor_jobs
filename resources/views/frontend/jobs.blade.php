@@ -385,7 +385,7 @@ class PriceRange extends HTMLElement {
     delete this.elements;
     delete this.currency;
 
-    console.log('Price Range: Disconnected', this);
+    // console.log('Price Range: Disconnected', this);
   }
   
   get from() {

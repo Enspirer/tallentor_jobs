@@ -381,7 +381,6 @@
   .about-hero .content-block {
     margin-bottom: 2rem;
   }
-
   .counter-section .inner-wrapper {
     flex-wrap: wrap;
   }
@@ -391,11 +390,9 @@
   .counter-section .inner-wrapper .counter-block:nth-child(odd) {
     background-color: unset;
   }
-
   .about-services .inner-wrapper {
     width: 100%;
   }
-
   .pro-services .services-block .wrapepr {
     flex-wrap: wrap;
   }
@@ -407,7 +404,6 @@
   .about-hero .inner-wrapper .content-block h2 br {
     display: none;
   }
-
   .pro-services .services-block .wrapepr .block {
     flex: unset;
   }
@@ -416,14 +412,12 @@
   .about-hero {
     padding: 7.5rem 0 10rem;
   }
-
   .about-image-block {
     margin-top: -15vh;
   }
   .about-image-block .inner-wrapper {
     gap: 0.5rem;
   }
-
   .pro-services .services-block {
     width: 90%;
   }
