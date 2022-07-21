@@ -19,9 +19,10 @@ class CreateEducationalDetailsTable extends Migration
             $table->text('profile_id')->nullable();
             $table->text('name')->nullable();
             $table->text('university')->nullable();
-            $table->text('duration')->nullable();
+            $table->text('start_date')->nullable();
+            $table->text('end_date')->nullable();
             $table->text('description')->nullable();
-            $table->text('status')->nullable();
+            $table->text('present')->nullable();
             $table->timestamps();
         });
     }

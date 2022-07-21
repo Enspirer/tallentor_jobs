@@ -158,18 +158,22 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td><span class="information-table__tag">UI Design</span></td>
-                                        <td><span class="information-table__text">Expert</span></td>
-                                    </tr>
-                                    <tr>
+                                    @if(count($personal_informations) != 0)
+                                        @foreach($personal_informations as $personal_information)
+                                            <tr>
+                                                <td><span class="information-table__tag">{{$personal_information->skill}}</span></td>
+                                                <td><span class="information-table__text">{{$personal_information->level}}</span></td>
+                                            </tr>
+                                        @endforeach
+                                    @endif
+                                    <!-- <tr>
                                         <td><span class="information-table__tag">UX Design</span></td>
                                         <td><span class="information-table__text">Intermediate</span></td>
                                     </tr>
                                     <tr>
                                         <td><span class="information-table__tag">Web Development</span></td>
                                         <td><span class="information-table__text">Beginner</span></td>
-                                    </tr>
+                                    </tr> -->
                                 </tbody>
                             </table>
                         </div>
@@ -272,26 +276,29 @@
                         <button type="button" class="experience-block__header-btn" data-bs-toggle="modal" data-bs-target="#addWorkExperienceModal"><i class="bi bi-plus-lg"></i> Add More</button>
                     </div>
                     <div class="experience-items">
-                        <div class="experience-items__item">
-                            <div class="title">UX Designer</div>
-                            <div class="subtitle"><i class="bi bi-building"></i>Tallentor Global</div>
-                            <div class="duration"><i class="bi bi-calendar-event"></i>14th Jan 2020 - Present</div>
-                            <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus officia, illo odio laudantium natus et voluptate aliquid, culpa fugiat quod ea cupiditate accusamus eos eum hic architecto numquam. Harum, temporibus.</p>
-                            <div class="button-block">
-                                <button type="button" class="edit-btn" data-bs-toggle="modal" data-bs-target="#editWorkExperienceModal">Edit</button>
-                                <button type="button" class="delete-btn" data-bs-toggle="modal" data-bs-target="#delWorkExperienceModal">Delete</button>
-                            </div>
-                        </div>
-                        <div class="experience-items__item">
-                            <div class="title">UX Designer</div>
-                            <div class="subtitle"><i class="bi bi-building"></i>Tallentor Global</div>
-                            <div class="duration"><i class="bi bi-calendar-event"></i>14th Jan 2020 - Present</div>
-                            <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus officia, illo odio laudantium natus et voluptate aliquid, culpa fugiat quod ea cupiditate accusamus eos eum hic architecto numquam. Harum, temporibus.</p>
-                            <div class="button-block">
-                                <button type="button" class="edit-btn" data-bs-toggle="modal" data-bs-target="#editWorkExperienceModal">Edit</button>
-                                <button type="button" class="delete-btn" data-bs-toggle="modal" data-bs-target="#delWorkExperienceModal">Delete</button>
-                            </div>
-                        </div>
+
+                        @if(count($work_experiences) != 0)
+                            @foreach($work_experiences as $work_expirence)
+                                <div class="experience-items__item">
+                                    <div class="title">{{$work_expirence->name}}</div>
+                                    <div class="subtitle"><i class="bi bi-building"></i>{{$work_expirence->company}}</div>
+                                    <div class="duration"><i class="bi bi-calendar-event"></i>{{ date('d M Y', strtotime($work_expirence->start_date)) }} - 
+                                    @if($work_expirence->present == 'on')
+                                        Present
+                                    @else
+                                        {{ date('d M Y', strtotime($work_expirence->end_date)) }}
+                                    @endif
+                                    </div>
+
+                                    <p class="description">{!!$work_expirence->description!!}</p>
+                                    <div class="button-block">
+                                        <button type="button" class="edit-btn" data-bs-toggle="modal" data-bs-target="#editWorkExperienceModal{{$work_expirence->id}}">Edit</button>
+                                        <a href="{{ route('frontend.user.work_experience.destroy', $work_expirence->id) }}" class="delete delete-btn" data-bs-toggle="modal" data-bs-target="#delWorkExperienceModal">Delete</a>
+                                    </div>
+                                </div>
+                            @endforeach
+                        @endif
+                       
                     </div>
                 </div>
             </div>
@@ -302,26 +309,30 @@
                         <button type="button" class="experience-block__header-btn" data-bs-toggle="modal" data-bs-target="#addEduDetailsModal"><i class="bi bi-plus-lg"></i> Add More</button>
                     </div>
                     <div class="experience-items">
-                        <div class="experience-items__item">
-                            <div class="title">Bachelor of Software Engineering</div>
-                            <div class="subtitle"><i class="bi bi-building"></i>University Of Colombo</div>
-                            <div class="duration"><i class="bi bi-calendar-event"></i>14th Jan 2020 - Present</div>
-                            <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus officia, illo odio laudantium natus et voluptate aliquid, culpa fugiat quod ea cupiditate accusamus eos eum hic architecto numquam. Harum, temporibus.</p>
-                            <div class="button-block">
-                                <button type="button" class="edit-btn" data-bs-toggle="modal" data-bs-target="#editEduDetailsModal">Edit</button>
-                                <button type="button" class="delete-btn" data-bs-toggle="modal" data-bs-target="#delEduModal">Delete</button>
-                            </div>
-                        </div>
-                        <div class="experience-items__item">
-                            <div class="title">Bachelor of Software Engineering</div>
-                            <div class="subtitle"><i class="bi bi-building"></i>University Of Colombo</div>
-                            <div class="duration"><i class="bi bi-calendar-event"></i>14th Jan 2020 - Present</div>
-                            <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus officia, illo odio laudantium natus et voluptate aliquid, culpa fugiat quod ea cupiditate accusamus eos eum hic architecto numquam. Harum, temporibus.</p>
-                            <div class="button-block">
-                                <button type="button" class="edit-btn" data-bs-toggle="modal" data-bs-target="#editEduDetailsModal">Edit</button>
-                                <button type="button" class="delete-btn" data-bs-toggle="modal" data-bs-target="#delEduModal">Delete</button>
-                            </div>
-                        </div>
+
+                    
+                        @if(count($educational_details) != 0)
+                            @foreach($educational_details as $educational_detail)
+                                <div class="experience-items__item">
+                                    <div class="title">{{$educational_detail->name}}</div>
+                                    <div class="subtitle"><i class="bi bi-building"></i>{{$educational_detail->university}}</div>
+                                    <div class="duration"><i class="bi bi-calendar-event"></i>{{ date('d M Y', strtotime($educational_detail->start_date)) }} - 
+                                    @if($educational_detail->present == 'on')
+                                        Present
+                                    @else
+                                        {{ date('d M Y', strtotime($educational_detail->end_date)) }}
+                                    @endif
+                                    </div>
+
+                                    <p class="description">{!!$educational_detail->description!!}</p>
+                                    <div class="button-block">
+                                        <button type="button" class="edit-btn" data-bs-toggle="modal" data-bs-target="#editEduDetailsModal{{$educational_detail->id}}">Edit</button>
+                                        <a href="{{ route('frontend.user.educational_details.destroy', $educational_detail->id) }}" class="delete_edu delete-btn" data-bs-toggle="modal" data-bs-target="#delEduModal">Delete</a>
+                                    </div>
+                                </div>
+                            @endforeach
+                        @endif
+                       
                     </div>
                 </div>
             </div>
@@ -332,26 +343,29 @@
                         <button type="button" class="experience-block__header-btn" data-bs-toggle="modal" data-bs-target="#addProjectsModal"><i class="bi bi-plus-lg"></i> Add More</button>
                     </div>
                     <div class="experience-items">
-                        <div class="experience-items__item">
-                            <div class="title">Sample Project</div>
-                            <div class="subtitle"><i class="bi bi-building"></i>Sample Company</div>
-                            <div class="duration"><i class="bi bi-calendar-event"></i>14th Jan 2020 - Present</div>
-                            <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus officia, illo odio laudantium natus et voluptate aliquid, culpa fugiat quod ea cupiditate accusamus eos eum hic architecto numquam. Harum, temporibus.</p>
-                            <div class="button-block">
-                                <button type="button" class="edit-btn" data-bs-toggle="modal" data-bs-target="#editProjectsModal">Edit</button>
-                                <button type="button" class="delete-btn" data-bs-toggle="modal" data-bs-target="#delProjectsModal">Delete</button>
-                            </div>
-                        </div>
-                        <div class="experience-items__item">
-                            <div class="title">Sample Project</div>
-                            <div class="subtitle"><i class="bi bi-building"></i>Sample Company</div>
-                            <div class="duration"><i class="bi bi-calendar-event"></i>14th Jan 2020 - Present</div>
-                            <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus officia, illo odio laudantium natus et voluptate aliquid, culpa fugiat quod ea cupiditate accusamus eos eum hic architecto numquam. Harum, temporibus.</p>
-                            <div class="button-block">
-                                <button type="button" class="edit-btn" data-bs-toggle="modal" data-bs-target="#editProjectsModal">Edit</button>
-                                <button type="button" class="delete-btn" data-bs-toggle="modal" data-bs-target="#delProjectsModal">Delete</button>
-                            </div>
-                        </div>
+
+                        @if(count($profile_projects) != 0)
+                            @foreach($profile_projects as $profile_project)
+                                <div class="experience-items__item">
+                                    <div class="title">{{$profile_project->name}}</div>
+                                    <div class="subtitle"><i class="bi bi-building"></i>{{$profile_project->company}}</div>
+                                    <div class="duration"><i class="bi bi-calendar-event"></i>{{ date('d M Y', strtotime($profile_project->start_date)) }} - 
+                                    @if($profile_project->present == 'on')
+                                        Present
+                                    @else
+                                        {{ date('d M Y', strtotime($profile_project->end_date)) }}
+                                    @endif
+                                    </div>
+
+                                    <p class="description">{!!$profile_project->description!!}</p>
+                                    <div class="button-block">
+                                        <button type="button" class="edit-btn" data-bs-toggle="modal" data-bs-target="#editProjectsModal{{$profile_project->id}}">Edit</button>
+                                        <a href="{{ route('frontend.user.profile_projects.destroy', $profile_project->id) }}" class="delete_project delete-btn" data-bs-toggle="modal" data-bs-target="#delProjectsModal">Delete</a>
+                                    </div>
+                                </div>
+                            @endforeach
+                        @endif
+
                     </div>
                 </div>
             </div>
@@ -727,27 +741,32 @@
         <h5 class="modal-title" id="addSkillModalLabel">Add Skills</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        <div class="row">
-            <div class="col-md-6">
-                <label class="form-label">Skill :</label>
-                <input type="text" class="form-control" name="skill">
+        <form action="{{route('frontend.user.skill.add')}}" method="post" enctype="multipart/form-data">
+        {{csrf_field()}}
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label">Skill :</label>
+                        <input type="text" class="form-control" name="skill" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Level :</label>
+                        <select name="level" class="form-control" required>
+                            <option value="" selected disabled>Select...</option>
+                            <option value="Beginner">Beginner</option>
+                            <option value="Intermediate">Intermediate</option>
+                            <option value="Expert">Expert</option>
+                        </select>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6">
-                <label class="form-label">Level :</label>
-                <select name="level" class="form-control">
-                    <option selected disabled>Select...</option>
-                    <option>Beginner</option>
-                    <option>Intermediate</option>
-                    <option>Expert</option>
-                </select>
+            <div class="modal-footer">
+                <input type="hidden" name="hidden_profile_id" value="{{$profile->id}}">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-success">Add Skill</button>
             </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Add Skill</button>
-      </div>
+        </form>
+
     </div>
   </div>
 </div>
@@ -760,75 +779,74 @@
         <h5 class="modal-title" id="editSkillModalLabel">Edit Skills</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      
+        <div class="modal-body">
+
+            @if(count($personal_informations) != 0)
+                @foreach($personal_informations as $personal_information)
+                                        
+                <form action="{{route('frontend.user.skill.update')}}" method="post" enctype="multipart/form-data">
+                {{csrf_field()}}
+                    <div class="skill-row">
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <label class="form-label">Skill :</label>
+                                <input type="text" class="form-control" name="skill" value="{{$personal_information->skill}}" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Level :</label>
+                                <select name="level" class="form-control" required>
+                                    <option value="" selected disabled>Select...</option>
+                                    <option value="Beginner" {{$personal_information->level == 'Beginner' ? "selected" : "" }}>Beginner</option>
+                                    <option value="Intermediate" {{$personal_information->level == 'Intermediate' ? "selected" : "" }}>Intermediate</option>
+                                    <option value="Expert" {{$personal_information->level == 'Expert' ? "selected" : "" }}>Expert</option>
+                                </select>
+                            </div>
+                            <input type="hidden" name="hidden_profile_id" value="{{$profile->id}}">
+                            <input type="hidden" name="hidden_id" value="{{$personal_information->id}}">
+
+                            <div class="col-md-2 d-flex align-items-end">                
+                                <a href="{{ route('frontend.user.skill.destroy', $personal_information->id) }}" class="delete_skill btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#delskillModal">Delete</a>
+                            </div>
+                            <div class="col-md-2 d-flex align-items-end">                           
+                                <button type="submit" class="btn btn-outline-success">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                @endforeach
+            @endif
+            
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Delete Projects Modal -->
+
+<div class="modal fade" id="delskillModal" tabindex="-1" aria-labelledby="delskillModalLabel" aria-hidden="true">
+  <div class="modal-dialog  modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="delskillModalLabel">Delete ?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
       <div class="modal-body">
-        <div class="skill-row">
-            <div class="row g-3">
-                <div class="col-md-5">
-                    <label class="form-label">Skill :</label>
-                    <input type="text" class="form-control" name="skill">
-                </div>
-                <div class="col-md-4">
-                    <label class="form-label">Level :</label>
-                    <select name="level" class="form-control">
-                        <option selected disabled>Select...</option>
-                        <option>Beginner</option>
-                        <option>Intermediate</option>
-                        <option>Expert</option>
-                    </select>
-                </div>
-                <div class="col-md-3 d-flex align-items-end">
-                    <button type="button" class="btn btn-outline-danger">Delete</button>
-                </div>
-            </div>
-        </div>
-        <div class="skill-row">
-            <div class="row g-3">
-                <div class="col-md-5">
-                    <label class="form-label">Skill :</label>
-                    <input type="text" class="form-control" name="skill">
-                </div>
-                <div class="col-md-4">
-                    <label class="form-label">Level :</label>
-                    <select name="level" class="form-control">
-                        <option selected disabled>Select...</option>
-                        <option>Beginner</option>
-                        <option>Intermediate</option>
-                        <option>Expert</option>
-                    </select>
-                </div>
-                <div class="col-md-3 d-flex align-items-end">
-                    <button type="button" class="btn btn-outline-danger">Delete</button>
-                </div>
-            </div>
-        </div>
-        <div class="skill-row">
-            <div class="row g-3">
-                <div class="col-md-5">
-                    <label class="form-label">Skill :</label>
-                    <input type="text" class="form-control" name="skill">
-                </div>
-                <div class="col-md-4">
-                    <label class="form-label">Level :</label>
-                    <select name="level" class="form-control">
-                        <option selected disabled>Select...</option>
-                        <option>Beginner</option>
-                        <option>Intermediate</option>
-                        <option>Expert</option>
-                    </select>
-                </div>
-                <div class="col-md-3 d-flex align-items-end">
-                    <button type="button" class="btn btn-outline-danger">Delete</button>
-                </div>
-            </div>
-        </div>
+        Are you sure want to delete?
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <a href="" class="btn btn-danger">Delete</a>
       </div>
     </div>
   </div>
 </div>
+
 
 <!-- Job Preference Modal -->
 <div class="modal fade" id="jobPreferenceModal" tabindex="-1" aria-labelledby="jobPreferenceModalLabel" aria-hidden="true">
@@ -959,6 +977,7 @@
   </div>
 </div>
 
+
 <!-- Add Work Experience Modal -->
 <div class="modal fade" id="addWorkExperienceModal" tabindex="-1" aria-labelledby="addWorkExperienceModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -981,7 +1000,7 @@
                     </div>
                     <div class="col-12">
                         <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="present_work" name="present" value="Yes">
+                            <input class="form-check-input" type="checkbox" id="present_work" onchange="myFunction()" name="present">
                             <label class="form-check-label" for="present_work">
                                 I am currently working in this role
                             </label>
@@ -993,16 +1012,16 @@
                     </div>
                     <div class="col-md-6">
                         <label class="form-label">End Date :</label>
-                        <input type="date" class="form-control" name="end_date" required>
+                        <input type="date" class="form-control" id="work_end_date" name="end_date" required>
                     </div>
                     <div class="col-12">
                         <label class="form-label">Description :</label>
-                        <textarea name="description" class="form-control" id="editor_work_experience"><br><br></textarea>
+                        <textarea name="description" class="form-control" id="editor_work_experience"></textarea>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <input type="hidden" name="hidden_id" value="{{$profile->id}}">
+                <input type="hidden" name="hidden_profile_id" value="{{$profile->id}}">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-success">Add</button>
             </div>
@@ -1012,52 +1031,66 @@
 </div>
 
 <!-- Edit Work Experience Modal -->
-<div class="modal fade" id="editWorkExperienceModal" tabindex="-1" aria-labelledby="editWorkExperienceModalLabel" aria-hidden="true">
-  <div class="modal-dialog  modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="editWorkExperienceModalLabel">Edit Work Experience</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="row g-3">
-            <div class="col-12">
-                <label class="form-label">Designation :</label>
-                <input type="text" class="form-control" name="designation">
-            </div>
-            <div class="col-12">
-                <label class="form-label">Company :</label>
-                <input type="text" class="form-control" name="company">
-            </div>
-            <div class="col-12">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="present">
-                    <label class="form-check-label">
-                        I am currently working in this role
-                    </label>
+
+@if(count($work_experiences) != 0)
+    @foreach($work_experiences as $work_expirence)
+        <div class="modal fade" id="editWorkExperienceModal{{$work_expirence->id}}" tabindex="-1" aria-labelledby="editWorkExperienceModalLabel{{$work_expirence->id}}" aria-hidden="true">
+            <div class="modal-dialog  modal-dialog-centered">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editWorkExperienceModalLabel{{$work_expirence->id}}">Edit Work Experience</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                    <form action="{{route('frontend.user.work_experience.update')}}" method="post" enctype="multipart/form-data">
+                    {{csrf_field()}}
+                        <div class="modal-body">
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <label class="form-label">Designation :</label>
+                                    <input type="text" class="form-control" name="designation" value="{{$work_expirence->name}}" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Company :</label>
+                                    <input type="text" class="form-control" name="company" value="{{$work_expirence->company}}" required>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check form-switch">
+                                        @if($work_expirence->present == 'on')
+                                            <input class="form-check-input" type="checkbox" id="present_work_edit{{$work_expirence->id}}" onchange="myFunctionEdit()" name="present" checked>
+                                        @else
+                                            <input class="form-check-input" type="checkbox" id="present_work_edit{{$work_expirence->id}}" onchange="myFunctionEdit()" name="present">
+                                        @endif
+                                        <label class="form-check-label" for="present_work_edit{{$work_expirence->id}}">
+                                            I am currently working in this role
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Start Date :</label>
+                                    <input type="date" class="form-control" name="start_date" value="{{$work_expirence->start_date}}" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">End Date :</label>
+                                    <input type="date" class="form-control" id="work_end_date_edit{{$work_expirence->id}}" value="{{$work_expirence->end_date}}" name="end_date" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Description :</label>
+                                    <textarea name="description" class="form-control" id="editor_work_experience_edit{{$work_expirence->id}}">{!!$work_expirence->description!!}</textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="hidden" name="hidden_profile_id" value="{{$profile->id}}">
+                            <input type="hidden" name="hidden_id" value="{{$work_expirence->id}}">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-success">Update</button>
+                        </div>
+                    </form>
                 </div>
             </div>
-            <div class="col-md-6">
-                <label class="form-label">Start Date :</label>
-                <input type="date" class="form-control" name="start_date">
-            </div>
-            <div class="col-md-6">
-                <label class="form-label">End Date :</label>
-                <input type="date" class="form-control" name="end_date">
-            </div>
-            <div class="col-12">
-                <label class="form-label">Description :</label>
-                <textarea name="description" class="form-control" rows="4"></textarea>
-            </div>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+    @endforeach
+@endif
 
 <!-- Delete Work Experience Modal -->
 <div class="modal fade" id="delWorkExperienceModal" tabindex="-1" aria-labelledby="delWorkExperienceModalLabel" aria-hidden="true">
@@ -1065,13 +1098,14 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="delWorkExperienceModalLabel">Delete ?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         Are you sure want to delete?
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-danger">Delete</button>
+        <a href="" class="btn btn-danger">Delete</a>
       </div>
     </div>
   </div>
@@ -1085,229 +1119,452 @@
         <h5 class="modal-title" id="addEduDetailsModalLabel">Add Educational Details</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        <div class="row g-3">
-            <div class="col-12">
-                <label class="form-label">Title :</label>
-                <input type="text" class="form-control" name="title">
-            </div>
-            <div class="col-12">
-                <label class="form-label">Institute :</label>
-                <input type="text" class="form-control" name="institute">
-            </div>
-            <div class="col-12">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="present">
-                    <label class="form-check-label">
-                        I am currently studying
-                    </label>
+        <form action="{{route('frontend.user.educational_details.add')}}" method="post" enctype="multipart/form-data">
+        {{csrf_field()}}
+            <div class="modal-body">
+                <div class="row g-3">
+                    <div class="col-12">
+                        <label class="form-label">Title :</label>
+                        <input type="text" class="form-control" name="title" required>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">Institute :</label>
+                        <input type="text" class="form-control" name="institute" required>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="present_edu" onchange="myFunctionEdu()" name="present">
+                            <label class="form-check-label" for="present_edu">
+                                I am currently working in this role
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Start Date :</label>
+                        <input type="date" class="form-control" name="start_date" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">End Date :</label>
+                        <input type="date" class="form-control" id="edu_end_date" name="end_date" required>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">Description :</label>
+                        <textarea name="description" class="form-control" id="editor_edu"></textarea>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <label class="form-label">Start Date :</label>
-                <input type="date" class="form-control" name="start_date">
+            <div class="modal-footer">
+                <input type="hidden" name="hidden_profile_id" value="{{$profile->id}}">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-success">Add</button>
             </div>
-            <div class="col-md-6">
-                <label class="form-label">End Date :</label>
-                <input type="date" class="form-control" name="end_date">
-            </div>
-            <div class="col-12">
-                <label class="form-label">Description :</label>
-                <textarea name="description" class="form-control" rows="4"></textarea>
-            </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Add</button>
-      </div>
+        </form>
     </div>
   </div>
 </div>
 
-<!-- Edit Educational Details Modal -->
-<div class="modal fade" id="editEduDetailsModal" tabindex="-1" aria-labelledby="editEduDetailsModalLabel" aria-hidden="true">
-  <div class="modal-dialog  modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="editEduDetailsModalLabel">Edit Educational Details</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="row g-3">
-            <div class="col-12">
-                <label class="form-label">Title :</label>
-                <input type="text" class="form-control" name="title">
-            </div>
-            <div class="col-12">
-                <label class="form-label">Institute :</label>
-                <input type="text" class="form-control" name="institute">
-            </div>
-            <div class="col-12">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="present">
-                    <label class="form-check-label">
-                        I am currently studying
-                    </label>
+@if(count($educational_details) != 0)
+    @foreach($educational_details as $educational_detail)
+
+        <!-- Edit Educational Details Modal -->
+        <div class="modal fade" id="editEduDetailsModal{{$educational_detail->id}}" tabindex="-1" aria-labelledby="editEduDetailsModalLabel{{$educational_detail->id}}" aria-hidden="true">
+            <div class="modal-dialog  modal-dialog-centered">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editEduDetailsModalLabel{{$educational_detail->id}}">Edit Educational Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                
+                <form action="{{route('frontend.user.educational_details.update')}}" method="post" enctype="multipart/form-data">
+                {{csrf_field()}}
+                    <div class="modal-body">
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label class="form-label">Title :</label>
+                                <input type="text" class="form-control" name="title" value="{{$educational_detail->name}}" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Institute :</label>
+                                <input type="text" class="form-control" name="institute" value="{{$educational_detail->university}}" required>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check form-switch">
+                                    @if($educational_detail->present == 'on')
+                                        <input class="form-check-input" type="checkbox" id="present_edu_edit{{$educational_detail->id}}" onchange="myFunctionEduEdit()" name="present" checked>
+                                    @else
+                                        <input class="form-check-input" type="checkbox" id="present_edu_edit{{$educational_detail->id}}" onchange="myFunctionEduEdit()" name="present">
+                                    @endif
+                                    <label class="form-check-label" for="present_edu_edit{{$educational_detail->id}}">
+                                        I am currently working in this role
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Start Date :</label>
+                                <input type="date" class="form-control" name="start_date" value="{{$educational_detail->start_date}}" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">End Date :</label>
+                                <input type="date" class="form-control" id="edu_end_date_edit{{$educational_detail->id}}" value="{{$educational_detail->end_date}}" name="end_date" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Description :</label>
+                                <textarea name="description" class="form-control" id="editor_edu_edit{{$educational_detail->id}}">{!!$educational_detail->description!!}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="hidden" name="hidden_profile_id" value="{{$profile->id}}">
+                        <input type="hidden" name="hidden_id" value="{{$educational_detail->id}}">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-success">Update</button>
+                    </div>
+                </form>
                 </div>
             </div>
-            <div class="col-md-6">
-                <label class="form-label">Start Date :</label>
-                <input type="date" class="form-control" name="start_date">
-            </div>
-            <div class="col-md-6">
-                <label class="form-label">End Date :</label>
-                <input type="date" class="form-control" name="end_date">
-            </div>
-            <div class="col-12">
-                <label class="form-label">Description :</label>
-                <textarea name="description" class="form-control" rows="4"></textarea>
-            </div>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+    @endforeach
+@endif
 
 <!-- Delete Educational Details Modal -->
-<div class="modal fade" id="delEduModal" tabindex="-1" aria-labelledby="delEduModalLabel" aria-hidden="true">
+
+  <div class="modal fade" id="delEduModal" tabindex="-1" aria-labelledby="delEduModalLabel" aria-hidden="true">
   <div class="modal-dialog  modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="delEduModalLabel">Delete ?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         Are you sure want to delete?
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-danger">Delete</button>
+        <a href="" class="btn btn-danger">Delete</a>
       </div>
     </div>
   </div>
 </div>
+
 
 <!-- Add Projects Modal -->
 <div class="modal fade" id="addProjectsModal" tabindex="-1" aria-labelledby="addProjectsModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="addProjectsModalLabel">Add Projects</h5>
+        <h5 class="modal-title" id="addProjectsModalLabel">Add Project</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        <div class="row g-3">
-            <div class="col-12">
-                <label class="form-label">Project Name :</label>
-                <input type="text" class="form-control" name="project_name">
-            </div>
-            <div class="col-12">
-                <label class="form-label">Company :</label>
-                <input type="text" class="form-control" name="company">
-            </div>
-            <div class="col-12">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="present">
-                    <label class="form-check-label">
-                        I am currently working on this project
-                    </label>
+      <form action="{{route('frontend.user.profile_projects.add')}}" method="post" enctype="multipart/form-data">
+        {{csrf_field()}}
+            <div class="modal-body">
+                <div class="row g-3">
+                    <div class="col-12">
+                        <label class="form-label">Project Name :</label>
+                        <input type="text" class="form-control" name="name" required>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">Company :</label>
+                        <input type="text" class="form-control" name="company" required>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="present_profile_project" onchange="myFunctionProject()" name="present">
+                            <label class="form-check-label" for="present_profile_project">
+                                I am currently working in this role
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Start Date :</label>
+                        <input type="date" class="form-control" name="start_date" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">End Date :</label>
+                        <input type="date" class="form-control" id="profile_project_end_date" name="end_date" required>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">Description :</label>
+                        <textarea name="description" class="form-control" id="editor_profile_project"></textarea>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <label class="form-label">Start Date :</label>
-                <input type="date" class="form-control" name="start_date">
+            <div class="modal-footer">
+                <input type="hidden" name="hidden_profile_id" value="{{$profile->id}}">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-success">Add</button>
             </div>
-            <div class="col-md-6">
-                <label class="form-label">End Date :</label>
-                <input type="date" class="form-control" name="end_date">
-            </div>
-            <div class="col-12">
-                <label class="form-label">Description :</label>
-                <textarea name="description" class="form-control" rows="4"></textarea>
-            </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Add</button>
-      </div>
+        </form>
     </div>
   </div>
 </div>
 
-<!-- Edit Projects Modal -->
-<div class="modal fade" id="editProjectsModal" tabindex="-1" aria-labelledby="editProjectsModalLabel" aria-hidden="true">
-  <div class="modal-dialog  modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="editProjectsModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="row g-3">
-            <div class="col-12">
-                <label class="form-label">Project Name :</label>
-                <input type="text" class="form-control" name="project_name">
-            </div>
-            <div class="col-12">
-                <label class="form-label">Company :</label>
-                <input type="text" class="form-control" name="company">
-            </div>
-            <div class="col-12">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="present">
-                    <label class="form-check-label">
-                        I am currently working on this project
-                    </label>
+
+@if(count($profile_projects) != 0)
+    @foreach($profile_projects as $profile_project)
+        <div class="modal fade" id="editProjectsModal{{$profile_project->id}}" tabindex="-1" aria-labelledby="editProjectsModalLabel{{$profile_project->id}}" aria-hidden="true">
+            <div class="modal-dialog  modal-dialog-centered">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editProjectsModalLabel{{$profile_project->id}}">Edit Project</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                    <form action="{{route('frontend.user.profile_projects.update')}}" method="post" enctype="multipart/form-data">
+                    {{csrf_field()}}
+                        <div class="modal-body">
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <label class="form-label">Project Name :</label>
+                                    <input type="text" class="form-control" name="name" value="{{$profile_project->name}}" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Company :</label>
+                                    <input type="text" class="form-control" name="company" value="{{$profile_project->company}}" required>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check form-switch">
+                                        @if($profile_project->present == 'on')
+                                            <input class="form-check-input" type="checkbox" id="present_profile_project_edit{{$profile_project->id}}" onchange="myFunctionProjectEdit()" name="present" checked>
+                                        @else
+                                            <input class="form-check-input" type="checkbox" id="present_profile_project_edit{{$profile_project->id}}" onchange="myFunctionProjectEdit()" name="present">
+                                        @endif
+                                        <label class="form-check-label" for="present_profile_project_edit{{$profile_project->id}}">
+                                            I am currently working in this role
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Start Date :</label>
+                                    <input type="date" class="form-control" name="start_date" value="{{$profile_project->start_date}}" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">End Date :</label>
+                                    <input type="date" class="form-control" id="profile_project_end_date_edit{{$profile_project->id}}" value="{{$profile_project->end_date}}" name="end_date" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Description :</label>
+                                    <textarea name="description" class="form-control" id="editor_profile_project_edit{{$profile_project->id}}">{!!$profile_project->description!!}</textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="hidden" name="hidden_profile_id" value="{{$profile->id}}">
+                            <input type="hidden" name="hidden_id" value="{{$profile_project->id}}">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-success">Update</button>
+                        </div>
+                    </form>
                 </div>
             </div>
-            <div class="col-md-6">
-                <label class="form-label">Start Date :</label>
-                <input type="date" class="form-control" name="start_date">
-            </div>
-            <div class="col-md-6">
-                <label class="form-label">End Date :</label>
-                <input type="date" class="form-control" name="end_date">
-            </div>
-            <div class="col-12">
-                <label class="form-label">Description :</label>
-                <textarea name="description" class="form-control" rows="4"></textarea>
-            </div>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+    @endforeach
+@endif
+
+
 
 <!-- Delete Projects Modal -->
+
 <div class="modal fade" id="delProjectsModal" tabindex="-1" aria-labelledby="delProjectsModalLabel" aria-hidden="true">
   <div class="modal-dialog  modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="delProjectsModalLabel">Delete ?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         Are you sure want to delete?
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-danger">Delete</button>
+        <a href="" class="btn btn-danger">Delete</a>
       </div>
     </div>
   </div>
 </div>
-  
+
+
 @endsection
 
 @push('after-scripts')
+
+<script>
+    function myFunction() {
+
+        present_work = $('#present_work:checked').val();
+        if (present_work == 'on') {
+            $('#work_end_date').attr('disabled', 'disabled');
+        } else {
+            $('#work_end_date').removeAttr('disabled');
+        }  
+
+    }
+</script>
+
+@if(count($work_experiences) != 0)
+    @foreach($work_experiences as $work_expirence)
+        <script>
+            function myFunctionEdit() {
+                present_work_edit = $('#present_work_edit{{$work_expirence->id}}:checked').val();
+                // console.log(present_work_edit);
+
+                if (present_work_edit == 'on') {
+                    $('#work_end_date_edit{{$work_expirence->id}}').attr('disabled', 'disabled');
+                } else {
+                    $('#work_end_date_edit{{$work_expirence->id}}').removeAttr('disabled');
+                }  
+            }
+        </script>
+    @endforeach
+@endif
+
+@if(count($work_experiences) != 0)
+    @foreach($work_experiences as $work_expirence)
+        <script>
+            $(document).ready(function () {
+
+                $('#present_work_edit{{$work_expirence->id}}').ready(function () {
+
+                    present_work_edit_load = $('#present_work_edit{{$work_expirence->id}}:checked').val();
+                    if (present_work_edit_load == 'on') {
+                        $('#work_end_date_edit{{$work_expirence->id}}').attr('disabled', 'disabled');
+                    } else {
+                        $('#work_end_date_edit{{$work_expirence->id}}').removeAttr('disabled');
+                    }  
+                });
+            
+            });
+        </script>
+    @endforeach
+@endif
+
+<!-- ************************************************************************************ -->
+
+
+<script>
+    function myFunctionEdu() {
+
+        present_edu = $('#present_edu:checked').val();
+        if (present_edu == 'on') {
+            $('#edu_end_date').attr('disabled', 'disabled');
+        } else {
+            $('#edu_end_date').removeAttr('disabled');
+        }  
+
+    }
+</script>
+
+@if(count($educational_details) != 0)
+    @foreach($educational_details as $educational_detail)
+        <script>
+            function myFunctionEduEdit() {
+                present_edu_edit = $('#present_edu_edit{{$educational_detail->id}}:checked').val();
+                // console.log(present_edu_edit);
+
+                if (present_edu_edit == 'on') {
+                    $('#edu_end_date_edit{{$educational_detail->id}}').attr('disabled', 'disabled');
+                } else {
+                    $('#edu_end_date_edit{{$educational_detail->id}}').removeAttr('disabled');
+                }  
+            }
+        </script>
+    @endforeach
+@endif
+
+@if(count($educational_details) != 0)
+    @foreach($educational_details as $educational_detail)
+        <script>
+            $(document).ready(function () {
+
+                $('#present_edu_edit{{$educational_detail->id}}').ready(function () {
+
+                    present_edu_edit_load = $('#present_edu_edit{{$educational_detail->id}}:checked').val();
+                    if (present_edu_edit_load == 'on') {
+                        $('#edu_end_date_edit{{$educational_detail->id}}').attr('disabled', 'disabled');
+                    } else {
+                        $('#edu_end_date_edit{{$educational_detail->id}}').removeAttr('disabled');
+                    }  
+                });
+            
+            });
+        </script>
+    @endforeach
+@endif
+
+<!-- ************************************************************************************* -->
+
+
+<script>
+    function myFunctionProject() {
+
+        present_profile_project = $('#present_profile_project:checked').val();
+        if (present_profile_project == 'on') {
+            $('#profile_project_end_date').attr('disabled', 'disabled');
+        } else {
+            $('#profile_project_end_date').removeAttr('disabled');
+        }  
+
+    }
+</script>
+
+@if(count($profile_projects) != 0)
+    @foreach($profile_projects as $profile_project)
+        <script>
+            function myFunctionProjectEdit() {
+                present_profile_project_edit = $('#present_profile_project_edit{{$profile_project->id}}:checked').val();
+                // console.log(present_profile_project_edit);
+
+                if (present_profile_project_edit == 'on') {
+                    $('#profile_project_end_date_edit{{$profile_project->id}}').attr('disabled', 'disabled');
+                } else {
+                    $('#profile_project_end_date_edit{{$profile_project->id}}').removeAttr('disabled');
+                }  
+            }
+        </script>
+    @endforeach
+@endif
+
+@if(count($profile_projects) != 0)
+    @foreach($profile_projects as $profile_project)
+        <script>
+            $(document).ready(function () {
+
+                present_profile_project_edit = $('#present_profile_project_edit{{$profile_project->id}}:checked').val();
+                // console.log(present_profile_project_edit);
+
+                if (present_profile_project_edit == 'on') {
+                    $('#profile_project_end_date_edit{{$profile_project->id}}').attr('disabled', 'disabled');
+                } else {
+                    $('#profile_project_end_date_edit{{$profile_project->id}}').removeAttr('disabled');
+                }
+            
+            });
+        </script>
+    @endforeach
+@endif
+
+
+
+<script>
+    $('.delete').on('click', function() {
+        let link = $(this).attr('href');
+        $('.modal-footer a').attr('href', link);
+    })
+
+    $('.delete_edu').on('click', function() {
+        let link = $(this).attr('href');
+        $('.modal-footer a').attr('href', link);
+    })
+
+    $('.delete_project').on('click', function() {
+        let link = $(this).attr('href');
+        $('.modal-footer a').attr('href', link);
+    })
+
+    $('.delete_skill').on('click', function() {
+        let link = $(this).attr('href');
+        $('.modal-footer a').attr('href', link);
+    })
+</script>
 
 <!-- Radial Progress Fuction -->
 <script>
@@ -1399,8 +1656,86 @@ function remove(element, tag) {
 		.catch( err => {
 			console.error( err.stack );
 		} );
-
-    
 </script>
+
+@if(count($work_experiences) != 0)
+    @foreach($work_experiences as $work_expirence)
+        <script>
+            ClassicEditor
+                .create( document.querySelector( '#editor_work_experience_edit{{$work_expirence->id}}' ), {
+                    // toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
+                } )
+                .then( editor => {
+                    window.editor = editor;
+                } )
+                .catch( err => {
+                    console.error( err.stack );
+                } );
+        </script>
+    @endforeach
+@endif
+
+
+<script>
+	ClassicEditor
+		.create( document.querySelector( '#editor_edu' ), {
+			// toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
+		} )
+		.then( editor => {
+			window.editor = editor;
+		} )
+		.catch( err => {
+			console.error( err.stack );
+		} );
+</script>
+
+@if(count($educational_details) != 0)
+    @foreach($educational_details as $educational_detail)
+        <script>
+            ClassicEditor
+                .create( document.querySelector( '#editor_edu_edit{{$educational_detail->id}}' ), {
+                    // toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
+                } )
+                .then( editor => {
+                    window.editor = editor;
+                } )
+                .catch( err => {
+                    console.error( err.stack );
+                } );
+        </script>
+    @endforeach
+@endif
+
+
+<script>
+	ClassicEditor
+		.create( document.querySelector( '#editor_profile_project' ), {
+			// toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
+		} )
+		.then( editor => {
+			window.editor = editor;
+		} )
+		.catch( err => {
+			console.error( err.stack );
+		} );
+</script>
+
+@if(count($profile_projects) != 0)
+    @foreach($profile_projects as $profile_project)
+        <script>
+            ClassicEditor
+                .create( document.querySelector( '#editor_profile_project_edit{{$profile_project->id}}' ), {
+                    // toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
+                } )
+                .then( editor => {
+                    window.editor = editor;
+                } )
+                .catch( err => {
+                    console.error( err.stack );
+                } );
+        </script>
+    @endforeach
+@endif
+
 
 @endpush

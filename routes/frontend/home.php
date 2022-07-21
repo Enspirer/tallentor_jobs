@@ -51,10 +51,26 @@ Route::group(['middleware' => ['auth', 'password_expires']], function () {
         // User Profile Specific
         Route::patch('profile/update', [ProfileController::class, 'update'])->name('profile.update');
 
-        Route::get('profile/{id}', [DashboardProfileController::class, 'index'])->name('profile');
-        Route::post('job_preference.update', [DashboardProfileController::class, 'job_preference_update'])->name('job_preference.update');
-        Route::post('work_experience.add', [DashboardProfileController::class, 'work_experience_add'])->name('work_experience.add');
+        Route::post('skill/add', [DashboardProfileController::class, 'skill_add'])->name('skill.add');
+        Route::post('skill/update', [DashboardProfileController::class, 'skill_update'])->name('skill.update');
+        Route::get('skill/delete/{id}', [DashboardProfileController::class, 'skill_destroy'])->name('skill.destroy');
 
+        Route::get('profile/{id}', [DashboardProfileController::class, 'index'])->name('profile');
+        Route::post('job_preference/update', [DashboardProfileController::class, 'job_preference_update'])->name('job_preference.update');
+
+        Route::post('work_experience/add', [DashboardProfileController::class, 'work_experience_add'])->name('work_experience.add');
+        Route::post('work_experience/update', [DashboardProfileController::class, 'work_experience_update'])->name('work_experience.update');
+        Route::get('work_experience/delete/{id}', [DashboardProfileController::class, 'work_experience_destroy'])->name('work_experience.destroy');
+
+        Route::post('educational_details/add', [DashboardProfileController::class, 'educational_details_add'])->name('educational_details.add');
+        Route::post('educational_details/update', [DashboardProfileController::class, 'educational_details_update'])->name('educational_details.update');
+        Route::get('educational_details/delete/{id}', [DashboardProfileController::class, 'educational_details_destroy'])->name('educational_details.destroy');
+
+        Route::post('profile_projects/add', [DashboardProfileController::class, 'profile_projects_add'])->name('profile_projects.add');
+        Route::post('profile_projects/update', [DashboardProfileController::class, 'profile_projects_update'])->name('profile_projects.update');
+        Route::get('profile_projects/delete/{id}', [DashboardProfileController::class, 'profile_projects_destroy'])->name('profile_projects.destroy');
+
+        
         // Employer Dashboard
         Route::get('welcome', [EmployerWelcomeController::class, 'index'])->name('welcome');
         Route::get('create-account', [EmployerCreateAccountController::class, 'index'])->name('employer_create_account');
