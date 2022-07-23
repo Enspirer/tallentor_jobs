@@ -51,12 +51,18 @@ Route::group(['middleware' => ['auth', 'password_expires']], function () {
         // User Profile Specific
         Route::patch('profile/update', [ProfileController::class, 'update'])->name('profile.update');
 
+        Route::post('my_profile/update', [DashboardProfileController::class, 'my_profile_update'])->name('my_profile.update');
+
+        Route::post('new_profile/add', [DashboardProfileController::class, 'new_profile_add'])->name('new_profile.add');
+
         Route::post('skill/add', [DashboardProfileController::class, 'skill_add'])->name('skill.add');
         Route::post('skill/update', [DashboardProfileController::class, 'skill_update'])->name('skill.update');
         Route::get('skill/delete/{id}', [DashboardProfileController::class, 'skill_destroy'])->name('skill.destroy');
 
         Route::get('profile/{id}', [DashboardProfileController::class, 'index'])->name('profile');
         Route::post('job_preference/update', [DashboardProfileController::class, 'job_preference_update'])->name('job_preference.update');
+        Route::post('personal_details/update', [DashboardProfileController::class, 'personal_details_update'])->name('personal_details.update');
+
 
         Route::post('work_experience/add', [DashboardProfileController::class, 'work_experience_add'])->name('work_experience.add');
         Route::post('work_experience/update', [DashboardProfileController::class, 'work_experience_update'])->name('work_experience.update');
