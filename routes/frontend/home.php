@@ -80,6 +80,8 @@ Route::group(['middleware' => ['auth', 'password_expires']], function () {
         // Employer Dashboard
         Route::get('welcome', [EmployerWelcomeController::class, 'index'])->name('welcome');
         Route::get('create-account', [EmployerCreateAccountController::class, 'index'])->name('employer_create_account');
+        Route::post('user_account/update', [EmployerCreateAccountController::class, 'user_accounts_update'])->name('user_account.update');
+
         Route::get('employer/dashboard/active-jobs', [EmployerDashboardController::class, 'active_jobs'])->name('active_jobs');     
         Route::get('employer/dashboard/inactive-jobs', [EmployerDashboardController::class, 'inactive_jobs'])->name('inactive_jobs');     
         Route::get('employer/dashboard/candidate-list', [CandidateListController::class, 'index'])->name('candidate_list');     

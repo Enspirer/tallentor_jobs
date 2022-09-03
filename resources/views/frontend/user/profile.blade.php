@@ -16,10 +16,18 @@
             <div class="status-block">
                 <div class="text-block">
                     <div class="title">Profile Status</div>
-                    <div class="status">Okay</div>
+                    @if($all_percantage < 30)
+                        <div class="status">Poor</div>
+                    @elseif($all_percantage < 50)
+                        <div class="status">Okay</div>
+                    @elseif($all_percantage < 70)
+                        <div class="status">Good</div>
+                    @else
+                        <div class="status">Perfect</div>
+                    @endif
                 </div>
                 <div id="radialProgress" class="center radial-progress">
-                    <svg class="progress blue noselect" data-progress="42" x="0px" y="0px" viewBox="0 0 80 80">
+                    <svg class="progress blue noselect" data-progress="{{round($all_percantage, 2)}}" x="0px" y="0px" viewBox="0 0 80 80">
                         <path class="track" d="M5,40a35,35 0 1,0 70,0a35,35 0 1,0 -70,0" />
                         <path class="fill" d="M5,40a35,35 0 1,0 70,0a35,35 0 1,0 -70,0" />
                         <text class="value" x="50%" y="60%">0%</text>
@@ -139,18 +147,42 @@
                 <div class="pending-actions">
                     <h5 class="pending-actions__title">Pending Actions</h5>
                     <div class="pending-actions__content">
-                        <a href="#" class="pending-actions__item">
-                            <div class="pending-actions__item-name">Resume</div>
-                            <div class="pending-actions__item-status">30%</div>
+
+                        <a class="pending-actions__item">
+                            <div class="pending-actions__item-name">My Profile</div>
+                            <div class="pending-actions__item-status">{{round($first_percantage, 2)}}%</div>
                         </a>
-                        <a href="#" class="pending-actions__item">
-                            <div class="pending-actions__item-name">Education</div>
-                            <div class="pending-actions__item-status">75%</div>
+
+                        <a class="pending-actions__item">
+                            <div class="pending-actions__item-name">Personal Information</div>
+                            <div class="pending-actions__item-status">{{round($second_percantage, 2)}}%</div>
                         </a>
-                        <a href="#" class="pending-actions__item">
-                            <div class="pending-actions__item-name">Verify Email ID</div>
-                            <div class="pending-actions__item-status">0%</div>
+
+                        <a class="pending-actions__item">
+                            <div class="pending-actions__item-name">Job Preferences</div>
+                            <div class="pending-actions__item-status">{{round($third_percantage, 2)}}%</div>
                         </a>
+
+                        <a class="pending-actions__item">
+                            <div class="pending-actions__item-name">Personal Details</div>
+                            <div class="pending-actions__item-status">{{round($fourth_percantage, 2)}}%</div>
+                        </a>
+
+                        <a class="pending-actions__item">
+                            <div class="pending-actions__item-name">Work Experience</div>
+                            <div class="pending-actions__item-status">{{round($fifth_percantage, 2)}}%</div>
+                        </a>
+
+                        <a class="pending-actions__item">
+                            <div class="pending-actions__item-name">Educational Details</div>
+                            <div class="pending-actions__item-status">{{round($sixth_percantage, 2)}}%</div>
+                        </a>
+
+                        <a class="pending-actions__item">
+                            <div class="pending-actions__item-name">Projects</div>
+                            <div class="pending-actions__item-status">{{round($seventh_percantage, 2)}}%</div>
+                        </a>    
+                        
                     </div>
                 </div>
             </div>

@@ -24,6 +24,263 @@ class DashboardProfileController extends Controller
         $profile_projects = ProfileProjects::where('profile_id',$profile->id)->where('user_id',auth()->user()->id)->orderby('id','desc')->get();
 
         // dd($personal_details->languages);
+
+        $profile_name = Profile::where('id',$id)->first()->profile_name;
+        if($profile_name){
+            $profile_name_count = 1;
+        }
+        else{
+            $profile_name_count = 0;
+        }
+
+        $profile_image = Profile::where('id',$id)->first()->profile_image;
+        if($profile_image){
+            $profile_image_count = 1;
+        }
+        else{
+            $profile_image_count = 0;
+        }
+        
+        $name = Profile::where('id',$id)->first()->name;
+        if($name){
+            $name_count = 1;
+        }
+        else{
+            $name_count = 0;
+        }
+
+        $country = Profile::where('id',$id)->first()->country;
+        if($country){
+            $country_count = 1;
+        }
+        else{
+            $country_count = 0;
+        }
+
+        $experience = Profile::where('id',$id)->first()->experience;
+        if($experience){
+            $experience_count = 1;
+        }
+        else{
+            $experience_count = 0;
+        }
+
+        $role = Profile::where('id',$id)->first()->role;
+        if($role){
+            $role_count = 1;
+        }
+        else{
+            $role_count = 0;
+        }
+
+        $phone = Profile::where('id',$id)->first()->phone;
+         if($phone){
+            $phone_count = 1;
+        }
+        else{
+            $phone_count = 0;
+        }
+
+        $email = Profile::where('id',$id)->first()->email;
+         if($email){
+            $email_count = 1;
+        }
+        else{
+            $email_count = 0;
+        }
+
+        $first_section = $profile_name_count + $profile_image_count + $name_count + $country_count + $experience_count + $role_count + $phone_count + $email_count; 
+        // dd($first_section);
+        $first_percantage = ($first_section * 100) / 8;
+
+
+
+        $personal_information = PersonalInformations::where('profile_id',$id)->first();
+        if($personal_information){
+            $personal_information_count = 1;
+        }
+        else{
+            $personal_information_count = 0;
+        }
+      
+        $second_section = $personal_information_count; 
+        $second_percantage = ($second_section * 100) / 1;
+
+
+
+        $industry = Profile::where('id',$id)->first()->industry;
+        if($industry){
+            $industry_count = 1;
+        }
+        else{
+            $industry_count = 0;
+        }
+
+        $function = Profile::where('id',$id)->first()->function;
+        if($function){
+            $function_count = 1;
+        }
+        else{
+            $function_count = 0;
+        }
+
+        $job_type = Profile::where('id',$id)->first()->job_type;
+        if($job_type){
+            $job_type_count = 1;
+        }
+        else{
+            $job_type_count = 0;
+        }
+               
+
+        $employment_type = Profile::where('id',$id)->first()->employment_type;
+         if($employment_type){
+            $employment_type_count = 1;
+        }
+        else{
+            $employment_type_count = 0;
+        }
+
+        $six_days = Profile::where('id',$id)->first()->six_days;
+        if($six_days){
+           $six_days_count = 1;
+        }
+        else{
+            $six_days_count = 0;
+        }
+
+        $startup = Profile::where('id',$id)->first()->startup;
+        if($startup){
+          $startup_count = 1;
+        }
+        else{
+            $startup_count = 0;
+        }
+
+
+        $third_section = $industry_count + $function_count + $job_type_count + $employment_type_count + $six_days_count + $startup_count; 
+        // dd($third_section);
+        $third_percantage = ($third_section * 100) / 6;
+
+
+        $home_town = Profile::where('id',$id)->first()->home_town;
+        if($home_town){
+            $home_town_count = 1;
+        }
+        else{
+            $home_town_count = 0;
+        }
+
+        $gender = Profile::where('id',$id)->first()->gender;
+        if($gender){
+            $gender_count = 1;
+        }
+        else{
+            $gender_count = 0;
+        }
+
+        $marital_status = Profile::where('id',$id)->first()->marital_status;
+        if($marital_status){
+            $marital_status_count = 1;
+        }
+        else{
+            $marital_status_count = 0;
+        }
+
+        $passport_number = Profile::where('id',$id)->first()->passport_number;
+         if($passport_number){
+            $passport_number_count = 1;
+        }
+        else{
+            $passport_number_count = 0;
+        }
+
+        $work_permit_usa = Profile::where('id',$id)->first()->work_permit_usa;
+         if($work_permit_usa){
+            $work_permit_usa_count = 1;
+        }
+        else{
+            $work_permit_usa_count = 0;
+        }
+
+        $address = Profile::where('id',$id)->first()->address;
+        if($address){
+           $address_count = 1;
+        }
+        else{
+            $address_count = 0;
+        }
+
+        $dob = Profile::where('id',$id)->first()->dob;
+        if($dob){
+            $dob_count = 1;
+        }
+        else{
+            $dob_count = 0;
+        }
+
+
+        $nationality = Profile::where('id',$id)->first()->nationality;
+        if($nationality){
+           $nationality_count = 1;
+        }
+        else{
+            $nationality_count = 0;
+        }
+
+        $languages = Profile::where('id',$id)->first()->languages;
+        if($languages){
+            $languages_count = 1;
+        }
+        else{
+            $languages_count = 0;
+        }
+
+     
+        $fourth_section = $home_town_count + $gender_count + $marital_status_count + $passport_number_count + $work_permit_usa_count + $address_count + $dob_count + $nationality_count + $languages_count; 
+        // dd($fourth_section);
+        $fourth_percantage = ($fourth_section * 100) / 9;
+
+
+        $work_experience = WorkExperience::where('profile_id',$id)->first();
+        if($work_experience){
+            $work_experience_count = 1;
+        }
+        else{
+            $work_experience_count = 0;
+        }
+      
+        $fifth_section = $work_experience_count; 
+        $fifth_percantage = ($fifth_section * 100) / 1;
+
+
+        $educational_detail = EducationalDetails::where('profile_id',$id)->first();
+        if($educational_detail){
+            $educational_detail_count = 1;
+        }
+        else{
+            $educational_detail_count = 0;
+        }
+      
+        $sixth_section = $educational_detail_count; 
+        $sixth_percantage = ($sixth_section * 100) / 1;
+
+
+        $profile_project = ProfileProjects::where('profile_id',$id)->first();
+        if($profile_project){
+            $profile_project_count = 1;
+        }
+        else{
+            $profile_project_count = 0;
+        }
+      
+        $seventh_section = $profile_project_count; 
+        $seventh_percantage = ($seventh_section * 100) / 1;
+
+
+        $all = $first_section + $second_section + $third_section + $fourth_section + $fifth_section + $sixth_section + $seventh_section; 
+        $all_percantage = ($all * 100) / 27;
+
         return view('frontend.user.profile',[
             'profile' => $profile,
             'user_profiles' => $user_profiles,
@@ -31,7 +288,15 @@ class DashboardProfileController extends Controller
             'personal_informations' => $personal_informations,
             'work_experiences' => $work_experiences,
             'educational_details' => $educational_details,
-            'profile_projects' => $profile_projects
+            'profile_projects' => $profile_projects,
+            'first_percantage' => $first_percantage,
+            'second_percantage' => $second_percantage,
+            'third_percantage' => $third_percantage,
+            'fourth_percantage' => $fourth_percantage,
+            'fifth_percantage' => $fifth_percantage,
+            'sixth_percantage' => $sixth_percantage,
+            'seventh_percantage' => $seventh_percantage,
+            'all_percantage' => $all_percantage
         ]);
     }
 

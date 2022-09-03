@@ -37,7 +37,9 @@ if (! function_exists('home_route')) {
             if (auth()->user()->can('view backend')) {
                 return 'admin.dashboard';
             }
-
+            elseif(auth()->user()->user_type == 'Employer'){
+                return 'frontend.user.welcome';
+            }
             return 'frontend.user.dashboard';
         }
 

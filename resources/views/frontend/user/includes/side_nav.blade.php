@@ -15,11 +15,13 @@
                     Top Jobs
                 </a>
             </li>
-            <li>
-                <a href="#">
-                    <i class="bi bi-person"></i>
-                    Profile
-                </a>
+            <li>                
+                @if(App\Models\Profile::where('user_id',auth()->user()->id)->latest()->first() != null)
+                    <a href="{{route('frontend.user.profile',App\Models\Profile::where('user_id',auth()->user()->id)->latest()->first()->id)}}">
+                        <i class="bi bi-person"></i>
+                        Profile
+                    </a>
+                @endif
             </li>
             <li>
                 <a href="#">
